@@ -17,13 +17,14 @@
 		FF8BDB4017DF9866002AE0F9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB3F17DF9866002AE0F9 /* Default@2x.png */; };
 		FF8BDB4217DF9866002AE0F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4117DF9866002AE0F9 /* Default-568h@2x.png */; };
 		FF8BDB4517DF9866002AE0F9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */; };
-		FF8BDB4817DF9866002AE0F9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB4717DF9866002AE0F9 /* FirstViewController.m */; };
 		FF8BDB4A17DF9866002AE0F9 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4917DF9866002AE0F9 /* first.png */; };
 		FF8BDB4C17DF9866002AE0F9 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4B17DF9866002AE0F9 /* first@2x.png */; };
 		FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */; };
 		FF8BDB5117DF9866002AE0F9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5017DF9866002AE0F9 /* second.png */; };
 		FF8BDB5317DF9866002AE0F9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5217DF9866002AE0F9 /* second@2x.png */; };
 		FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */; };
+		FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */; };
+		FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +42,6 @@
 		FF8BDB3F17DF9866002AE0F9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FF8BDB4117DF9866002AE0F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		FF8BDB4417DF9866002AE0F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		FF8BDB4617DF9866002AE0F9 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		FF8BDB4717DF9866002AE0F9 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		FF8BDB4917DF9866002AE0F9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = Finnkino/first.png; sourceTree = "<group>"; };
 		FF8BDB4B17DF9866002AE0F9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Finnkino/first@2x.png"; sourceTree = "<group>"; };
 		FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		FF8BDB5217DF9866002AE0F9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Finnkino/second@2x.png"; sourceTree = "<group>"; };
 		FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoMovieViewController.h; sourceTree = "<group>"; };
 		FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoMovieViewController.m; sourceTree = "<group>"; };
+		FF8BDB6017DFA38F002AE0F9 /* FinnkinoEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoEvent.h; path = Finnkino/FinnkinoEvent.h; sourceTree = "<group>"; };
+		FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoEvent.m; path = Finnkino/FinnkinoEvent.m; sourceTree = "<group>"; };
+		FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoOneMovieEvent.h; path = Finnkino/FinnkinoOneMovieEvent.h; sourceTree = "<group>"; };
+		FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoOneMovieEvent.m; path = Finnkino/FinnkinoOneMovieEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +106,6 @@
 			children = (
 				FF8BDB3A17DF9866002AE0F9 /* AppDelegate.h */,
 				FF8BDB3B17DF9866002AE0F9 /* AppDelegate.m */,
-				FF8BDB4617DF9866002AE0F9 /* FirstViewController.h */,
-				FF8BDB4717DF9866002AE0F9 /* FirstViewController.m */,
 				FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */,
 				FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */,
 				FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */,
@@ -139,6 +140,10 @@
 		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BDB6017DFA38F002AE0F9 /* FinnkinoEvent.h */,
+				FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */,
+				FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */,
+				FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -234,9 +239,10 @@
 			files = (
 				FF8BDB3817DF9866002AE0F9 /* main.m in Sources */,
 				FF8BDB3C17DF9866002AE0F9 /* AppDelegate.m in Sources */,
-				FF8BDB4817DF9866002AE0F9 /* FirstViewController.m in Sources */,
 				FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */,
 				FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */,
+				FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */,
+				FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

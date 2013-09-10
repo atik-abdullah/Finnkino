@@ -7,9 +7,13 @@
 //
 
 #import "FinnkinoMovieViewController.h"
+#import "FinnkinoEvent.h"
+#import "FinnkinoOneMovieEvent.h"
 
 @interface FinnkinoMovieViewController ()
-
+@property (nonatomic, strong) NSURLConnection *connection;
+@property (nonatomic, strong) NSMutableData *xmlData;
+@property (nonatomic, strong) FinnkinoEvent *finnkinoEvent;
 @end
 
 @implementation FinnkinoMovieViewController
@@ -24,25 +28,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[self.finnkinoEvent movieItems] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:@"UITableViewCell"];
+    }
+    FinnkinoOneMovieEvent *oneMovieEvent = [[self.finnkinoEvent movieItems] objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:[oneMovieEvent title]];
     return cell;
 }
 
@@ -74,10 +78,20 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
-    // We are just checking to make sure we are getting the XML
-    NSString *xmlCheck = [[NSString alloc] initWithData:self.xmlData
-                                               encoding:NSUTF8StringEncoding];
-    NSLog(@"xmlCheck = %@", xmlCheck);
+    // Create the parser object with the data received from the web service
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.xmlData];
+    // Give it a delegate - ignore the warning here for now
+    [parser setDelegate:self];
+    // Tell it to start parsing - the document will be parsed and
+    // the delegate of NSXMLParser will get all of its delegate messages
+    // sent to it before this line finishes execution - it is blocking
+    [parser parse];
+    // Get rid of the XML data as we no longer need it
+    self.xmlData = nil;
+    // Get rid of the connection, no longer need it
+    self.connection = nil;
+    // Reload the table.. for now, the table will be empty.
+    [[self tableView] reloadData];
 }
 
 - (void)connection:(NSURLConnection *)conn
@@ -100,6 +114,29 @@
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
     [av show];
+}
+
+#pragma mark NSXMLParser delegate methods
+
+- (void)parser:(NSXMLParser *)parser
+didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qualifiedName
+    attributes:(NSDictionary *)attributeDict
+{
+    NSLog(@"%@ found a %@ element", self, elementName);
+    if ([elementName isEqual:@"Events"])
+    {
+        // If the parser saw a channel, create new instance, store in our ivar
+        self.finnkinoEvent = [[FinnkinoEvent alloc] init];
+        
+        // Give the channel object a pointer back to ourselves for later
+        [self.finnkinoEvent setParentParserDelegate:self];
+        
+        // Set the parser's delegate to the channel object
+        // There will be a warning here, ignore it warning for now
+        [parser setDelegate:self.finnkinoEvent];
+    }
 }
 
 @end

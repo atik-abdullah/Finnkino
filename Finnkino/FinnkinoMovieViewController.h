@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinnkinoMovieViewController : UITableViewController
-
-@property (nonatomic, strong) NSURLConnection *connection;
-@property (nonatomic, strong) NSMutableData *xmlData;
+@interface FinnkinoMovieViewController : UITableViewController <NSXMLParserDelegate>
 
 @end
