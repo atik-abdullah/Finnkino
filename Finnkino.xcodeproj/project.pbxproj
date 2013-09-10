@@ -23,6 +23,7 @@
 		FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */; };
 		FF8BDB5117DF9866002AE0F9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5017DF9866002AE0F9 /* second.png */; };
 		FF8BDB5317DF9866002AE0F9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5217DF9866002AE0F9 /* second@2x.png */; };
+		FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,12 +43,14 @@
 		FF8BDB4417DF9866002AE0F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FF8BDB4617DF9866002AE0F9 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		FF8BDB4717DF9866002AE0F9 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		FF8BDB4917DF9866002AE0F9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		FF8BDB4B17DF9866002AE0F9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		FF8BDB4917DF9866002AE0F9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = Finnkino/first.png; sourceTree = "<group>"; };
+		FF8BDB4B17DF9866002AE0F9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Finnkino/first@2x.png"; sourceTree = "<group>"; };
 		FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		FF8BDB5017DF9866002AE0F9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		FF8BDB5217DF9866002AE0F9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		FF8BDB5017DF9866002AE0F9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = Finnkino/second.png; sourceTree = "<group>"; };
+		FF8BDB5217DF9866002AE0F9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Finnkino/second@2x.png"; sourceTree = "<group>"; };
+		FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoMovieViewController.h; sourceTree = "<group>"; };
+		FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoMovieViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +70,11 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
-				FF8BDB3117DF9866002AE0F9 /* Finnkino */,
+				FF8BDB5C17DF998A002AE0F9 /* Resources */,
+				FF8BDB5B17DF9981002AE0F9 /* Store */,
+				FF8BDB5A17DF9979002AE0F9 /* Model */,
+				FF8BDB5917DF9971002AE0F9 /* View */,
+				FF8BDB3117DF9866002AE0F9 /* Controller */,
 				FF8BDB2A17DF9866002AE0F9 /* Frameworks */,
 				FF8BDB2917DF9866002AE0F9 /* Products */,
 			);
@@ -91,22 +98,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF8BDB3117DF9866002AE0F9 /* Finnkino */ = {
+		FF8BDB3117DF9866002AE0F9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FF8BDB3A17DF9866002AE0F9 /* AppDelegate.h */,
 				FF8BDB3B17DF9866002AE0F9 /* AppDelegate.m */,
-				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
 				FF8BDB4617DF9866002AE0F9 /* FirstViewController.h */,
 				FF8BDB4717DF9866002AE0F9 /* FirstViewController.m */,
-				FF8BDB4917DF9866002AE0F9 /* first.png */,
-				FF8BDB4B17DF9866002AE0F9 /* first@2x.png */,
 				FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */,
 				FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */,
-				FF8BDB5017DF9866002AE0F9 /* second.png */,
-				FF8BDB5217DF9866002AE0F9 /* second@2x.png */,
+				FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */,
+				FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 			);
+			name = Controller;
 			path = Finnkino;
 			sourceTree = "<group>";
 		};
@@ -122,6 +127,39 @@
 				FF8BDB4117DF9866002AE0F9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF8BDB5917DF9971002AE0F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FF8BDB5B17DF9981002AE0F9 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		FF8BDB5C17DF998A002AE0F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF8BDB4917DF9866002AE0F9 /* first.png */,
+				FF8BDB4B17DF9866002AE0F9 /* first@2x.png */,
+				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
+				FF8BDB5017DF9866002AE0F9 /* second.png */,
+				FF8BDB5217DF9866002AE0F9 /* second@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +236,7 @@
 				FF8BDB3C17DF9866002AE0F9 /* AppDelegate.m in Sources */,
 				FF8BDB4817DF9866002AE0F9 /* FirstViewController.m in Sources */,
 				FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */,
+				FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +257,7 @@
 				FF8BDB4417DF9866002AE0F9 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = Finnkino;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
