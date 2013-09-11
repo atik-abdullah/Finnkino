@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FinnkinoMovieViewController : UITableViewController <NSXMLParserDelegate>
+@interface FinnkinoMovieViewController : UITableViewController
 
 @end
