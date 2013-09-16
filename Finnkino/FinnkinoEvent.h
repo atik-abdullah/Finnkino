@@ -13,4 +13,7 @@
 @property (nonatomic, strong) NSMutableArray *movieItems;
 @property (nonatomic, weak) id parentParserDelegate;
 
+// Holds movies sorted alphabetically
+@property (nonatomic, strong) NSArray *sortedMovieItems;
+
 @end

@@ -16,6 +16,7 @@
 @implementation FinnkinoEvent
 @synthesize movieItems;
 @synthesize parentParserDelegate;
+@synthesize sortedMovieItems;
 
 - (id)init
 {
@@ -48,6 +49,7 @@ didStartElement:(NSString *)elementName
         
         // Add the item to our array and release our hold on it
         [self.movieItems addObject:movieEvent];
+        self.sortedMovieItems = [self.movieItems sortedArrayUsingSelector:@selector(nameAscCompare:)];
     }
     
 }

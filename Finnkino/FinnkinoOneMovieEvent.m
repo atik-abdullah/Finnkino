@@ -74,4 +74,8 @@ didStartElement:(NSString *)elementName
     _accumulatingParsedCharacterData = NO;
 }
 
+- (NSComparisonResult)nameAscCompare:(FinnkinoOneMovieEvent *)fkv
+{
+	return [self.title caseInsensitiveCompare:[fkv title]];
+}
 @end
