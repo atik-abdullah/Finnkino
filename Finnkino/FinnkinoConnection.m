@@ -10,6 +10,10 @@
 
 static NSMutableArray *sharedConnectionList = nil;
 
+@interface FinnkinoConnection ()
+@property (nonatomic, strong) NSURLConnection *connection;
+@end
+
 @implementation FinnkinoConnection
 @synthesize xmlRootObject;
 @synthesize request;
@@ -53,18 +57,28 @@ static NSMutableArray *sharedConnectionList = nil;
 {
     id rootObject = nil;
     
-    // If there is a "root object"
+    // xmlRootObject determines the delegate for xml parser (in our case which is FinnkinoEvent)
+    // xmlRootObject should have been set by FinnkinoFeedStore before making a
+    // NSURLConnection connection request which is encapsulated by this class in -(void)start method.
     if([self xmlRootObject])
     {
         // Create a parser with the incoming data and let the root object parse
         // its contents
         NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.xmlData];
+        
+        // Set the delegate to FinnkinoEvent(xmlRootObject)object
         [parser setDelegate:[self xmlRootObject]];
+        
+        // Start parsing, delegate FinnkinoEvent will take care of it
         [parser parse];
+        
+        // After parsing the FinnkinoEvent is in-memory holding the parsed 
+        // xml information converted to tree of objects. Grab a copy of that
+        // object becuase after it goes out of scope it will be erased from memory
         rootObject = [self xmlRootObject];
     }
     
-    // Then, pass the root object to the completion block - remember,
+    // Then, pass the grabbed object to the completion block - remember,
     // this is the block that the controller supplied.
     if([self completionBlock])
         [self completionBlock](rootObject, nil);
