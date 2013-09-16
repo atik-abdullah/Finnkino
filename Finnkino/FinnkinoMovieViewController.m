@@ -37,14 +37,20 @@
 
 #pragma mark - Table view data source
 
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
+    return (self.sectionNames)[section];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.sectionNames count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.finnkinoEvent movieItems] count];
+    return [(self.sectionData)[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,9 +62,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:@"UITableViewCell"];
     }
-    FinnkinoOneMovieEvent *oneMovieEvent = [[self.finnkinoEvent movieItems] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[oneMovieEvent title]];
+    [[cell textLabel] setText:[(self.sectionData)[[indexPath section]][[indexPath row]] objectForKey:@"title"]];
     return cell;
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [@[UITableViewIndexSearch] arrayByAddingObjectsFromArray:self.sectionNames];
 }
 
 #pragma mark - Utility methods
@@ -138,8 +148,6 @@
         // If same letter encountered keep adding to the same small chunk
         [[self.sectionData lastObject] addObject: aMovieDictionary];
     }
-    NSLog(@"%@", self.sectionNames);
-    NSLog(@"%@", self.sectionData);
 }
 
 @end
