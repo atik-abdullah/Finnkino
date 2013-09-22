@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class FinnkinoOneMovieEvent;
+
 @interface FinnkinoEvent : NSObject <NSXMLParserDelegate>
 
 @property (nonatomic, strong) NSMutableArray *movieItems;
@@ -15,5 +17,5 @@
 
 // Holds movies sorted alphabetically
 @property (nonatomic, strong) NSArray *sortedMovieItems;
-
+@property (nonatomic, strong) FinnkinoOneMovieEvent *movieEvent;
 @end

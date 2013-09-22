@@ -37,11 +37,12 @@ didStartElement:(NSString *)elementName
 {
     if ([elementName isEqual:@"OriginalTitle"])
     {
-    // The contents are collected in parser:foundCharacters:.
-    _accumulatingParsedCharacterData = YES;
-    // The mutable string needs to be reset to empty.
-    [self.currentParsedCharacterData setString:@""];
-}
+        // The contents are collected in parser:foundCharacters:.
+        _accumulatingParsedCharacterData = YES;
+        
+        // The mutable string needs to be reset to empty.
+        [self.currentParsedCharacterData setString:@""];
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)str
@@ -50,7 +51,6 @@ didStartElement:(NSString *)elementName
     {
         // If the current element is one whose content we care about, append 'string'
         // to the property that holds the content of the current element.
-        //
         [self.currentParsedCharacterData appendString:str];
     }
 }
@@ -63,14 +63,12 @@ didStartElement:(NSString *)elementName
     if ([elementName isEqual:@"Title"])
     {
         [self setTitle:self.currentParsedCharacterData];
-        NSLog(@"%@ found a %@ element", self, self.title);
     }
     
     if ([elementName isEqual:@"Event"])
     {
         [parser setDelegate:self.parentParserDelegate];
     }
-    
     _accumulatingParsedCharacterData = NO;
 }
 
@@ -78,4 +76,5 @@ didStartElement:(NSString *)elementName
 {
 	return [self.title caseInsensitiveCompare:[fkv title]];
 }
+
 @end

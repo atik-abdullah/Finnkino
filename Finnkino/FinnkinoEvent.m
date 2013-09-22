@@ -39,16 +39,16 @@ didStartElement:(NSString *)elementName
     if ([elementName isEqual:@"Event"])
     {
         // When we find an item, create an instance of FinnkinoOneMovieEvent
-        FinnkinoOneMovieEvent *movieEvent = [[FinnkinoOneMovieEvent alloc] init];
+        self.movieEvent = [[FinnkinoOneMovieEvent alloc] init];
         
         // Set up its parent as ourselves so we can regain control of the parser
-        [movieEvent setParentParserDelegate:self];
+        [self.movieEvent setParentParserDelegate:self];
         
         // Turn the parser to the RSSItem
-        [parser setDelegate:movieEvent];
+        [parser setDelegate:self.movieEvent];
         
         // Add the item to our array and release our hold on it
-        [self.movieItems addObject:movieEvent];
+        [self.movieItems addObject:self.movieEvent];
         self.sortedMovieItems = [self.movieItems sortedArrayUsingSelector:@selector(nameAscCompare:)];
     }
     

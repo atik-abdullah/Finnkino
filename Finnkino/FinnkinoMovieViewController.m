@@ -10,21 +10,19 @@
 #import "FinnkinoEvent.h"
 #import "FinnkinoOneMovieEvent.h"
 #import "FinnkinoFeedStore.h"
+#import "FinnkinoEvent+TableRepresentation.h"
 
 @interface FinnkinoMovieViewController ()
 
 // finnkinoEvent holds all the movie information,received from the completion block
 @property (nonatomic, strong) FinnkinoEvent *finnkinoEvent;
 
-// An array of dictionary - each movie in finnkinoEvent will be converted in dictionary
-// in -configureModel , then added to the arrayOfMovies.
-@property (nonatomic, strong) NSMutableArray *arrayOfMovies;
-
 // An array of arrays containing Dictionary
 @property (nonatomic, strong) NSMutableArray* sectionData;
 
 // An array of section headers
 @property (nonatomic, strong) NSMutableArray* sectionNames;
+
 @end
 
 @implementation FinnkinoMovieViewController
@@ -84,7 +82,7 @@ titleForHeaderInSection:(NSInteger)section
             // reload the table.
             self.finnkinoEvent = obj;
             [self configureModel];
-
+            
             // If table view is not reloaded executing next line will crash
             [self.tableView reloadData];
         }
@@ -107,47 +105,14 @@ titleForHeaderInSection:(NSInteger)section
 }
 
 -(void) configureModel
-{    
-    // Holds one single movie information
-    NSMutableDictionary *aMovieInformationDict;
-
+{
     // It has to be initialized here and not in viewDidLoad or awakeFromNib because
     // those methods are not called after the completion block has finished
-    self.arrayOfMovies = [[NSMutableArray alloc] init];
+    NSDictionary *aDictionary = [self.finnkinoEvent tr_tableRepresentation];
     
-    // Convert each movie information to dictionary
-    for (FinnkinoOneMovieEvent *aMovie in [self.finnkinoEvent sortedMovieItems])
-    {
-        aMovieInformationDict = [NSDictionary dictionaryWithObjectsAndKeys:aMovie.title , @"title", nil];
-        
-        // Create an array of dictionary(aMovieInformationDict)
-        [self.arrayOfMovies addObject:aMovieInformationDict];
-    }
+    self.sectionNames = [aDictionary objectForKey:@"sectionNames"];
+    self.sectionData = [aDictionary objectForKey:@"sectionData"];
     
-    self.sectionNames = [NSMutableArray array];
-    self.sectionData = [NSMutableArray array];
-    
-    NSString* previous = @"";
-    
-    // From one long list of array divide them into small chunk of arrays and then add the small chunks to an array , the output is an array of arrays.
-    for (NSDictionary* aMovieDictionary in self.arrayOfMovies)
-    {
-        
-        // Each title having common first letter belongs to one smaller chunk
-        NSString* c = [[aMovieDictionary objectForKey:@"title" ] substringToIndex:1];
-        
-        // If a different letter encountered than previous begin a new smaller chunk
-        if (![c isEqualToString: previous])
-        {
-            previous = c;
-            [self.sectionNames addObject: [c uppercaseString]];
-            NSMutableArray* oneSection = [NSMutableArray array];
-            [self.sectionData addObject: oneSection];
-        }
-        
-        // If same letter encountered keep adding to the same small chunk
-        [[self.sectionData lastObject] addObject: aMovieDictionary];
-    }
 }
 
 @end
