@@ -51,7 +51,7 @@
         [[sectionData lastObject] addObject: aMovieDictionary];
     }
     
-    return [NSDictionary dictionaryWithObjectsAndKeys:sectionData , @"sectionData", sectionNames, @"sectionNames", nil];
+    return [NSDictionary dictionaryWithObjectsAndKeys:sectionData , @"sectionData", sectionNames, @"sectionNames", arrayOfMovies, @"arrayOfMovies", nil];
 }
 
 @end

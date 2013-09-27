@@ -17,14 +17,14 @@
     BOOL _accumulatingParsedCharacterData;
 }
 
-@synthesize parentParserDelegate;
-
 - (id)init
 {
     self = [super init];
     if (self)
     {
-        _currentParsedCharacterData = [[NSMutableString alloc] init];
+        self.currentParsedCharacterData = [[NSMutableString alloc] init];
+        self.title = [[NSMutableString alloc] init];
+        self.movieImageURL = [[NSMutableString alloc] init];
     }
     return self;
 }
@@ -35,7 +35,7 @@ didStartElement:(NSString *)elementName
  qualifiedName:(NSString *)qualifiedName
     attributes:(NSDictionary *)attributeDict
 {
-    if ([elementName isEqual:@"OriginalTitle"])
+    if ([elementName isEqual:@"OriginalTitle"]||[elementName isEqual:@"EventSmallImagePortrait"])
     {
         // The contents are collected in parser:foundCharacters:.
         _accumulatingParsedCharacterData = YES;
@@ -60,14 +60,19 @@ didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
 {
-    if ([elementName isEqual:@"Title"])
-    {
-        [self setTitle:self.currentParsedCharacterData];
-    }
-    
     if ([elementName isEqual:@"Event"])
     {
         [parser setDelegate:self.parentParserDelegate];
+    }
+    else if ([elementName isEqual:@"OriginalTitle"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        [self setTitle:localString];
+    }
+    else if ([elementName isEqual:@"EventSmallImagePortrait"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieImageURL = localString;
     }
     _accumulatingParsedCharacterData = NO;
 }

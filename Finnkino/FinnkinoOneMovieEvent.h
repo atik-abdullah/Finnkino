@@ -11,6 +11,7 @@
 @interface FinnkinoOneMovieEvent : NSObject <NSXMLParserDelegate>
 
 @property (nonatomic, weak) id parentParserDelegate;
-@property (nonatomic, strong) NSMutableString *title;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *movieImageURL;
 
 @end

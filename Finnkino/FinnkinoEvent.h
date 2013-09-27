@@ -17,5 +17,4 @@
 
 // Holds movies sorted alphabetically
 @property (nonatomic, strong) NSArray *sortedMovieItems;
-@property (nonatomic, strong) FinnkinoOneMovieEvent *movieEvent;
 @end
