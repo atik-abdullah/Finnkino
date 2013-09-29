@@ -50,7 +50,6 @@
         // If same letter encountered keep adding to the same small chunk
         [[sectionData lastObject] addObject: aMovieDictionary];
     }
-    
     return [NSDictionary dictionaryWithObjectsAndKeys:sectionData , @"sectionData", sectionNames, @"sectionNames", arrayOfMovies, @"arrayOfMovies", nil];
 }
 

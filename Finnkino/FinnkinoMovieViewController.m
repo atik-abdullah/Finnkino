@@ -11,6 +11,7 @@
 #import "FinnkinoOneMovieEvent.h"
 #import "FinnkinoFeedStore.h"
 #import "FinnkinoEvent+TableRepresentation.h"
+#import "FinnkinoDetailViewController.h"
 
 @interface FinnkinoMovieViewController ()
 
@@ -23,7 +24,7 @@
 // An array of section headers
 @property (nonatomic, strong) NSMutableArray* sectionNames;
 
-// An array of arrays containing Dictionary
+// It's an array of filtered Movie Dictionary, not array of arrays of movie dict
 @property (nonatomic, strong) NSArray* filteredSectionData;
 
 // Switch to determine if datasource needs to be filtered
@@ -51,8 +52,14 @@
     // Set the scope bar initially which contains button"begins with" and "contains"
     [self.movieSearchBar setShowsScopeBar:NO];
     [self.movieSearchBar sizeToFit];
-    
     [self fetchEntries];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Hide the navigation bar , it has to be here since when popped
+    //  back from Detail view viewDidLoad method is not called
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark - Table view data source
@@ -151,7 +158,7 @@ titleForHeaderInSection:(NSInteger)section
     UIImageView *cellImageView = (UIImageView *) [cell viewWithTag:1];
     
     // Create URL from String
-    NSURL *urlFromString = [[NSURL alloc] initWithString:[currentDictionary objectForKey:@"movieImageURL"]] ;
+    NSURL *urlFromString = [[NSURL alloc] initWithString:[currentDictionary objectForKey:@"movieSmallImagePortraitURL"]] ;
     
     // Download image from created URL
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
@@ -189,6 +196,37 @@ titleForHeaderInSection:(NSInteger)section
         NSLog(@"creating new header view"); // this will prove we're reusing views
     h.tintColor = [UIColor redColor]; // this will prove we're using these reusable views
     return h;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    FinnkinoDetailViewController *fdvc = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *selection;
+    
+    if ([fdvc respondsToSelector:@selector(setDelegate:)])
+    {
+        [fdvc setValue:self forKey:@"delegate"];
+    }
+    
+    // Check if destination view controller has property named selection
+    if ([fdvc respondsToSelector:@selector(setSelection:)])
+    {
+        if(self.isFiltered == YES)
+        {
+            // Prepare selection info
+            selection = (self.filteredSectionData)[[indexPath row]];
+            [fdvc setValue:selection forKey:@"selection"];
+        }
+        else
+        {
+            // Prepare selection info
+            selection = (self.sectionData)[[indexPath section]][[indexPath row]];
+            [fdvc setValue:selection forKey:@"selection"];
+        }
+    }
 }
 
 #pragma mark - UISearchBarDelegate
@@ -230,7 +268,6 @@ titleForHeaderInSection:(NSInteger)section
 {
     searchBar.showsScopeBar = YES;
     [searchBar sizeToFit];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [searchBar setShowsCancelButton:YES animated:YES];
     self.hideIndexTools = YES;
     [self.tableView reloadData];
@@ -241,7 +278,6 @@ titleForHeaderInSection:(NSInteger)section
 {
     searchBar.showsScopeBar = NO;
     [searchBar sizeToFit];
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
     [searchBar setShowsCancelButton:NO animated:YES];
     return YES;
 }
@@ -307,7 +343,6 @@ titleForHeaderInSection:(NSInteger)section
                                                                    options:options].location != NSNotFound);
                       }];
     self.filteredSectionData = [self.arrayOfMovieDictionary filteredArrayUsingPredicate:p];
-    NSLog(@"%@", self.filteredSectionData);
 }
 
 @end

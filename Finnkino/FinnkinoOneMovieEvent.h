@@ -12,6 +12,10 @@
 
 @property (nonatomic, weak) id parentParserDelegate;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *movieImageURL;
-
+@property (nonatomic, strong) NSString *movieMicroImagePortraitURL;
+@property (nonatomic, strong) NSString *movieSmallImagePortraitURL;
+@property (nonatomic, strong) NSString *movieLargeImagePortraitURL;
+@property (nonatomic, strong) NSString *movieSmallImageLandscapeURL;
+@property (nonatomic, strong) NSString *movieLargeImageLandscapeURL;
+@property (nonatomic, strong) NSMutableArray *contentDescriptorItems;
 @end

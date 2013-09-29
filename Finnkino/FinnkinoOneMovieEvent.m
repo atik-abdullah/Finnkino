@@ -7,6 +7,7 @@
 //
 
 #import "FinnkinoOneMovieEvent.h"
+#import "FinnkinoMovieContentDescriptor.h"
 
 @interface FinnkinoOneMovieEvent ()
 @property (nonatomic) NSMutableString *currentParsedCharacterData;
@@ -24,7 +25,12 @@
     {
         self.currentParsedCharacterData = [[NSMutableString alloc] init];
         self.title = [[NSMutableString alloc] init];
-        self.movieImageURL = [[NSMutableString alloc] init];
+        self.movieSmallImagePortraitURL = [[NSMutableString alloc] init];
+        self.movieMicroImagePortraitURL = [[NSMutableString alloc] init];
+        self.movieLargeImagePortraitURL = [[NSMutableString alloc] init];
+        self.movieSmallImageLandscapeURL = [[NSMutableString alloc] init];
+        self.movieLargeImageLandscapeURL = [[NSMutableString alloc] init];
+        self.contentDescriptorItems = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -42,6 +48,14 @@ didStartElement:(NSString *)elementName
         
         // The mutable string needs to be reset to empty.
         [self.currentParsedCharacterData setString:@""];
+    }
+    else if ([elementName isEqual:@"ContentDescriptor"])
+    {
+        FinnkinoMovieContentDescriptor *contentDescriptorEvent = [[FinnkinoMovieContentDescriptor alloc] init];
+        // Set up its parent as ourselves so we can regain control of the parser
+        [contentDescriptorEvent setParentParserDelegate:self];
+        [parser setDelegate:contentDescriptorEvent];
+        [self.contentDescriptorItems addObject:contentDescriptorEvent];
     }
 }
 
@@ -72,7 +86,27 @@ didStartElement:(NSString *)elementName
     else if ([elementName isEqual:@"EventSmallImagePortrait"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieImageURL = localString;
+        self.movieSmallImagePortraitURL = localString;
+    }
+    else if ([elementName isEqual:@"EventMicroImagePortrait"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieMicroImagePortraitURL = localString;
+    }
+    else if ([elementName isEqual:@"EventLargeImagePortrait"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieLargeImagePortraitURL = localString;
+    }
+    else if ([elementName isEqual:@"EventSmallImageLandscape"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieSmallImageLandscapeURL = localString;
+    }
+    else if ([elementName isEqual:@"EventLargeImageLandscape"])
+    {
+        NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieLargeImageLandscapeURL = localString;
     }
     _accumulatingParsedCharacterData = NO;
 }

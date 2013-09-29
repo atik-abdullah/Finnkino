@@ -12,7 +12,15 @@
 
 - (NSDictionary*) tr_tableRepresentation
 {
-    return [NSDictionary dictionaryWithObjectsAndKeys:self.title , @"title", self.movieImageURL, @"movieImageURL",nil];
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            self.title , @"title",
+            self.movieSmallImagePortraitURL, @"movieSmallImagePortraitURL",
+            self.movieMicroImagePortraitURL, @"movieMicroImagePortraitURL",
+            self.movieLargeImagePortraitURL, @"movieLargeImagePortraitURL",
+            self.movieSmallImageLandscapeURL, @"movieSmallImageLandscapeURL",
+            self.movieLargeImagePortraitURL, @"movieLargeImagePortraitURL",
+            self.contentDescriptorItems, @"contentDescriptorItems",
+            nil];
 }
 
 @end
