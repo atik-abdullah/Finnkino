@@ -19,7 +19,7 @@ typedef enum {
 
 + (FinnkinoFeedStore *)sharedStore;
 
-- (void)fetchRSSFeedWithCompletion:(void (^)(FinnkinoEvent *obj, NSError *err))block
+- (void)fetchRSSFeedWithCompletion:(void (^)(id obj, NSError *err))block
                         forURLType: (ChangeURLType) URLType;
 
 @end

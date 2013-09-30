@@ -299,6 +299,9 @@
                                             <constraint firstItem="KOF-F1-kmV" firstAttribute="centerY" secondItem="4il-eb-wll" secondAttribute="centerY" type="default" id="P13-kM-Fuv"/>
                                             <constraint firstItem="oHY-Sg-7Vm" firstAttribute="leading" secondItem="4il-eb-wll" secondAttribute="leading" constant="24" id="p5P-EN-QuP"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="ffw-WE-AOi" kind="push" id="hmR-JO-phM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="XzY-ze-Ws1">
                                         <rect key="frame" x="0.0" y="369" width="320" height="45"/>
@@ -345,7 +348,74 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzs-Ot-sJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="-464"/>
+            <point key="canvasLocation" x="1400" y="-624"/>
+        </scene>
+        <!--Finnkino Show Time View Controller-->
+        <scene sceneID="4uS-gS-5YA">
+            <objects>
+                <tableViewController id="ffw-WE-AOi" customClass="FinnkinoShowTimeViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HZ9-Yh-sDh">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="plainCell" id="oPi-G0-PVH">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUe-sG-VV5">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="291" id="scG-yL-LCW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="wUe-sG-VV5" firstAttribute="top" secondItem="oPi-G0-PVH" secondAttribute="top" constant="11" id="Po6-1e-xtM"/>
+                                    <constraint firstItem="wUe-sG-VV5" firstAttribute="leading" secondItem="oPi-G0-PVH" secondAttribute="leading" constant="20" type="default" id="ljm-E6-Awd"/>
+                                </constraints>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="attentionCell" id="Fgn-lq-Xc5">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yg-1C-hVV">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="135" id="lJw-Zf-XCh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="1Yg-1C-hVV" firstAttribute="top" secondItem="Fgn-lq-Xc5" secondAttribute="top" constant="11" id="MGE-gX-hd8"/>
+                                    <constraint firstItem="1Yg-1C-hVV" firstAttribute="leading" secondItem="Fgn-lq-Xc5" secondAttribute="leading" constant="28" id="U9z-YT-AlI"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ffw-WE-AOi" id="dZ3-ie-C0e"/>
+                            <outlet property="delegate" destination="ffw-WE-AOi" id="rnm-Gl-B6i"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ckd-TO-P3x"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qg0-P0-F1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="-629"/>
         </scene>
     </scenes>
     <resources>
@@ -355,6 +425,31 @@
         <image name="second" width="16" height="16"/>
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
+    <classes>
+        <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoMovieViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoMovieViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoShowTimeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoShowTimeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

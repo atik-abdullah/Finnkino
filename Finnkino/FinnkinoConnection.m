@@ -15,11 +15,6 @@ static NSMutableArray *sharedConnectionList = nil;
 @end
 
 @implementation FinnkinoConnection
-@synthesize xmlRootObject;
-@synthesize request;
-@synthesize completionBlock;
-@synthesize xmlData;
-@synthesize connection;
 
 - (id)initWithRequest:(NSURLRequest *)req
 {

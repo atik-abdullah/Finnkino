@@ -20,6 +20,9 @@
 		FF4BC4EE17F79A46002A50AB /* view_photos.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E817F79A46002A50AB /* view_photos.png */; };
 		FF505F8F17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */; };
 		FF505F9217ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */; };
+		FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */; };
+		FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */; };
+		FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */; };
 		FF8BDB2C17DF9866002AE0F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8BDB2B17DF9866002AE0F9 /* UIKit.framework */; };
 		FF8BDB2E17DF9866002AE0F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8BDB2D17DF9866002AE0F9 /* Foundation.framework */; };
 		FF8BDB3017DF9866002AE0F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8BDB2F17DF9866002AE0F9 /* CoreGraphics.framework */; };
@@ -60,6 +63,12 @@
 		FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FinnkinoEvent+TableRepresentation.m"; path = "Finnkino/FinnkinoEvent+TableRepresentation.m"; sourceTree = "<group>"; };
 		FF505F9017ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FinnkinoOneMovieEvent+TableRepresentation.h"; path = "Finnkino/FinnkinoOneMovieEvent+TableRepresentation.h"; sourceTree = "<group>"; };
 		FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FinnkinoOneMovieEvent+TableRepresentation.m"; path = "Finnkino/FinnkinoOneMovieEvent+TableRepresentation.m"; sourceTree = "<group>"; };
+		FF84F8B717F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleFirstLevelElement.h; path = Finnkino/FinnkinoScheduleFirstLevelElement.h; sourceTree = "<group>"; };
+		FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoScheduleFirstLevelElement.m; path = Finnkino/FinnkinoScheduleFirstLevelElement.m; sourceTree = "<group>"; };
+		FF84F8BA17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleSecondLevelElement.h; path = Finnkino/FinnkinoScheduleSecondLevelElement.h; sourceTree = "<group>"; };
+		FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoScheduleSecondLevelElement.m; path = Finnkino/FinnkinoScheduleSecondLevelElement.m; sourceTree = "<group>"; };
+		FF84F8BD17F98BF100AFD766 /* FinnkinoShowTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoShowTimeViewController.h; sourceTree = "<group>"; };
+		FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoShowTimeViewController.m; sourceTree = "<group>"; };
 		FF8BDB2817DF9866002AE0F9 /* Finnkino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finnkino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8BDB2B17DF9866002AE0F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FF8BDB2D17DF9866002AE0F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +111,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF84F8B217F982A800AFD766 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				FF8BDB6017DFA38F002AE0F9 /* FinnkinoEvent.h */,
+				FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */,
+				FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */,
+				FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */,
+				FF4BC4E017F7774E002A50AB /* FinnkinoMovieContentDescriptor.h */,
+				FF4BC4E117F7774E002A50AB /* FinnkinoMovieContentDescriptor.m */,
+				FF505F8D17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.h */,
+				FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */,
+				FF505F9017ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.h */,
+				FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */,
+			);
+			name = Movie;
+			sourceTree = "<group>";
+		};
+		FF84F8B317F982D300AFD766 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FF84F8B717F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.h */,
+				FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */,
+				FF84F8BA17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.h */,
+				FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +181,8 @@
 				FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */,
 				FF410BE717F6C72A009E6008 /* FinnkinoDetailViewController.h */,
 				FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */,
+				FF84F8BD17F98BF100AFD766 /* FinnkinoShowTimeViewController.h */,
+				FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 			);
 			name = Controller;
@@ -174,16 +213,8 @@
 		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF8BDB6017DFA38F002AE0F9 /* FinnkinoEvent.h */,
-				FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */,
-				FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */,
-				FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */,
-				FF4BC4E017F7774E002A50AB /* FinnkinoMovieContentDescriptor.h */,
-				FF4BC4E117F7774E002A50AB /* FinnkinoMovieContentDescriptor.m */,
-				FF505F8D17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.h */,
-				FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */,
-				FF505F9017ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.h */,
-				FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */,
+				FF84F8B317F982D300AFD766 /* Schedule */,
+				FF84F8B217F982A800AFD766 /* Movie */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -307,6 +338,9 @@
 				FF505F9217ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m in Sources */,
 				FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */,
 				FF4BC4E217F7774E002A50AB /* FinnkinoMovieContentDescriptor.m in Sources */,
+				FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */,
+				FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */,
+				FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

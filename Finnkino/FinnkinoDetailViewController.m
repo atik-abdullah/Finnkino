@@ -9,7 +9,7 @@
 #import "FinnkinoDetailViewController.h"
 #import "FinnkinoMovieContentDescriptor.h"
 #import "FinnkinoFeedStore.h"
-#import "FinnkinoEvent.h"
+#import "FinnkinoShowTimeViewController.h"
 
 @interface FinnkinoDetailViewController ()
 
@@ -62,10 +62,23 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    FinnkinoShowTimeViewController *stvc = segue.destinationViewController;
+    
+    if ([stvc respondsToSelector:@selector(setDelegate:)])
+    {
+        [stvc setValue:self forKey:@"delegate"];
+    }
+    
+    if ([stvc respondsToSelector:@selector(setSelection:)])
+    {
+        // prepare selection info
+        [stvc setValue:self.selection forKey:@"selection"];
+    }
+    
 }
 
 @end

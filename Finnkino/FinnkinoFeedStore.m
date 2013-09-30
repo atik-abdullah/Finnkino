@@ -9,6 +9,7 @@
 #import "FinnkinoFeedStore.h"
 #import "FinnkinoConnection.h"
 #import "FinnkinoEvent.h"
+#import "FinnkinoScheduleFirstLevelElement.h"
 
 @implementation FinnkinoFeedStore
 
@@ -20,32 +21,38 @@
     return feedStore;
 }
 
-- (void)fetchRSSFeedWithCompletion:(void (^)(FinnkinoEvent *obj, NSError *err))block forURLType:(ChangeURLType)URLType
+- (void)fetchRSSFeedWithCompletion:(void (^)(id obj, NSError *err))block forURLType:(ChangeURLType)URLType
 {
     NSURL *url;
+    NSURLRequest *req;
+    FinnkinoConnection *connection;
+    id model;
+    
     if (URLType == EventURL)
     {
+        // Movie event URL
         url = [NSURL URLWithString:[[NSMutableString alloc] initWithString:@"http://www.finnkino.fi/xml/Events"]];
+        // Create an empty channel
+        model = [[FinnkinoEvent alloc] init];
     }
     else if (URLType == ShowURL)
     {
+        // Schedule URL
         url = [NSURL URLWithString:[[NSMutableString alloc] initWithString:@"http://www.finnkino.fi/xml/Schedule/"]];
-        
+        // Create an empty channel
+        model = [[FinnkinoScheduleFirstLevelElement alloc] init];
     }
     
-    // Create an empty channel
-    FinnkinoEvent *events = [[FinnkinoEvent alloc] init];
-    
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    req = [NSURLRequest requestWithURL:url];
     
     // Create a connection "actor" object that will transfer data from the server
-    FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
+    connection = [[FinnkinoConnection alloc] initWithRequest:req];
     
     // When the connection completes, this block from the controller will be executed.
     [connection setCompletionBlock:block];
     
     // Let the empty channel parse the returning data from the web service
-    [connection setXmlRootObject:events];
+    [connection setXmlRootObject:model];
     
     [connection start];
 }

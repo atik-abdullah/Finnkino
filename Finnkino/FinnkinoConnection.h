@@ -15,7 +15,7 @@
 
 // Completion block, that will be called when parsing is finished
 // parameter "obj" is either xmlRootObject or jsonRootObject
-@property (nonatomic, copy) void (^completionBlock)(id obj, NSError *err);
+@property (nonatomic, strong) void (^completionBlock)(id obj, NSError *err);
 
 // When the web service completes and if data is xml, it parses data in xmlRootObject
 @property (nonatomic, strong) id <NSXMLParserDelegate> xmlRootObject;

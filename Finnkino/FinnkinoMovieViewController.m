@@ -15,7 +15,7 @@
 
 @interface FinnkinoMovieViewController ()
 
-// finnkinoEvent holds all the movie information,received from the completion block
+// Holds all the movie information,received from the completion block
 @property (nonatomic, strong) FinnkinoEvent *finnkinoEvent;
 
 // An array of arrays containing Dictionary
@@ -108,9 +108,7 @@ titleForHeaderInSection:(NSInteger)section
     }
     else if (self.hideIndexTools == YES)
     {
-        NSDictionary *aDictionary = [self.finnkinoEvent tr_tableRepresentation];
-        NSArray *arrayOfMovieDictionary = [aDictionary objectForKey:@"arrayOfMovies"];
-        return [arrayOfMovieDictionary count];
+        return [self.arrayOfMovieDictionary count];
     }
     else
     {
@@ -140,11 +138,10 @@ titleForHeaderInSection:(NSInteger)section
     }
     else if (self.hideIndexTools == YES)
     {
-        NSDictionary *aDictionary = [self.finnkinoEvent tr_tableRepresentation];
-        NSArray *arrayOfMovieDictionary = [aDictionary objectForKey:@"arrayOfMovies"];
+
         // Set the title to the label
-        cellLabel.text = [arrayOfMovieDictionary[indexPath.row] objectForKey:@"title"];
-        currentDictionary = arrayOfMovieDictionary[indexPath.row];
+        cellLabel.text = [self.arrayOfMovieDictionary[indexPath.row] objectForKey:@"title"];
+        currentDictionary = self.arrayOfMovieDictionary[indexPath.row];
     }
     else
     {
