@@ -9,19 +9,24 @@
 #import <Foundation/Foundation.h>
 #import "JSONSerializable.h"
 
+@class JSONThirdLevelDict;
 @interface JSONSecondLevelDict : NSObject < JSONSerializable >
 //JSON Data structure
-@property (nonatomic, strong) NSMutableString *postersThumbnail;
-@property (nonatomic, strong) NSMutableString *postersProfile;
-@property (nonatomic, strong) NSMutableString *postersDetailed;
-@property (nonatomic, strong) NSMutableString *postersOriginal;
 @property (nonatomic, strong) NSMutableString *jsonTitle;
-@property (nonatomic, strong) NSString *criticsScore;
-@property (nonatomic, strong) NSMutableString *criticsRating;
-@property (nonatomic, strong) NSMutableString *audienceRating;
-@property (nonatomic, strong) NSString *audienceScore;
-@property (nonatomic, strong) NSMutableArray *castItems;
-@property (nonatomic, strong) NSString *releseDatesTheater;
+
 @property (nonatomic, strong) NSString *runtime;
-@property (nonatomic, strong) NSString *linksSelf;
+
+// Holds array of third level element
+@property (nonatomic, strong) NSMutableArray *castItems;
+@property (nonatomic, strong) JSONThirdLevelDict *postersThumbnail;
+@property (nonatomic, strong) JSONThirdLevelDict *postersProfile;
+@property (nonatomic, strong) JSONThirdLevelDict *postersDetailed;
+@property (nonatomic, strong) JSONThirdLevelDict *postersOriginal;
+@property (nonatomic, strong) JSONThirdLevelDict *releaseDatesElement;
+@property (nonatomic, strong) JSONThirdLevelDict *criticsScoreElement;
+@property (nonatomic, strong) JSONThirdLevelDict *criticsRatingElement;
+@property (nonatomic, strong) JSONThirdLevelDict *audienceRatingElement;
+@property (nonatomic, strong) JSONThirdLevelDict *audienceScoreElement;
+@property (nonatomic, strong) JSONThirdLevelDict *linkSelfElement;
+
 @end

@@ -28,4 +28,6 @@ typedef enum {
 
 - (void)fetchRottenTomatoesMovies:(int)count withCompletion:(void (^)(id obj, NSError *err))block forURLType: (ChangeURLType) URLType;
 
+- (void)fetchRottenTomatoesMoviesWithCompletion:(void (^)(id obj, NSError *err))block
+                                         forURL: (NSString *) str;
 @end

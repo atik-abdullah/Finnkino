@@ -10,8 +10,7 @@
 #import "JSONSecondLevelDict.h"
 
 @interface JSONFirstLevelDict ()
-//JSON Data structure
-@property (nonatomic, strong) NSMutableArray *movieGenreNames;
+
 @end
 
 @implementation JSONFirstLevelDict
@@ -28,7 +27,6 @@
 
 - (void)readFromJSONDictionary:(NSDictionary *)d
 {
-    // The top-level object contains a "feed" object, which is the channel.
     if ([d objectForKey:@"movies"])
     {
         NSArray *movies = [d objectForKey:@"movies"];

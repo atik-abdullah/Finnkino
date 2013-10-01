@@ -10,6 +10,8 @@
 #import "FinnkinoFeedStore.h"
 #import "JSONFirstLevelDict.h"
 #import "JSONSecondLevelDict.h"
+#import "JSONThirdLevelDict.h"
+#import "RottenTomatoesDetailViewController.h"
 
 @interface RottenTomatoesMoviesViewController ()
 
@@ -71,7 +73,7 @@
     dispatch_async(concurrentQueue, ^
                    {
                        // Retrieve the URL for image
-                       NSURL *urlFromString = [[NSURL alloc] initWithString:[[[self.allEvents movieItems] objectAtIndex:indexPath.row] postersThumbnail]] ;
+                       NSURL *urlFromString = [[NSURL alloc] initWithString:[[[[self.allEvents movieItems] objectAtIndex:indexPath.row] postersThumbnail] postersThumbnail]] ;
                        
                        // Download the raw image data
                        NSData *data = [NSData dataWithContentsOfURL:urlFromString];
@@ -89,6 +91,24 @@
     // Set the label text
     cellLabel.text = [[[self.allEvents movieItems] objectAtIndex:indexPath.row] jsonTitle];
     return cell;
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    RottenTomatoesDetailViewController *rtdvc = segue.destinationViewController;
+    
+    if ([rtdvc respondsToSelector:@selector(setDelegate:)])
+    {
+        [rtdvc setValue:self forKey:@"delegate"];
+    }
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    if ([rtdvc respondsToSelector:@selector(setSelection:)])
+    {
+        [rtdvc setValue:[[self.allEvents movieItems] objectAtIndex:indexPath.row] forKey:@"selection"];
+    }
 }
 
 #pragma mark - Interface Builder methods

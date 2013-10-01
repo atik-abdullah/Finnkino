@@ -15,34 +15,57 @@
 
 @implementation JSONSecondLevelDict
 
+- (id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.castItems = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)readFromJSONDictionary:(NSDictionary *)d
 {
     self.jsonTitle = [d objectForKey:@"title"];
-    self.postersOriginal = [[d objectForKey:@"posters"] objectForKey:@"original"];
-    self.postersThumbnail = [[d objectForKey:@"posters"] objectForKey:@"thumbnail"];
-    self.postersDetailed = [[d objectForKey:@"posters"] objectForKey:@"detailed"];
+
+    // Poster
+    JSONThirdLevelDict *postersElement = [[JSONThirdLevelDict alloc] init];
+    [postersElement readFromJSONDictionary:[d objectForKey:@"posters"]];
+    self.postersOriginal = postersElement;
+    self.postersProfile = postersElement;
+    self.postersThumbnail = postersElement;
+    self.postersDetailed = postersElement;
     
-    self.releseDatesTheater = [[d objectForKey:@"release_dates"] objectForKey:@"theater"];
+    // Rlease date
+    JSONThirdLevelDict *releaseDate = [[JSONThirdLevelDict alloc] init];
+    [releaseDate readFromJSONDictionary:[d objectForKey:@"release_dates"]];
+    self.releaseDatesElement = releaseDate;
     
+    // Runtime
     int  aRuntime = [[d objectForKey:@"runtime"] intValue]/60;
     int  bRuntime = [[d objectForKey:@"runtime"] intValue]%60;
-    
     NSString *prepareString = [NSString stringWithFormat:@"%d",aRuntime];
     prepareString = [prepareString stringByAppendingString:@"hr "];
     prepareString = [prepareString stringByAppendingString:[NSString stringWithFormat:@"%d",bRuntime]];
     prepareString = [prepareString stringByAppendingString:@" min"];
-    
     self.runtime = prepareString;
     
-    self.criticsRating = [[d objectForKey:@"ratings"] objectForKey:@"critics_rating"];
-    self.audienceRating = [[d objectForKey:@"ratings"] objectForKey:@"audience_rating"];
-    NSNumber * aNumb =[[d objectForKey:@"ratings"] objectForKey:@"critics_score"];
-    self.criticsScore = [aNumb stringValue];
-    NSNumber * bNumb =[[d objectForKey:@"ratings"] objectForKey:@"audience_score"];
-    self.audienceScore = [bNumb stringValue];
+    // Rating
+    JSONThirdLevelDict *ratingElement = [[JSONThirdLevelDict alloc] init];
+    [ratingElement readFromJSONDictionary:[d objectForKey:@"ratings"]];
+    self.criticsRatingElement = ratingElement;
+    self.criticsScoreElement = ratingElement;
+    self.audienceRatingElement = ratingElement;
+    self.audienceScoreElement = ratingElement;
+
+    // Link to this Movie
+    JSONThirdLevelDict *linkElement = [[JSONThirdLevelDict alloc] init];
+    [linkElement readFromJSONDictionary:[d objectForKey:@"links"]];
+    self.linkSelfElement = linkElement;
     
+    // Actors
     NSArray *starring = [d objectForKey:@"abridged_cast"];
-    
     for(NSDictionary *anActor in starring)
     {
         JSONThirdLevelDict *i = [[JSONThirdLevelDict alloc] init];
@@ -51,10 +74,6 @@
         [i readFromJSONDictionary:anActor];
         [self.castItems addObject:i];
     }
-    
-    self.linksSelf = [[d objectForKey:@"links"] objectForKey:@"self"];
-    
-    
 }
 
 @end

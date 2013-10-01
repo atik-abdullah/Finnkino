@@ -98,4 +98,23 @@
     [connection start];
 }
 
+- (void)fetchRottenTomatoesMoviesWithCompletion:(void (^)(id obj, NSError *err))block
+                                         forURL: (NSString *) str
+{
+    NSString *stringWithParameter = [[NSString alloc] init];
+    stringWithParameter = [stringWithParameter stringByAppendingString:str];
+    stringWithParameter = [stringWithParameter stringByAppendingString:@"?apikey=43txzxgnzhrpwxrnbeam9dxa"];
+    
+    NSURL *url;
+    url = [NSURL URLWithString:[NSString stringWithString:stringWithParameter]];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    JSONFirstLevelDict *channel = [[JSONFirstLevelDict alloc] init];
+    
+    FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
+    [connection setCompletionBlock:block];
+    [connection setJsonRootObject:channel];
+    
+    [connection start];
+}
+
 @end

@@ -11,6 +11,8 @@
 
 @interface JSONFirstLevelDict : NSObject < JSONSerializable >
 
+//JSON Data structure
+@property (nonatomic, strong) NSMutableArray *movieGenreNames;
 @property (nonatomic, strong) NSMutableArray *movieItems;
 
 @end

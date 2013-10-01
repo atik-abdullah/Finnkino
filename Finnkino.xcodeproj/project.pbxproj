@@ -22,6 +22,7 @@
 		FF4BC4EC17F79A46002A50AB /* movie_synopsis.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E617F79A46002A50AB /* movie_synopsis.png */; };
 		FF4BC4ED17F79A46002A50AB /* MovieSlateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E717F79A46002A50AB /* MovieSlateIcon.png */; };
 		FF4BC4EE17F79A46002A50AB /* view_photos.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E817F79A46002A50AB /* view_photos.png */; };
+		FF4F426C17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4F426B17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m */; };
 		FF505F8F17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */; };
 		FF505F9217ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */; };
 		FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */; };
@@ -71,6 +72,8 @@
 		FF4BC4E617F79A46002A50AB /* movie_synopsis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie_synopsis.png; sourceTree = "<group>"; };
 		FF4BC4E717F79A46002A50AB /* MovieSlateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MovieSlateIcon.png; sourceTree = "<group>"; };
 		FF4BC4E817F79A46002A50AB /* view_photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = view_photos.png; sourceTree = "<group>"; };
+		FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RottenTomatoesDetailViewController.h; path = Finnkino/RottenTomatoesDetailViewController.h; sourceTree = "<group>"; };
+		FF4F426B17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RottenTomatoesDetailViewController.m; path = Finnkino/RottenTomatoesDetailViewController.m; sourceTree = "<group>"; };
 		FF505F8D17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FinnkinoEvent+TableRepresentation.h"; path = "Finnkino/FinnkinoEvent+TableRepresentation.h"; sourceTree = "<group>"; };
 		FF505F8E17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FinnkinoEvent+TableRepresentation.m"; path = "Finnkino/FinnkinoEvent+TableRepresentation.m"; sourceTree = "<group>"; };
 		FF505F9017ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FinnkinoOneMovieEvent+TableRepresentation.h"; path = "Finnkino/FinnkinoOneMovieEvent+TableRepresentation.h"; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 			children = (
 				FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */,
 				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
+				FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */,
+				FF4F426B17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m */,
 			);
 			name = RottenTomatoViewController;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */,
 				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
 				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
+				FF4F426C17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

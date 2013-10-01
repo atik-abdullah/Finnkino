@@ -82,7 +82,6 @@ static NSMutableArray *sharedConnectionList = nil;
         
         // Have the root object pull its data from the dictionary
         [[self jsonRootObject] readFromJSONDictionary:d];
-        
         rootObject = [self jsonRootObject];
     }
     
