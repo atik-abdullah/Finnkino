@@ -13,6 +13,10 @@
 typedef enum {
     EventURL = 1,
     ShowURL = 2,
+    RottenTomatoesBoxOfficeURL = 3,
+    RottenTomatoesUpcomingURL = 4,
+    RottenTomatoesSearchURL =5,
+    SelfMovieURL = 6,
 }ChangeURLType;
 
 @interface FinnkinoFeedStore : NSObject
@@ -21,5 +25,7 @@ typedef enum {
 
 - (void)fetchRSSFeedWithCompletion:(void (^)(id obj, NSError *err))block
                         forURLType: (ChangeURLType) URLType;
+
+- (void)fetchRottenTomatoesMovies:(int)count withCompletion:(void (^)(id obj, NSError *err))block forURLType: (ChangeURLType) URLType;
 
 @end

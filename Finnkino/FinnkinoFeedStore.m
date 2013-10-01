@@ -10,6 +10,7 @@
 #import "FinnkinoConnection.h"
 #import "FinnkinoEvent.h"
 #import "FinnkinoScheduleFirstLevelElement.h"
+#import "JSONFirstLevelDict.h"
 
 @implementation FinnkinoFeedStore
 
@@ -53,6 +54,46 @@
     
     // Let the empty channel parse the returning data from the web service
     [connection setXmlRootObject:model];
+    
+    [connection start];
+}
+
+- (void)fetchRottenTomatoesMovies:(int)count
+                   withCompletion:(void (^)(id obj, NSError *err))block
+                       forURLType: (ChangeURLType) URLType
+{
+    NSURL *url;
+    if (URLType == RottenTomatoesBoxOfficeURL)
+    {
+        url = [NSURL URLWithString:[NSString stringWithFormat:
+                                    @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=43txzxgnzhrpwxrnbeam9dxa&limit=%d", count]];
+    }
+    else if (URLType == RottenTomatoesUpcomingURL)
+    {
+        url = [NSURL URLWithString:[NSString stringWithFormat:
+                                    @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json?apikey=43txzxgnzhrpwxrnbeam9dxa&limit=%d", count]];
+    }
+    else if (URLType == RottenTomatoesSearchURL)
+    {
+        url = [NSURL URLWithString:[NSString stringWithFormat:
+                                    @"http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=43txzxgnzhrpwxrnbeam9dxa&q=sky&limit=%d", count]];
+    }
+    else if (URLType == SelfMovieURL)
+    {
+        url = [NSURL URLWithString:[NSString stringWithFormat:
+                                    @"http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=43txzxgnzhrpwxrnbeam9dxa&q=sky&limit=%d", count]];
+    }
+    
+    // Prepare a request URL, including the argument from the controller
+    
+    
+    // Set up the connection as normal
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    JSONFirstLevelDict *channel = [[JSONFirstLevelDict alloc] init];
+    
+    FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
+    [connection setCompletionBlock:block];
+    [connection setJsonRootObject:channel];
     
     [connection start];
 }

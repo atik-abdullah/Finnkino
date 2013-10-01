@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONSerializable.h"
 
 @interface FinnkinoConnection : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate, NSXMLParserDelegate>
 
@@ -19,6 +20,9 @@
 
 // When the web service completes and if data is xml, it parses data in xmlRootObject
 @property (nonatomic, strong) id <NSXMLParserDelegate> xmlRootObject;
+
+// When the web service completes and if data is xml, it parses data in jsonRootObject
+@property (nonatomic, strong) id <JSONSerializable> jsonRootObject;
 
 // Holds the downloaded data
 @property (nonatomic, strong) NSMutableData *xmlData;

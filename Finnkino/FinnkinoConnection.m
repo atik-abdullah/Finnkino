@@ -7,6 +7,7 @@
 //
 
 #import "FinnkinoConnection.h"
+#import "JSONFirstLevelDict.h"
 
 static NSMutableArray *sharedConnectionList = nil;
 
@@ -71,6 +72,18 @@ static NSMutableArray *sharedConnectionList = nil;
         // xml information converted to tree of objects. Grab a copy of that
         // object becuase after it goes out of scope it will be erased from memory
         rootObject = [self xmlRootObject];
+    }
+    else if([self jsonRootObject])
+    {
+        // Turn JSON data into model objects
+        NSDictionary *d = [NSJSONSerialization JSONObjectWithData:self.xmlData
+                                                          options:0
+                                                            error:nil];
+        
+        // Have the root object pull its data from the dictionary
+        [[self jsonRootObject] readFromJSONDictionary:d];
+        
+        rootObject = [self jsonRootObject];
     }
     
     // Then, pass the grabbed object to the completion block - remember,

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FF388E9E17E04F6400B4D13E /* FinnkinoFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */; };
 		FF388EA117E053C800B4D13E /* FinnkinoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388EA017E053C800B4D13E /* FinnkinoConnection.m */; };
+		FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */; };
+		FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8717F9E5AD00B6BE0D /* JSONFirstLevelDict.m */; };
+		FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8A17F9E5DA00B6BE0D /* JSONSecondLevelDict.m */; };
+		FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */; };
 		FF3D2E5617F08F09000BBEA1 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3D2E5517F08F09000BBEA1 /* Readme.txt */; };
 		FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */; };
 		FF4BC4E217F7774E002A50AB /* FinnkinoMovieContentDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC4E117F7774E002A50AB /* FinnkinoMovieContentDescriptor.m */; };
@@ -35,7 +39,6 @@
 		FF8BDB4517DF9866002AE0F9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */; };
 		FF8BDB4A17DF9866002AE0F9 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4917DF9866002AE0F9 /* first.png */; };
 		FF8BDB4C17DF9866002AE0F9 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB4B17DF9866002AE0F9 /* first@2x.png */; };
-		FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */; };
 		FF8BDB5117DF9866002AE0F9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5017DF9866002AE0F9 /* second.png */; };
 		FF8BDB5317DF9866002AE0F9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF8BDB5217DF9866002AE0F9 /* second@2x.png */; };
 		FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */; };
@@ -48,6 +51,15 @@
 		FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoFeedStore.m; path = Finnkino/FinnkinoFeedStore.m; sourceTree = "<group>"; };
 		FF388E9F17E053C800B4D13E /* FinnkinoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoConnection.h; path = Finnkino/FinnkinoConnection.h; sourceTree = "<group>"; };
 		FF388EA017E053C800B4D13E /* FinnkinoConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoConnection.m; path = Finnkino/FinnkinoConnection.m; sourceTree = "<group>"; };
+		FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RottenTomatoesMoviesViewController.h; path = Finnkino/RottenTomatoesMoviesViewController.h; sourceTree = "<group>"; };
+		FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RottenTomatoesMoviesViewController.m; path = Finnkino/RottenTomatoesMoviesViewController.m; sourceTree = "<group>"; };
+		FF3BBA8417F9E4E900B6BE0D /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONSerializable.h; path = Finnkino/JSONSerializable.h; sourceTree = "<group>"; };
+		FF3BBA8617F9E5AD00B6BE0D /* JSONFirstLevelDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONFirstLevelDict.h; path = Finnkino/JSONFirstLevelDict.h; sourceTree = "<group>"; };
+		FF3BBA8717F9E5AD00B6BE0D /* JSONFirstLevelDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONFirstLevelDict.m; path = Finnkino/JSONFirstLevelDict.m; sourceTree = "<group>"; };
+		FF3BBA8917F9E5DA00B6BE0D /* JSONSecondLevelDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONSecondLevelDict.h; path = Finnkino/JSONSecondLevelDict.h; sourceTree = "<group>"; };
+		FF3BBA8A17F9E5DA00B6BE0D /* JSONSecondLevelDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONSecondLevelDict.m; path = Finnkino/JSONSecondLevelDict.m; sourceTree = "<group>"; };
+		FF3BBA8C17F9E72000B6BE0D /* JSONThirdLevelDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONThirdLevelDict.h; path = Finnkino/JSONThirdLevelDict.h; sourceTree = "<group>"; };
+		FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONThirdLevelDict.m; path = Finnkino/JSONThirdLevelDict.m; sourceTree = "<group>"; };
 		FF3D2E5517F08F09000BBEA1 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = Finnkino/Readme.txt; sourceTree = "<group>"; };
 		FF410BE717F6C72A009E6008 /* FinnkinoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoDetailViewController.h; sourceTree = "<group>"; };
 		FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoDetailViewController.m; sourceTree = "<group>"; };
@@ -85,8 +97,6 @@
 		FF8BDB4417DF9866002AE0F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FF8BDB4917DF9866002AE0F9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = Finnkino/first.png; sourceTree = "<group>"; };
 		FF8BDB4B17DF9866002AE0F9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Finnkino/first@2x.png"; sourceTree = "<group>"; };
-		FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		FF8BDB5017DF9866002AE0F9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = Finnkino/second.png; sourceTree = "<group>"; };
 		FF8BDB5217DF9866002AE0F9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Finnkino/second@2x.png"; sourceTree = "<group>"; };
 		FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoMovieViewController.h; sourceTree = "<group>"; };
@@ -111,6 +121,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */,
+				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
+			);
+			name = RottenTomatoViewController;
+			sourceTree = "<group>";
+		};
+		FF3BBA8517F9E4FC00B6BE0D /* RottenTomato */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BBA8417F9E4E900B6BE0D /* JSONSerializable.h */,
+				FF3BBA8617F9E5AD00B6BE0D /* JSONFirstLevelDict.h */,
+				FF3BBA8717F9E5AD00B6BE0D /* JSONFirstLevelDict.m */,
+				FF3BBA8917F9E5DA00B6BE0D /* JSONSecondLevelDict.h */,
+				FF3BBA8A17F9E5DA00B6BE0D /* JSONSecondLevelDict.m */,
+				FF3BBA8C17F9E72000B6BE0D /* JSONThirdLevelDict.h */,
+				FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */,
+			);
+			name = RottenTomato;
+			sourceTree = "<group>";
+		};
 		FF84F8B217F982A800AFD766 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +179,8 @@
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
 				FF8BDB5A17DF9979002AE0F9 /* Model */,
 				FF8BDB5917DF9971002AE0F9 /* View */,
-				FF8BDB3117DF9866002AE0F9 /* Controller */,
+				FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */,
+				FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */,
 				FF8BDB2A17DF9866002AE0F9 /* Frameworks */,
 				FF8BDB2917DF9866002AE0F9 /* Products */,
 			);
@@ -170,13 +204,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF8BDB3117DF9866002AE0F9 /* Controller */ = {
+		FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */ = {
 			isa = PBXGroup;
 			children = (
 				FF8BDB3A17DF9866002AE0F9 /* AppDelegate.h */,
 				FF8BDB3B17DF9866002AE0F9 /* AppDelegate.m */,
-				FF8BDB4D17DF9866002AE0F9 /* SecondViewController.h */,
-				FF8BDB4E17DF9866002AE0F9 /* SecondViewController.m */,
 				FF8BDB5D17DF9A3F002AE0F9 /* FinnkinoMovieViewController.h */,
 				FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */,
 				FF410BE717F6C72A009E6008 /* FinnkinoDetailViewController.h */,
@@ -185,7 +217,7 @@
 				FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 			);
-			name = Controller;
+			name = FinnkinoViewController;
 			path = Finnkino;
 			sourceTree = "<group>";
 		};
@@ -213,6 +245,7 @@
 		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF3BBA8517F9E4FC00B6BE0D /* RottenTomato */,
 				FF84F8B317F982D300AFD766 /* Schedule */,
 				FF84F8B217F982A800AFD766 /* Movie */,
 			);
@@ -328,7 +361,6 @@
 			files = (
 				FF8BDB3817DF9866002AE0F9 /* main.m in Sources */,
 				FF8BDB3C17DF9866002AE0F9 /* AppDelegate.m in Sources */,
-				FF8BDB4F17DF9866002AE0F9 /* SecondViewController.m in Sources */,
 				FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */,
 				FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */,
 				FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */,
@@ -341,6 +373,10 @@
 				FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */,
 				FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */,
 				FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */,
+				FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */,
+				FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */,
+				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
+				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
