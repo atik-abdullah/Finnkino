@@ -17,9 +17,9 @@
 
 - (id)init
 {
-    
     self = [super init];
-    if (self) {
+    if (self)
+    {
         self.movieItems = [[NSMutableArray alloc] init];
     }
     return self;

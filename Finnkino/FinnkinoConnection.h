@@ -27,6 +27,9 @@
 // Holds the downloaded data
 @property (nonatomic, strong) NSMutableData *xmlData;
 
+// Switch for genre
+@property BOOL genre;
+
 // Custom initializer method
 - (id)initWithRequest:(NSURLRequest *)req;
 

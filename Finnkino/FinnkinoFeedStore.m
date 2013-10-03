@@ -83,19 +83,29 @@
         url = [NSURL URLWithString:[NSString stringWithFormat:
                                     @"http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=43txzxgnzhrpwxrnbeam9dxa&q=sky&limit=%d", count]];
     }
-    
+#ifdef USE_KVC_KVO_MODEL
     // Prepare a request URL, including the argument from the controller
-    
-    
-    // Set up the connection as normal
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    JSONFirstLevelDict *channel = [[JSONFirstLevelDict alloc] init];
     
+    // Set up the connection
+    FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
+    [connection setCompletionBlock:block];
+    
+    // Start
+    [connection start];
+#else
+    // Prepare a request URL, including the argument from the controller
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    // Set up the connection
+    JSONFirstLevelDict *channel = [[JSONFirstLevelDict alloc] init];
     FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
     [connection setCompletionBlock:block];
     [connection setJsonRootObject:channel];
     
+    // Start
     [connection start];
+#endif
 }
 
 - (void)fetchRottenTomatoesMoviesWithCompletion:(void (^)(id obj, NSError *err))block

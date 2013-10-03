@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - RottenTomato-->
         <scene sceneID="v4A-LC-WAp">
             <objects>
                 <navigationController definesPresentationContext="YES" id="pDt-uE-W3m" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vYe-Ww-Q7g"/>
+                    <tabBarItem key="tabBarItem" title="RottenTomato" id="vYe-Ww-Q7g"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1T-qF-jRX">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="E2u-qa-g9R" kind="relationship" relationship="viewControllers" id="0al-as-Ca4"/>
+                        <segue destination="E2u-qa-g9R" kind="relationship" relationship="viewControllers" id="6FI-VA-mlv"/>
                         <segue destination="pDt-uE-W3m" kind="relationship" relationship="viewControllers" id="RdA-oU-7Sz"/>
                     </connections>
                 </tabBarController>
@@ -39,11 +39,11 @@
             </objects>
             <point key="canvasLocation" x="22" y="32"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Finnkino-->
         <scene sceneID="o8H-83-MID">
             <objects>
                 <navigationController definesPresentationContext="YES" id="E2u-qa-g9R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1Cw-aM-D7l"/>
+                    <tabBarItem key="tabBarItem" title="Finnkino" id="1Cw-aM-D7l"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ltG-ch-4RG">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -667,6 +667,48 @@
         <image name="movie_synopsis.png" width="524" height="465"/>
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
+    <classes>
+        <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoMovieViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoMovieViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoShowTimeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoShowTimeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RottenTomatoesDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="actorNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="audienceScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="criticsScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="genreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="movieNamelabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myButtonView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="releaseDateTheaterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="runTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RottenTomatoesMoviesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesMoviesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeType:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

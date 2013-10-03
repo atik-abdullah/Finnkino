@@ -28,7 +28,7 @@
 - (void)readFromJSONDictionary:(NSDictionary *)d
 {
     self.jsonTitle = [d objectForKey:@"title"];
-
+    
     // Poster
     JSONThirdLevelDict *postersElement = [[JSONThirdLevelDict alloc] init];
     [postersElement readFromJSONDictionary:[d objectForKey:@"posters"]];
@@ -58,7 +58,7 @@
     self.criticsScoreElement = ratingElement;
     self.audienceRatingElement = ratingElement;
     self.audienceScoreElement = ratingElement;
-
+    
     // Link to this Movie
     JSONThirdLevelDict *linkElement = [[JSONThirdLevelDict alloc] init];
     [linkElement readFromJSONDictionary:[d objectForKey:@"links"]];

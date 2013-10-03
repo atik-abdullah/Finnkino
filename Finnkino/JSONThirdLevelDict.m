@@ -28,14 +28,11 @@
     // Rating Elements
     self.criticsRating = [d objectForKey:@"critics_rating"];
     self.audienceRating = [d objectForKey:@"audience_rating"];
-    NSNumber * aNumb =[d objectForKey:@"critics_score"];
-    self.criticsScore = [aNumb stringValue];
-    NSNumber * bNumb =[d objectForKey:@"audience_score"];
-    self.audienceScore = [bNumb stringValue];
+    self.criticsScore =[d objectForKey:@"critics_score"];
+    self.audienceScore =[d objectForKey:@"audience_score"];
     
     // Link to self
     self.linksSelf = [d objectForKey:@"self"];
-
 }
 
 @end
