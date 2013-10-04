@@ -8,7 +8,6 @@
 
 #import "FinnkinoConnection.h"
 #import "JSONFirstLevelDict.h"
-#import "Movie.h"
 
 static NSMutableArray *sharedConnectionList = nil;
 
@@ -74,32 +73,6 @@ static NSMutableArray *sharedConnectionList = nil;
         // object becuase after it goes out of scope it will be erased from memory
         rootObject = [self xmlRootObject];
     }
-    
-#ifdef USE_KVC_KVO_MODEL
-    else if(self.genre == NO)
-    {
-        // Turn JSON data into model objects
-        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:self.xmlData
-                                                                 options:0
-                                                                   error:nil];
-        
-        // Have the root object pull its data from the dictionary
-        NSMutableArray *movieItems = [NSMutableArray array];
-        NSArray *movieItemsDictionaries = [jsonDict objectForKey:@"movies"];
-        
-        for(NSMutableDictionary *movieItemDict in movieItemsDictionaries)
-            [movieItems addObject:[[Movie  alloc ] initWithDictionary:movieItemDict]];
-        rootObject = movieItems;
-    }
-    else if (self.genre == YES)
-    {
-        // Turn JSON data into model objects
-        NSMutableDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:self.xmlData
-                                                                        options:0
-                                                                          error:nil];
-        rootObject = [[Movie alloc] initWithDictionary:jsonDict];
-    }
-#else
     else if([self jsonRootObject])
     {
         // Turn JSON data into model objects
@@ -111,7 +84,6 @@ static NSMutableArray *sharedConnectionList = nil;
         [[self jsonRootObject] readFromJSONDictionary:jsonDict];
         rootObject = [self jsonRootObject];
     }
-#endif
     // Then, pass the grabbed object to the completion block - remember,
     // this is the block that the controller supplied.
     if([self completionBlock])

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class JSONSecondLevelDict;
-@class Movie;
 @interface RottenTomatoesDetailViewController : UITableViewController
 
 @property IBOutlet UILabel *movieNamelabel;
@@ -19,12 +18,7 @@
 @property IBOutlet UILabel *releaseDateTheaterLabel;
 @property IBOutlet UILabel *runTimeLabel;
 @property IBOutlet UILabel *genreLabel;
-
-#ifdef USE_KVC_KVO_MODEL
-@property (nonatomic, strong) Movie *selection;
-#else
 @property (nonatomic, strong) JSONSecondLevelDict *selection;
-#endif
 @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
 @property (nonatomic, weak) IBOutlet UIView *myButtonView;
 

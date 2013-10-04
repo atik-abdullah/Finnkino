@@ -131,35 +131,3 @@ Example JSON Data structure snippent
         ]
     }
 ]
-
-
-Model creation plan : 
-1. Notice in 1st level tree we are only interested in "movies" element which 
-is an array of "Movie". we are not interested in "links","link_template" or "total" element.
-So we wont create model for the whole tree. Create only second 
-level model "Movie". In code it will look like following:
-
-// Create an array to hold the array of Movie model
-NSMutableArray *movieItems = [NSMutableArray array];
-
-// Extrace "movies" element from JSON tree
-NSArray *movieItemsDictionaries = [jsonDict objectForKey:@"movies"];
-
-// Parse each movie information with the Movie model and add to the array
-for(NSMutableDictionary *movieItemDict in movieItemsDictionaries)
-    [movieItems addObject:[[Movie  alloc ] initWithDictionary:movieItemDict]];
-
-2. Notice in the second level tree the elements that hold third level elements are
-"abridged_cast", "ratings" , "posters" , "release_dates", "links" , "alternate_ids".
-Amongst them "abridged_cast" is the only element that holds array. elements are not
-array and only holds simple data.So we will create third level "AbridgedCast" model
-and  "ratings" , "posters" , "release_dates" will be merged with First level model
-"Movie" .
-
-3. Don't do step 2 , it doesn't help to merge all models in one "Movie" model. because
-now instead of creating different models for different elements it will create "Movie" 
-element inside "Movie" elements. So it doesn't improve the situation.
-
-4. For http://api.rottentomatoes.com/api/public/v1.0/movies/771264988.json?apikey=43txzxgnzhrpwxrnbeam9dxa
-the model looks almost identical except for genre, studio, abridged_directors elements. so 
-instead of creating whole new model just add them to the existing Movie element by hand.

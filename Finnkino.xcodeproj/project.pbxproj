@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF306F6117FDE3E5006B3CA1 /* AbridgedCast.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5017FDE3E5006B3CA1 /* AbridgedCast.m */; };
-		FF306F6217FDE3E5006B3CA1 /* AbridgedDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5217FDE3E5006B3CA1 /* AbridgedDirector.m */; };
-		FF306F6317FDE3E5006B3CA1 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5417FDE3E5006B3CA1 /* JSONModel.m */; };
-		FF306F6417FDE3E5006B3CA1 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5617FDE3E5006B3CA1 /* Movie.m */; };
-		FF306F6517FDE3E5006B3CA1 /* MovieAlternateIds.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5817FDE3E5006B3CA1 /* MovieAlternateIds.m */; };
-		FF306F6617FDE3E5006B3CA1 /* MovieLinks.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5A17FDE3E5006B3CA1 /* MovieLinks.m */; };
-		FF306F6717FDE3E5006B3CA1 /* MoviePosters.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5C17FDE3E5006B3CA1 /* MoviePosters.m */; };
-		FF306F6817FDE3E5006B3CA1 /* MovieRatings.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F5E17FDE3E5006B3CA1 /* MovieRatings.m */; };
-		FF306F6917FDE3E5006B3CA1 /* MovieReleaseDates.m in Sources */ = {isa = PBXBuildFile; fileRef = FF306F6017FDE3E5006B3CA1 /* MovieReleaseDates.m */; };
 		FF388E9E17E04F6400B4D13E /* FinnkinoFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */; };
 		FF388EA117E053C800B4D13E /* FinnkinoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388EA017E053C800B4D13E /* FinnkinoConnection.m */; };
 		FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */; };
@@ -57,24 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF306F4F17FDE3E5006B3CA1 /* AbridgedCast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbridgedCast.h; path = "Finnkino/KVC-KVO Model/AbridgedCast.h"; sourceTree = "<group>"; };
-		FF306F5017FDE3E5006B3CA1 /* AbridgedCast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbridgedCast.m; path = "Finnkino/KVC-KVO Model/AbridgedCast.m"; sourceTree = "<group>"; };
-		FF306F5117FDE3E5006B3CA1 /* AbridgedDirector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbridgedDirector.h; path = "Finnkino/KVC-KVO Model/AbridgedDirector.h"; sourceTree = "<group>"; };
-		FF306F5217FDE3E5006B3CA1 /* AbridgedDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbridgedDirector.m; path = "Finnkino/KVC-KVO Model/AbridgedDirector.m"; sourceTree = "<group>"; };
-		FF306F5317FDE3E5006B3CA1 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = "Finnkino/KVC-KVO Model/JSONModel.h"; sourceTree = "<group>"; };
-		FF306F5417FDE3E5006B3CA1 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = "Finnkino/KVC-KVO Model/JSONModel.m"; sourceTree = "<group>"; };
-		FF306F5517FDE3E5006B3CA1 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Movie.h; path = "Finnkino/KVC-KVO Model/Movie.h"; sourceTree = "<group>"; };
-		FF306F5617FDE3E5006B3CA1 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Movie.m; path = "Finnkino/KVC-KVO Model/Movie.m"; sourceTree = "<group>"; };
-		FF306F5717FDE3E5006B3CA1 /* MovieAlternateIds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieAlternateIds.h; path = "Finnkino/KVC-KVO Model/MovieAlternateIds.h"; sourceTree = "<group>"; };
-		FF306F5817FDE3E5006B3CA1 /* MovieAlternateIds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieAlternateIds.m; path = "Finnkino/KVC-KVO Model/MovieAlternateIds.m"; sourceTree = "<group>"; };
-		FF306F5917FDE3E5006B3CA1 /* MovieLinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieLinks.h; path = "Finnkino/KVC-KVO Model/MovieLinks.h"; sourceTree = "<group>"; };
-		FF306F5A17FDE3E5006B3CA1 /* MovieLinks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieLinks.m; path = "Finnkino/KVC-KVO Model/MovieLinks.m"; sourceTree = "<group>"; };
-		FF306F5B17FDE3E5006B3CA1 /* MoviePosters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoviePosters.h; path = "Finnkino/KVC-KVO Model/MoviePosters.h"; sourceTree = "<group>"; };
-		FF306F5C17FDE3E5006B3CA1 /* MoviePosters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoviePosters.m; path = "Finnkino/KVC-KVO Model/MoviePosters.m"; sourceTree = "<group>"; };
-		FF306F5D17FDE3E5006B3CA1 /* MovieRatings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieRatings.h; path = "Finnkino/KVC-KVO Model/MovieRatings.h"; sourceTree = "<group>"; };
-		FF306F5E17FDE3E5006B3CA1 /* MovieRatings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieRatings.m; path = "Finnkino/KVC-KVO Model/MovieRatings.m"; sourceTree = "<group>"; };
-		FF306F5F17FDE3E5006B3CA1 /* MovieReleaseDates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieReleaseDates.h; path = "Finnkino/KVC-KVO Model/MovieReleaseDates.h"; sourceTree = "<group>"; };
-		FF306F6017FDE3E5006B3CA1 /* MovieReleaseDates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieReleaseDates.m; path = "Finnkino/KVC-KVO Model/MovieReleaseDates.m"; sourceTree = "<group>"; };
 		FF388E9C17E04F6400B4D13E /* FinnkinoFeedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoFeedStore.h; path = Finnkino/FinnkinoFeedStore.h; sourceTree = "<group>"; };
 		FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoFeedStore.m; path = Finnkino/FinnkinoFeedStore.m; sourceTree = "<group>"; };
 		FF388E9F17E053C800B4D13E /* FinnkinoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoConnection.h; path = Finnkino/FinnkinoConnection.h; sourceTree = "<group>"; };
@@ -151,31 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF306F4E17FDE36B006B3CA1 /* RTKVC-KVO */ = {
-			isa = PBXGroup;
-			children = (
-				FF306F4F17FDE3E5006B3CA1 /* AbridgedCast.h */,
-				FF306F5017FDE3E5006B3CA1 /* AbridgedCast.m */,
-				FF306F5117FDE3E5006B3CA1 /* AbridgedDirector.h */,
-				FF306F5217FDE3E5006B3CA1 /* AbridgedDirector.m */,
-				FF306F5317FDE3E5006B3CA1 /* JSONModel.h */,
-				FF306F5417FDE3E5006B3CA1 /* JSONModel.m */,
-				FF306F5517FDE3E5006B3CA1 /* Movie.h */,
-				FF306F5617FDE3E5006B3CA1 /* Movie.m */,
-				FF306F5717FDE3E5006B3CA1 /* MovieAlternateIds.h */,
-				FF306F5817FDE3E5006B3CA1 /* MovieAlternateIds.m */,
-				FF306F5917FDE3E5006B3CA1 /* MovieLinks.h */,
-				FF306F5A17FDE3E5006B3CA1 /* MovieLinks.m */,
-				FF306F5B17FDE3E5006B3CA1 /* MoviePosters.h */,
-				FF306F5C17FDE3E5006B3CA1 /* MoviePosters.m */,
-				FF306F5D17FDE3E5006B3CA1 /* MovieRatings.h */,
-				FF306F5E17FDE3E5006B3CA1 /* MovieRatings.m */,
-				FF306F5F17FDE3E5006B3CA1 /* MovieReleaseDates.h */,
-				FF306F6017FDE3E5006B3CA1 /* MovieReleaseDates.m */,
-			);
-			name = "RTKVC-KVO";
-			sourceTree = "<group>";
-		};
 		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +250,6 @@
 		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF306F4E17FDE36B006B3CA1 /* RTKVC-KVO */,
 				FF3BBA8517F9E4FC00B6BE0D /* RTNormal */,
 				FF84F8B317F982D300AFD766 /* Schedule */,
 				FF84F8B217F982A800AFD766 /* Movie */,
@@ -436,15 +383,6 @@
 				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
 				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
 				FF4F426C17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m in Sources */,
-				FF306F6117FDE3E5006B3CA1 /* AbridgedCast.m in Sources */,
-				FF306F6217FDE3E5006B3CA1 /* AbridgedDirector.m in Sources */,
-				FF306F6317FDE3E5006B3CA1 /* JSONModel.m in Sources */,
-				FF306F6417FDE3E5006B3CA1 /* Movie.m in Sources */,
-				FF306F6517FDE3E5006B3CA1 /* MovieAlternateIds.m in Sources */,
-				FF306F6617FDE3E5006B3CA1 /* MovieLinks.m in Sources */,
-				FF306F6717FDE3E5006B3CA1 /* MoviePosters.m in Sources */,
-				FF306F6817FDE3E5006B3CA1 /* MovieRatings.m in Sources */,
-				FF306F6917FDE3E5006B3CA1 /* MovieReleaseDates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
