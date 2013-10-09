@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF3754E317FEA9C50032CB61 /* ImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754DC17FEA9C50032CB61 /* ImageFilter.m */; };
+		FF3754E417FEA9C50032CB61 /* ImageShadowFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754DE17FEA9C50032CB61 /* ImageShadowFilter.m */; };
+		FF3754E517FEA9C50032CB61 /* ImageTransformFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754E017FEA9C50032CB61 /* ImageTransformFilter.m */; };
+		FF3754E617FEA9C50032CB61 /* UIImage+ImageComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754E217FEA9C50032CB61 /* UIImage+ImageComponent.m */; };
+		FF3754E917FEAB120032CB61 /* DecoratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754E817FEAB120032CB61 /* DecoratorView.m */; };
 		FF388E9E17E04F6400B4D13E /* FinnkinoFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */; };
 		FF388EA117E053C800B4D13E /* FinnkinoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388EA017E053C800B4D13E /* FinnkinoConnection.m */; };
 		FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */; };
@@ -45,9 +50,22 @@
 		FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */; };
 		FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */; };
 		FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */; };
+		FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA084E718032388005BFFFC /* RTPosterViewController.m */; };
+		FFA084ED18033940005BFFFC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA084EC18033940005BFFFC /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF3754DA17FEA9C50032CB61 /* ImageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageComponent.h; sourceTree = "<group>"; };
+		FF3754DB17FEA9C50032CB61 /* ImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilter.h; sourceTree = "<group>"; };
+		FF3754DC17FEA9C50032CB61 /* ImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilter.m; sourceTree = "<group>"; };
+		FF3754DD17FEA9C50032CB61 /* ImageShadowFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShadowFilter.h; sourceTree = "<group>"; };
+		FF3754DE17FEA9C50032CB61 /* ImageShadowFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShadowFilter.m; sourceTree = "<group>"; };
+		FF3754DF17FEA9C50032CB61 /* ImageTransformFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTransformFilter.h; sourceTree = "<group>"; };
+		FF3754E017FEA9C50032CB61 /* ImageTransformFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTransformFilter.m; sourceTree = "<group>"; };
+		FF3754E117FEA9C50032CB61 /* UIImage+ImageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageComponent.h"; sourceTree = "<group>"; };
+		FF3754E217FEA9C50032CB61 /* UIImage+ImageComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageComponent.m"; sourceTree = "<group>"; };
+		FF3754E717FEAB120032CB61 /* DecoratorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecoratorView.h; sourceTree = "<group>"; };
+		FF3754E817FEAB120032CB61 /* DecoratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecoratorView.m; sourceTree = "<group>"; };
 		FF388E9C17E04F6400B4D13E /* FinnkinoFeedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoFeedStore.h; path = Finnkino/FinnkinoFeedStore.h; sourceTree = "<group>"; };
 		FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoFeedStore.m; path = Finnkino/FinnkinoFeedStore.m; sourceTree = "<group>"; };
 		FF388E9F17E053C800B4D13E /* FinnkinoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoConnection.h; path = Finnkino/FinnkinoConnection.h; sourceTree = "<group>"; };
@@ -108,6 +126,9 @@
 		FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoEvent.m; path = Finnkino/FinnkinoEvent.m; sourceTree = "<group>"; };
 		FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoOneMovieEvent.h; path = Finnkino/FinnkinoOneMovieEvent.h; sourceTree = "<group>"; };
 		FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoOneMovieEvent.m; path = Finnkino/FinnkinoOneMovieEvent.m; sourceTree = "<group>"; };
+		FFA084E618032388005BFFFC /* RTPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPosterViewController.h; path = Finnkino/RTPosterViewController.h; sourceTree = "<group>"; };
+		FFA084E718032388005BFFFC /* RTPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPosterViewController.m; path = Finnkino/RTPosterViewController.m; sourceTree = "<group>"; };
+		FFA084EC18033940005BFFFC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA084ED18033940005BFFFC /* CoreImage.framework in Frameworks */,
 				FF8BDB2C17DF9866002AE0F9 /* UIKit.framework in Frameworks */,
 				FF8BDB2E17DF9866002AE0F9 /* Foundation.framework in Frameworks */,
 				FF8BDB3017DF9866002AE0F9 /* CoreGraphics.framework in Frameworks */,
@@ -124,6 +146,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF3754D917FEA9A80032CB61 /* Decorator */ = {
+			isa = PBXGroup;
+			children = (
+				FF3754DA17FEA9C50032CB61 /* ImageComponent.h */,
+				FF3754DB17FEA9C50032CB61 /* ImageFilter.h */,
+				FF3754DC17FEA9C50032CB61 /* ImageFilter.m */,
+				FF3754DD17FEA9C50032CB61 /* ImageShadowFilter.h */,
+				FF3754DE17FEA9C50032CB61 /* ImageShadowFilter.m */,
+				FF3754DF17FEA9C50032CB61 /* ImageTransformFilter.h */,
+				FF3754E017FEA9C50032CB61 /* ImageTransformFilter.m */,
+				FF3754E117FEA9C50032CB61 /* UIImage+ImageComponent.h */,
+				FF3754E217FEA9C50032CB61 /* UIImage+ImageComponent.m */,
+				FF3754E717FEAB120032CB61 /* DecoratorView.h */,
+				FF3754E817FEAB120032CB61 /* DecoratorView.m */,
+			);
+			name = Decorator;
+			path = Finnkino;
+			sourceTree = "<group>";
+		};
 		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +172,9 @@
 				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
 				FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */,
 				FF4F426B17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m */,
+				FFA084E618032388005BFFFC /* RTPosterViewController.h */,
+				FFA084E718032388005BFFFC /* RTPosterViewController.m */,
+				FF3754D917FEA9A80032CB61 /* Decorator */,
 			);
 			name = RottenTomatoViewController;
 			sourceTree = "<group>";
@@ -180,6 +224,7 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
+				FFA084EC18033940005BFFFC /* CoreImage.framework */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
 				FF8BDB5A17DF9979002AE0F9 /* Model */,
@@ -383,6 +428,12 @@
 				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
 				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
 				FF4F426C17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m in Sources */,
+				FF3754E317FEA9C50032CB61 /* ImageFilter.m in Sources */,
+				FF3754E417FEA9C50032CB61 /* ImageShadowFilter.m in Sources */,
+				FF3754E517FEA9C50032CB61 /* ImageTransformFilter.m in Sources */,
+				FF3754E617FEA9C50032CB61 /* UIImage+ImageComponent.m in Sources */,
+				FF3754E917FEAB120032CB61 /* DecoratorView.m in Sources */,
+				FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

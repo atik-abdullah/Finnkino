@@ -10,6 +10,7 @@
 #import "JSONFirstLevelDict.h"
 #import "JSONSecondLevelDict.h"
 #import "JSONThirdLevelDict.h"
+#import "RTPosterViewController.h"
 
 @interface RottenTomatoesDetailViewController ()
 // 
@@ -129,6 +130,7 @@
     // Set label for the duration of movie
     self.runTimeLabel.text = [self.selection runtime];
     
+    // Set the movie poster 
     NSURL *urlFromString = [[NSURL alloc] initWithString:[[self.selection postersDetailed] postersDetailed]] ;
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
     self.profileImageView.image = [UIImage imageWithData:data];
@@ -144,4 +146,17 @@
     [self.myButtonView addSubview:myImageView2];
     self.selfMovieURL =  [[self.selection linkSelfElement] linksSelf];
 }
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    RTPosterViewController *rtpvc = segue.destinationViewController;
+    
+    if ([rtpvc respondsToSelector:@selector(setSelection:)])
+    {
+        [rtpvc setValue:self.selection forKey:@"selection"];
+    }
+}
+
 @end

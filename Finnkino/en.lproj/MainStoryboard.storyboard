@@ -326,7 +326,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzs-Ot-sJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="-624"/>
+            <point key="canvasLocation" x="1386" y="-612"/>
+        </scene>
+        <!--Poster View Controller-->
+        <scene sceneID="w6w-89-dSg">
+            <objects>
+                <viewController id="DTh-zv-qdd" customClass="RTPosterViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e0Y-j1-Vkq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u67-ay-mXc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQV-8u-eFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="280"/>
         </scene>
         <!--Finnkino Show Time View Controller-->
         <scene sceneID="4uS-gS-5YA">
@@ -393,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg0-P0-F1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="-629"/>
+            <point key="canvasLocation" x="1771" y="-975"/>
         </scene>
         <!--Rotten Tomatoes Movies View Controller-->
         <scene sceneID="stS-B2-gBG">
@@ -608,14 +623,28 @@
                         <sections>
                             <tableViewSection id="rio-js-vdU">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="egi-8h-mLe">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="egi-8h-mLe">
                                         <rect key="frame" x="0.0" y="465" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Poster Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIY-RK-LKY">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="qIY-RK-LKY" firstAttribute="centerX" secondItem="egi-8h-mLe" secondAttribute="centerX" type="default" id="5Ze-Lq-P6Y"/>
+                                            <constraint firstItem="qIY-RK-LKY" firstAttribute="centerY" secondItem="egi-8h-mLe" secondAttribute="centerY" type="default" id="vAU-Rr-KPB"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="DTh-zv-qdd" kind="push" id="Fy9-q2-LGv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eFg-lc-afB">
                                         <rect key="frame" x="0.0" y="510" width="320" height="44"/>
@@ -687,6 +716,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RTPosterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RTPosterViewController.h"/>
         </class>
         <class className="RottenTomatoesDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesDetailViewController.h"/>

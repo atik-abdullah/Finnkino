@@ -88,11 +88,6 @@
 {
     RottenTomatoesDetailViewController *rtdvc = segue.destinationViewController;
     
-    if ([rtdvc respondsToSelector:@selector(setDelegate:)])
-    {
-        [rtdvc setValue:self forKey:@"delegate"];
-    }
-    
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     if ([rtdvc respondsToSelector:@selector(setSelection:)])
     {
