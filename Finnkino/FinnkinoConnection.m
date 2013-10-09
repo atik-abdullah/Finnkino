@@ -84,6 +84,10 @@ static NSMutableArray *sharedConnectionList = nil;
         [[self jsonRootObject] readFromJSONDictionary:jsonDict];
         rootObject = [self jsonRootObject];
     }
+    else
+    {
+        rootObject = self.xmlData;
+    }
     // Then, pass the grabbed object to the completion block - remember,
     // this is the block that the controller supplied.
     if([self completionBlock])

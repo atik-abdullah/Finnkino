@@ -156,7 +156,8 @@ titleForHeaderInSection:(NSInteger)section
     
     // Create URL from String
     NSURL *urlFromString = [[NSURL alloc] initWithString:[currentDictionary objectForKey:@"movieSmallImagePortraitURL"]] ;
-    
+    NSLog(@"movieTrailerURL%@", [currentDictionary objectForKey:@"movieTrailerURL"]);
+
     // Download image from created URL
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
     
@@ -202,11 +203,6 @@ titleForHeaderInSection:(NSInteger)section
     FinnkinoDetailViewController *fdvc = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     NSDictionary *selection;
-    
-    if ([fdvc respondsToSelector:@selector(setDelegate:)])
-    {
-        [fdvc setValue:self forKey:@"delegate"];
-    }
     
     // Check if destination view controller has property named selection
     if ([fdvc respondsToSelector:@selector(setSelection:)])

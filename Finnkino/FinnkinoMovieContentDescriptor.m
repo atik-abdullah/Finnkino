@@ -13,12 +13,16 @@
 @end
 
 @implementation FinnkinoMovieContentDescriptor
+{
+    BOOL _accumulatingParsedCharacterData;
+}
 
 - (id)init
 {
     self = [super init];
-    if (self) {
-        
+    if (self)
+    {
+        self.currentString = [[NSMutableString alloc] init];
     }
     return self;
 }
@@ -31,8 +35,7 @@ didStartElement:(NSString *)elementName
 {
     if ([elementName isEqual:@"ImageURL"])
     {
-        self.currentString = [[NSMutableString alloc] init];
-        self.contentURL = self.currentString;
+        _accumulatingParsedCharacterData = YES;
     }
 }
 
@@ -40,19 +43,22 @@ didStartElement:(NSString *)elementName
  didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
  qualifiedName:(NSString *)qName
-{
-    // If the element that ended was the channel, give up control to
-    // who gave us control in the first place
-    self.currentString = nil;
-    
+{  
     if ([elementName isEqual:@"ContentDescriptor"])
     {
         [parser setDelegate:self.parentParserDelegate];
     }
+    else if ([elementName isEqual:@"ImageURL"])
+    {
+        NSMutableString *localString = [[NSMutableString alloc] initWithString:self.currentString];
+        self.contentURL = localString;
+    }
+    _accumulatingParsedCharacterData = NO;
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)str
 {
+    self.currentString = [[NSMutableString alloc] init];
     [self.currentString appendString:[NSString stringWithFormat:@"%@",str]];
 }
 

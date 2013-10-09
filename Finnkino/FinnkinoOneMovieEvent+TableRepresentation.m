@@ -20,6 +20,7 @@
             self.movieSmallImageLandscapeURL, @"movieSmallImageLandscapeURL",
             self.movieLargeImagePortraitURL, @"movieLargeImagePortraitURL",
             self.contentDescriptorItems, @"contentDescriptorItems",
+            self.movieTrailerURL, @"movieTrailerURL",
             nil];
 }
 

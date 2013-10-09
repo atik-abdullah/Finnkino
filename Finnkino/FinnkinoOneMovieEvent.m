@@ -31,6 +31,7 @@
         self.movieSmallImageLandscapeURL = [[NSMutableString alloc] init];
         self.movieLargeImageLandscapeURL = [[NSMutableString alloc] init];
         self.contentDescriptorItems = [[NSMutableArray alloc] init];
+        self.movieTrailerURL = [[NSMutableString alloc] init];
     }
     return self;
 }
@@ -41,7 +42,7 @@ didStartElement:(NSString *)elementName
  qualifiedName:(NSString *)qualifiedName
     attributes:(NSDictionary *)attributeDict
 {
-    if ([elementName isEqual:@"OriginalTitle"]||[elementName isEqual:@"EventSmallImagePortrait"])
+    if ([elementName isEqual:@"OriginalTitle"]||[elementName isEqual:@"EventSmallImagePortrait"]||[elementName isEqual:@"EventLargeImagePortrait"]||[elementName isEqual:@"EventSmallImageLandscape"]||[elementName isEqual:@"EventLargeImageLandscape"]||[elementName isEqual:@"Location"])
     {
         // The contents are collected in parser:foundCharacters:.
         _accumulatingParsedCharacterData = YES;
@@ -49,6 +50,7 @@ didStartElement:(NSString *)elementName
         // The mutable string needs to be reset to empty.
         [self.currentParsedCharacterData setString:@""];
     }
+    
     else if ([elementName isEqual:@"ContentDescriptor"])
     {
         FinnkinoMovieContentDescriptor *contentDescriptorEvent = [[FinnkinoMovieContentDescriptor alloc] init];
@@ -65,6 +67,7 @@ didStartElement:(NSString *)elementName
     {
         // If the current element is one whose content we care about, append 'string'
         // to the property that holds the content of the current element.
+        self.currentParsedCharacterData = [[NSMutableString alloc] init];
         [self.currentParsedCharacterData appendString:str];
     }
 }
@@ -86,27 +89,32 @@ didStartElement:(NSString *)elementName
     else if ([elementName isEqual:@"EventSmallImagePortrait"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieSmallImagePortraitURL = localString;
+        [self setMovieSmallImagePortraitURL:localString];
     }
     else if ([elementName isEqual:@"EventMicroImagePortrait"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieMicroImagePortraitURL = localString;
+        [self setMovieMicroImagePortraitURL:localString];
     }
     else if ([elementName isEqual:@"EventLargeImagePortrait"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieLargeImagePortraitURL = localString;
+        [self setMovieLargeImagePortraitURL:localString];
     }
     else if ([elementName isEqual:@"EventSmallImageLandscape"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieSmallImageLandscapeURL = localString;
+        [self setMovieSmallImageLandscapeURL:localString];
     }
     else if ([elementName isEqual:@"EventLargeImageLandscape"])
     {
         NSString *localString = [[NSString alloc] initWithString:self.currentParsedCharacterData];
-        self.movieLargeImageLandscapeURL = localString;
+        [self setMovieLargeImageLandscapeURL:localString ];
+    }
+    else if ([elementName isEqual:@"Location"])
+    {
+        NSMutableString *localString = [[NSMutableString alloc] initWithString:self.currentParsedCharacterData];
+        self.movieTrailerURL = localString;
     }
     _accumulatingParsedCharacterData = NO;
 }

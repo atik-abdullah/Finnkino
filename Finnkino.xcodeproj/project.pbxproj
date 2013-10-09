@@ -20,6 +20,7 @@
 		FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */; };
 		FF3D2E5617F08F09000BBEA1 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3D2E5517F08F09000BBEA1 /* Readme.txt */; };
 		FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */; };
+		FF42161B1805BDDE00BECFF0 /* FKTrailerEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF42161A1805BDDE00BECFF0 /* FKTrailerEditViewController.m */; };
 		FF4BC4E217F7774E002A50AB /* FinnkinoMovieContentDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4BC4E117F7774E002A50AB /* FinnkinoMovieContentDescriptor.m */; };
 		FF4BC4E917F79A46002A50AB /* audience_up.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E317F79A46002A50AB /* audience_up.png */; };
 		FF4BC4EA17F79A46002A50AB /* Button-Play-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FF4BC4E417F79A46002A50AB /* Button-Play-icon.png */; };
@@ -82,6 +83,8 @@
 		FF3D2E5517F08F09000BBEA1 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = Finnkino/Readme.txt; sourceTree = "<group>"; };
 		FF410BE717F6C72A009E6008 /* FinnkinoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoDetailViewController.h; sourceTree = "<group>"; };
 		FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoDetailViewController.m; sourceTree = "<group>"; };
+		FF4216191805BDDE00BECFF0 /* FKTrailerEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTrailerEditViewController.h; sourceTree = "<group>"; };
+		FF42161A1805BDDE00BECFF0 /* FKTrailerEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTrailerEditViewController.m; sourceTree = "<group>"; };
 		FF4BC4E017F7774E002A50AB /* FinnkinoMovieContentDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoMovieContentDescriptor.h; path = Finnkino/FinnkinoMovieContentDescriptor.h; sourceTree = "<group>"; };
 		FF4BC4E117F7774E002A50AB /* FinnkinoMovieContentDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoMovieContentDescriptor.m; path = Finnkino/FinnkinoMovieContentDescriptor.m; sourceTree = "<group>"; };
 		FF4BC4E317F79A46002A50AB /* audience_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audience_up.png; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FF4216121805779A00BECFF0 /* Command */,
 				FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */,
 				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
 				FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */,
@@ -191,6 +195,13 @@
 				FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */,
 			);
 			name = RTNormal;
+			sourceTree = "<group>";
+		};
+		FF4216121805779A00BECFF0 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Command;
 			sourceTree = "<group>";
 		};
 		FF84F8B217F982A800AFD766 /* Movie */ = {
@@ -265,6 +276,8 @@
 				FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */,
 				FF84F8BD17F98BF100AFD766 /* FinnkinoShowTimeViewController.h */,
 				FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */,
+				FF4216191805BDDE00BECFF0 /* FKTrailerEditViewController.h */,
+				FF42161A1805BDDE00BECFF0 /* FKTrailerEditViewController.m */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 			);
 			name = FinnkinoViewController;
@@ -434,6 +447,7 @@
 				FF3754E617FEA9C50032CB61 /* UIImage+ImageComponent.m in Sources */,
 				FF3754E917FEAB120032CB61 /* DecoratorView.m in Sources */,
 				FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */,
+				FF42161B1805BDDE00BECFF0 /* FKTrailerEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

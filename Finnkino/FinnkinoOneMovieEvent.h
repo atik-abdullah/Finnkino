@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSString *movieSmallImageLandscapeURL;
 @property (nonatomic, strong) NSString *movieLargeImageLandscapeURL;
 @property (nonatomic, strong) NSMutableArray *contentDescriptorItems;
+@property (nonatomic, strong) NSMutableString *movieTrailerURL;
+
 @end

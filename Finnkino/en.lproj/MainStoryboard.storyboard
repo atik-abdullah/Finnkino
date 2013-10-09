@@ -214,11 +214,11 @@
                                             <constraint firstItem="DwK-kb-8OK" firstAttribute="bottom" secondItem="A1d-Je-WKQ" secondAttribute="bottom" type="default" id="x7g-Hf-3Zx"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="KzA-Rh-5d5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="45" id="KzA-Rh-5d5">
                                         <rect key="frame" x="0.0" y="278" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="44"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Button-Play-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gis-pg-5EX">
@@ -245,6 +245,9 @@
                                             <constraint firstItem="yA3-wg-E2w" firstAttribute="leading" secondItem="KzA-Rh-5d5" secondAttribute="leading" constant="77" id="keB-5O-LqD"/>
                                             <constraint firstItem="Gis-pg-5EX" firstAttribute="top" secondItem="KzA-Rh-5d5" secondAttribute="top" constant="6" id="ocd-oc-vcz"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="4h4-Tn-hlS" kind="push" id="QyO-CL-pME"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="46" id="4il-eb-wll">
                                         <rect key="frame" x="0.0" y="323" width="320" height="46"/>
@@ -341,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQV-8u-eFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="280"/>
+            <point key="canvasLocation" x="2133" y="257"/>
         </scene>
         <!--Finnkino Show Time View Controller-->
         <scene sceneID="4uS-gS-5YA">
@@ -639,21 +642,32 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="qIY-RK-LKY" firstAttribute="centerX" secondItem="egi-8h-mLe" secondAttribute="centerX" type="default" id="5Ze-Lq-P6Y"/>
+                                            <constraint firstItem="qIY-RK-LKY" firstAttribute="leading" secondItem="egi-8h-mLe" secondAttribute="leading" constant="74" id="7TM-pZ-QAm"/>
                                             <constraint firstItem="qIY-RK-LKY" firstAttribute="centerY" secondItem="egi-8h-mLe" secondAttribute="centerY" type="default" id="vAU-Rr-KPB"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="DTh-zv-qdd" kind="push" id="Fy9-q2-LGv"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eFg-lc-afB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eFg-lc-afB">
                                         <rect key="frame" x="0.0" y="510" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Edit and save Trailer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmP-IU-m9F">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="mmP-IU-m9F" firstAttribute="leading" secondItem="eFg-lc-afB" secondAttribute="leading" constant="75" id="J7N-xz-o1x"/>
+                                            <constraint firstItem="mmP-IU-m9F" firstAttribute="top" secondItem="eFg-lc-afB" secondAttribute="top" constant="11" id="ah9-I2-WJt"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uSM-8O-Vmg">
                                         <rect key="frame" x="0.0" y="554" width="320" height="45"/>
@@ -689,6 +703,21 @@
             </objects>
             <point key="canvasLocation" x="1457" y="264"/>
         </scene>
+        <!--Trailer Edit View Controller-->
+        <scene sceneID="jad-Mx-bea">
+            <objects>
+                <viewController id="4h4-Tn-hlS" customClass="FKTrailerEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FiF-Tb-sYe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qIo-Jg-DWn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dB-qN-ViQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2291" y="-544"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Button-Play-icon.png" width="256" height="256"/>
@@ -697,6 +726,9 @@
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
     <classes>
+        <class className="FKTrailerEditViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
+        </class>
         <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
             <relationships>

@@ -30,17 +30,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    FinnkinoShowTimeViewController *stvc = segue.destinationViewController;
+    UIViewController *dvc = segue.destinationViewController;
     
-    if ([stvc respondsToSelector:@selector(setDelegate:)])
-    {
-        [stvc setValue:self forKey:@"delegate"];
-    }
-    
-    if ([stvc respondsToSelector:@selector(setSelection:)])
+    if ([dvc respondsToSelector:@selector(setSelection:)])
     {
         // prepare selection info
-        [stvc setValue:self.selection forKey:@"selection"];
+        [dvc setValue:self.selection forKey:@"selection"];
     }
     
 }
@@ -50,24 +45,10 @@
 - (void)configureImage
 {
     NSURL *urlFromString = [[NSURL alloc] initWithString:[self.selection objectForKey:@"movieLargeImagePortraitURL"]] ;
+    NSLog(@"url%@",[self.selection objectForKey:@"movieLargeImagePortraitURL"] );
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
     UIImage *image = [UIImage imageWithData:data];
     [self.largeImageView setImage:image];
-    
-//    // create a transformation
-//    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(-M_PI / 5.0);
-//    CGAffineTransform translateTransform = CGAffineTransformMakeTranslation(-image.size.width / 2.0,
-//                                                                            image.size.height / 8.0);
-//    CGAffineTransform finalTransform = CGAffineTransformConcat(rotateTransform, translateTransform);
-//    
-//    // a true subclass approach
-//    id <ImageComponent> transformedImage = [[ImageTransformFilter alloc] initWithImageComponent:image
-//                                                                                      transform:finalTransform];
-//    id <ImageComponent> finalImage = [[ImageShadowFilter alloc] initWithImageComponent:transformedImage];
-//    
-//    DecoratorView *decoratorView = [[DecoratorView alloc] initWithFrame:CGRectMake(50, 50, self.view.frame.size.width/4, self.view.frame.size.height/4)];
-//    [decoratorView setImage:finalImage];
-//    [self.largeImageView addSubview:decoratorView];
 }
 
 - (void)configureContentDescriptor
