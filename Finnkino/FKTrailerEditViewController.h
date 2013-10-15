@@ -21,6 +21,7 @@
 @property AVMutableComposition *composition;
 @property AVMutableVideoComposition *videoComposition;
 @property AVMutableAudioMix *audioMix;
+@property CALayer *watermarkLayer;
 
 @property IBOutlet UIActivityIndicatorView *loadingSpinner;
 @property IBOutlet UILabel *unplayableLabel;

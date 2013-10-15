@@ -39,6 +39,9 @@
 		FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826932180DF458006ABE96 /* FKTCropCommand.m */; };
 		FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */; };
 		FF826938180DFD66006ABE96 /* Music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF826937180DF928006ABE96 /* Music.m4a */; };
+		FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */; };
+		FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF82693C180E0162006ABE96 /* QuartzCore.framework */; };
+		FF82693F180E0A0E006ABE96 /* Movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FF82693E180E0A0E006ABE96 /* Movie.m4v */; };
 		FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */; };
 		FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */; };
 		FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */; };
@@ -119,6 +122,10 @@
 		FF826934180DF7A8006ABE96 /* FKTAddMusicCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTAddMusicCommand.h; sourceTree = "<group>"; };
 		FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTAddMusicCommand.m; sourceTree = "<group>"; };
 		FF826937180DF928006ABE96 /* Music.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.m4a; sourceTree = "<group>"; };
+		FF826939180DFF56006ABE96 /* FKTAddWaterMarkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTAddWaterMarkCommand.h; sourceTree = "<group>"; };
+		FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTAddWaterMarkCommand.m; sourceTree = "<group>"; };
+		FF82693C180E0162006ABE96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FF82693E180E0A0E006ABE96 /* Movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Movie.m4v; sourceTree = "<group>"; };
 		FF84F8B717F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleFirstLevelElement.h; path = Finnkino/FinnkinoScheduleFirstLevelElement.h; sourceTree = "<group>"; };
 		FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoScheduleFirstLevelElement.m; path = Finnkino/FinnkinoScheduleFirstLevelElement.m; sourceTree = "<group>"; };
 		FF84F8BA17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleSecondLevelElement.h; path = Finnkino/FinnkinoScheduleSecondLevelElement.h; sourceTree = "<group>"; };
@@ -158,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF38F7951806B9120042E073 /* CoreMedia.framework in Frameworks */,
 				FF38F7931806B3D00042E073 /* AVFoundation.framework in Frameworks */,
 				FF8BDB2C17DF9866002AE0F9 /* UIKit.framework in Frameworks */,
@@ -229,6 +237,8 @@
 				FF826932180DF458006ABE96 /* FKTCropCommand.m */,
 				FF826934180DF7A8006ABE96 /* FKTAddMusicCommand.h */,
 				FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */,
+				FF826939180DFF56006ABE96 /* FKTAddWaterMarkCommand.h */,
+				FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 		FF8BDB2A17DF9866002AE0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF82693C180E0162006ABE96 /* QuartzCore.framework */,
 				FF38F7941806B9120042E073 /* CoreMedia.framework */,
 				FF38F7921806B3D00042E073 /* AVFoundation.framework */,
 				FF8BDB2B17DF9866002AE0F9 /* UIKit.framework */,
@@ -362,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8BDB4917DF9866002AE0F9 /* first.png */,
+				FF82693E180E0A0E006ABE96 /* Movie.m4v */,
 				FF8BDB4B17DF9866002AE0F9 /* first@2x.png */,
 				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
 				FF8BDB5017DF9866002AE0F9 /* second.png */,
@@ -446,6 +458,7 @@
 				FF4BC4EC17F79A46002A50AB /* movie_synopsis.png in Resources */,
 				FF4BC4ED17F79A46002A50AB /* MovieSlateIcon.png in Resources */,
 				FF4BC4EE17F79A46002A50AB /* view_photos.png in Resources */,
+				FF82693F180E0A0E006ABE96 /* Movie.m4v in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +500,7 @@
 				FF826930180DEE4E006ABE96 /* FKTRotateCommand.m in Sources */,
 				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
 				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
+				FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

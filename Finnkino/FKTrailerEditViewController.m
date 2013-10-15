@@ -13,14 +13,16 @@
 #import "FKTRotateCommand.h"
 #import "FKTCropCommand.h"
 #import "FKTAddMusicCommand.h"
+#import "FKTAddWaterMarkCommand.h"
 
 #define kTrimIndex 0
 #define kRotateIndex 1
 #define kCropIndex 2
 #define kAddMusicIndex 3
+#define kAddWatermarkIndex 4
 
-static void *AVSEPlayerItemStatusContext = &AVSEPlayerItemStatusContext;
-static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
+static void *FKTPlayerItemStatusContext = &FKTPlayerItemStatusContext;
+static void *FKTPlayerLayerReadyForDisplay = &FKTPlayerLayerReadyForDisplay;
 
 NSString *kStatusKey		= @"status";
 NSString *kCurrentItemKey	= @"currentItem";
@@ -140,6 +142,9 @@ NSString *kCurrentItemKey	= @"currentItem";
 		// Update the document's composition, video composition etc
 		self.composition = [[notification object] mutableComposition];
         self.videoComposition = [[notification object] mutableVideoComposition];
+		self.audioMix = [[notification object] mutableAudioMix];
+		if([[notification object] watermarkLayer])
+			self.watermarkLayer = [[notification object] watermarkLayer];
 
 		dispatch_async( dispatch_get_main_queue(), ^{
 			[self reloadPlayerView];
@@ -170,7 +175,7 @@ NSString *kCurrentItemKey	= @"currentItem";
 
 	// Create AVPlayer, add rate and status observers
 	[self setPlayer:[[AVPlayer alloc] init]];
-	[self addObserver:self forKeyPath:@"player.currentItem.status" options:NSKeyValueObservingOptionNew context:AVSEPlayerItemStatusContext];
+	[self addObserver:self forKeyPath:@"player.currentItem.status" options:NSKeyValueObservingOptionNew context:FKTPlayerItemStatusContext];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(editCommandCompletionNotificationReceiver:)
@@ -178,7 +183,6 @@ NSString *kCurrentItemKey	= @"currentItem";
 											   object:nil];
     
 }
-
 
 - (IBAction)playPauseToggle:(id)sender
 {
@@ -215,6 +219,9 @@ NSString *kCurrentItemKey	= @"currentItem";
 			break;
         case kAddMusicIndex:
 			editCommand = [[FKTAddMusicCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+			break;
+        case kAddWatermarkIndex:
+			editCommand = [[FKTAddWaterMarkCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
 			break;
 		default:
 			break;
@@ -266,7 +273,7 @@ NSString *kCurrentItemKey	= @"currentItem";
 		[newPlayerLayer setHidden:YES];
 		[[[self playerView] layer] addSublayer:newPlayerLayer];
 		[self setPlayerLayer:newPlayerLayer];
-		[self addObserver:self forKeyPath:@"playerLayer.readyForDisplay" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:AVSEPlayerLayerReadyForDisplay];
+		[self addObserver:self forKeyPath:@"playerLayer.readyForDisplay" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:FKTPlayerLayerReadyForDisplay];
 	}
 	else
     {
@@ -298,7 +305,7 @@ NSString *kCurrentItemKey	= @"currentItem";
                         change:(NSDictionary *)change
                        context:(void *)context
 {
-	if (context == AVSEPlayerItemStatusContext)
+	if (context == FKTPlayerItemStatusContext)
     {
 		AVPlayerStatus status = [change[NSKeyValueChangeNewKey] integerValue];
 		BOOL enable = NO;
@@ -315,7 +322,7 @@ NSString *kCurrentItemKey	= @"currentItem";
 		}
 		[[self playPauseButton] setEnabled:enable];
 	}
-    else if (context == AVSEPlayerLayerReadyForDisplay)
+    else if (context == FKTPlayerLayerReadyForDisplay)
     {
 		if ([change[NSKeyValueChangeNewKey] boolValue] == YES)
         {
@@ -355,9 +362,15 @@ NSString *kCurrentItemKey	= @"currentItem";
 	// This method is called every time a tool has been applied to a composition
 	// It reloads the player view with the updated composition
 	// Create a new AVPlayerItem and make it our player's current item.
+    self.videoComposition.animationTool = NULL;
 	AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:self.composition];
     playerItem.videoComposition = self.videoComposition;
     playerItem.audioMix = self.audioMix;
+    if(self.watermarkLayer)
+    {
+		self.watermarkLayer.position = CGPointMake([[self playerView] bounds].size.width/2, [[self playerView] bounds].size.height);
+		[[[self playerView] layer] addSublayer:self.watermarkLayer];
+	}
 	[[self player] replaceCurrentItemWithPlayerItem:playerItem];
 }
 
