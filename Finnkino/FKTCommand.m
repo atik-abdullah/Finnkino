@@ -12,12 +12,14 @@ NSString* const FKTEditCommandCompletionNotification = @"FKTEditCommandCompletio
 
 @implementation FKTCommand
 
-- (id)initWithComposition:(AVMutableComposition *)composition
+- (id)initWithComposition:(AVMutableComposition *)composition videoComposition:(AVMutableVideoComposition *)videoComposition audioMix:(AVMutableAudioMix *)audioMix
 {
 	self = [super init];
 	if(self != nil)
     {
 		self.mutableComposition = composition;
+        self.mutableVideoComposition = videoComposition;
+        self.mutableAudioMix = audioMix;
 	}
 	return self;
 }

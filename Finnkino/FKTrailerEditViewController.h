@@ -19,6 +19,8 @@
 @property AVPlayerLayer *playerLayer;
 @property AVAsset *inputAsset;
 @property AVMutableComposition *composition;
+@property AVMutableVideoComposition *videoComposition;
+@property AVMutableAudioMix *audioMix;
 
 @property IBOutlet UIActivityIndicatorView *loadingSpinner;
 @property IBOutlet UILabel *unplayableLabel;

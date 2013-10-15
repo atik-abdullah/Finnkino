@@ -35,6 +35,10 @@
 		FF505F9217ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF505F9117ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m */; };
 		FF82692A180DDD44006ABE96 /* FKTCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826929180DDD44006ABE96 /* FKTCommand.m */; };
 		FF82692D180DE535006ABE96 /* FKTTrimCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF82692C180DE535006ABE96 /* FKTTrimCommand.m */; };
+		FF826930180DEE4E006ABE96 /* FKTRotateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF82692F180DEE4E006ABE96 /* FKTRotateCommand.m */; };
+		FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826932180DF458006ABE96 /* FKTCropCommand.m */; };
+		FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */; };
+		FF826938180DFD66006ABE96 /* Music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FF826937180DF928006ABE96 /* Music.m4a */; };
 		FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */; };
 		FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */; };
 		FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */; };
@@ -108,6 +112,13 @@
 		FF826929180DDD44006ABE96 /* FKTCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTCommand.m; sourceTree = "<group>"; };
 		FF82692B180DE535006ABE96 /* FKTTrimCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTTrimCommand.h; sourceTree = "<group>"; };
 		FF82692C180DE535006ABE96 /* FKTTrimCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTTrimCommand.m; sourceTree = "<group>"; };
+		FF82692E180DEE4E006ABE96 /* FKTRotateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTRotateCommand.h; sourceTree = "<group>"; };
+		FF82692F180DEE4E006ABE96 /* FKTRotateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTRotateCommand.m; sourceTree = "<group>"; };
+		FF826931180DF458006ABE96 /* FKTCropCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTCropCommand.h; sourceTree = "<group>"; };
+		FF826932180DF458006ABE96 /* FKTCropCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTCropCommand.m; sourceTree = "<group>"; };
+		FF826934180DF7A8006ABE96 /* FKTAddMusicCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTAddMusicCommand.h; sourceTree = "<group>"; };
+		FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTAddMusicCommand.m; sourceTree = "<group>"; };
+		FF826937180DF928006ABE96 /* Music.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.m4a; sourceTree = "<group>"; };
 		FF84F8B717F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleFirstLevelElement.h; path = Finnkino/FinnkinoScheduleFirstLevelElement.h; sourceTree = "<group>"; };
 		FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoScheduleFirstLevelElement.m; path = Finnkino/FinnkinoScheduleFirstLevelElement.m; sourceTree = "<group>"; };
 		FF84F8BA17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleSecondLevelElement.h; path = Finnkino/FinnkinoScheduleSecondLevelElement.h; sourceTree = "<group>"; };
@@ -180,7 +191,6 @@
 		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FF4216121805779A00BECFF0 /* Command */,
 				FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */,
 				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
 				FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */,
@@ -206,13 +216,6 @@
 			name = RTNormal;
 			sourceTree = "<group>";
 		};
-		FF4216121805779A00BECFF0 /* Command */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Command;
-			sourceTree = "<group>";
-		};
 		FF826927180DDCD8006ABE96 /* Command */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +223,12 @@
 				FF826929180DDD44006ABE96 /* FKTCommand.m */,
 				FF82692B180DE535006ABE96 /* FKTTrimCommand.h */,
 				FF82692C180DE535006ABE96 /* FKTTrimCommand.m */,
+				FF82692E180DEE4E006ABE96 /* FKTRotateCommand.h */,
+				FF82692F180DEE4E006ABE96 /* FKTRotateCommand.m */,
+				FF826931180DF458006ABE96 /* FKTCropCommand.h */,
+				FF826932180DF458006ABE96 /* FKTCropCommand.m */,
+				FF826934180DF7A8006ABE96 /* FKTAddMusicCommand.h */,
+				FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
 				FF8BDB5017DF9866002AE0F9 /* second.png */,
 				FF8BDB5217DF9866002AE0F9 /* second@2x.png */,
+				FF826937180DF928006ABE96 /* Music.m4a */,
 				FF4BC4E317F79A46002A50AB /* audience_up.png */,
 				FF4BC4E417F79A46002A50AB /* Button-Play-icon.png */,
 				FF4BC4E517F79A46002A50AB /* fresh.png */,
@@ -419,6 +429,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF826938180DFD66006ABE96 /* Music.m4a in Resources */,
 				FF8BDB3617DF9866002AE0F9 /* InfoPlist.strings in Resources */,
 				FF8BDB3E17DF9866002AE0F9 /* Default.png in Resources */,
 				FF8BDB4017DF9866002AE0F9 /* Default@2x.png in Resources */,
@@ -473,6 +484,9 @@
 				FF42161B1805BDDE00BECFF0 /* FKTrailerEditViewController.m in Sources */,
 				FF82692A180DDD44006ABE96 /* FKTCommand.m in Sources */,
 				FF82692D180DE535006ABE96 /* FKTTrimCommand.m in Sources */,
+				FF826930180DEE4E006ABE96 /* FKTRotateCommand.m in Sources */,
+				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
+				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

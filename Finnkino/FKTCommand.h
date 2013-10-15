@@ -17,8 +17,10 @@ extern NSString* const FKTEditCommandCompletionNotification;
 @interface FKTCommand : NSObject
 
 @property AVMutableComposition *mutableComposition;
+@property AVMutableVideoComposition *mutableVideoComposition;
+@property AVMutableAudioMix *mutableAudioMix;
 
-- (id)initWithComposition:(AVMutableComposition*)composition;
+- (id)initWithComposition:(AVMutableComposition*)composition videoComposition:(AVMutableVideoComposition *)videoComposition audioMix:(AVMutableAudioMix *)audioMix;
 - (void)performWithAsset:(AVAsset*)asset;
 
 @end

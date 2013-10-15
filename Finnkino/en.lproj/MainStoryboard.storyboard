@@ -754,6 +754,21 @@
                                             <action selector="edit:" destination="3FB-Zt-Bfc" id="N5X-G0-zhd"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem tag="1" title="Rotate" id="lkc-Hy-Ys9">
+                                        <connections>
+                                            <action selector="edit:" destination="3FB-Zt-Bfc" id="UNA-c6-w4g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="2" title="Crop" id="8TS-GI-SWd">
+                                        <connections>
+                                            <action selector="edit:" destination="3FB-Zt-Bfc" id="ZsV-6p-43f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="3" title="Add Music" id="hHk-vV-Rv5">
+                                        <connections>
+                                            <action selector="edit:" destination="3FB-Zt-Bfc" id="7ma-Xv-puv"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-4n-OKz">
@@ -804,6 +819,65 @@
         <image name="movie_synopsis.png" width="524" height="465"/>
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
+    <classes>
+        <class className="FKTrailerEditViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="edit:"/>
+                <relationship kind="action" name="loadMovieButtonPressed:"/>
+                <relationship kind="action" name="playPauseToggle:"/>
+                <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="noVideoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playPauseButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="playerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="protectedVideoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="unplayableLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoMovieViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoMovieViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="movieSearchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="FinnkinoShowTimeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoShowTimeViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RTPosterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RTPosterViewController.h"/>
+        </class>
+        <class className="RottenTomatoesDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="actorNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="audienceScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="criticsScore" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="genreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="movieNamelabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myButtonView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="releaseDateTheaterLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="runTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RottenTomatoesMoviesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesMoviesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeType:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

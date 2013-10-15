@@ -10,8 +10,14 @@
 #import "FinnkinoConnection.h"
 #import "FKTCommand.h"
 #import "FKTTrimCommand.h"
+#import "FKTRotateCommand.h"
+#import "FKTCropCommand.h"
+#import "FKTAddMusicCommand.h"
 
 #define kTrimIndex 0
+#define kRotateIndex 1
+#define kCropIndex 2
+#define kAddMusicIndex 3
 
 static void *AVSEPlayerItemStatusContext = &AVSEPlayerItemStatusContext;
 static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
@@ -133,7 +139,8 @@ NSString *kCurrentItemKey	= @"currentItem";
     {
 		// Update the document's composition, video composition etc
 		self.composition = [[notification object] mutableComposition];
-        
+        self.videoComposition = [[notification object] mutableVideoComposition];
+
 		dispatch_async( dispatch_get_main_queue(), ^{
 			[self reloadPlayerView];
 		});
@@ -198,7 +205,16 @@ NSString *kCurrentItemKey	= @"currentItem";
 	switch (tag)
     {
 		case kTrimIndex:
-			editCommand = [[FKTTrimCommand alloc] initWithComposition:self.composition];
+			editCommand = [[FKTTrimCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+			break;
+        case kRotateIndex:
+			editCommand = [[FKTRotateCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+			break;
+        case kCropIndex:
+			editCommand = [[FKTCropCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+			break;
+        case kAddMusicIndex:
+			editCommand = [[FKTAddMusicCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
 			break;
 		default:
 			break;
@@ -340,6 +356,8 @@ NSString *kCurrentItemKey	= @"currentItem";
 	// It reloads the player view with the updated composition
 	// Create a new AVPlayerItem and make it our player's current item.
 	AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:self.composition];
+    playerItem.videoComposition = self.videoComposition;
+    playerItem.audioMix = self.audioMix;
 	[[self player] replaceCurrentItemWithPlayerItem:playerItem];
 }
 
