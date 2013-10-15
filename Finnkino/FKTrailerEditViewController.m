@@ -9,20 +9,39 @@
 #import "FKTrailerEditViewController.h"
 #import "FinnkinoConnection.h"
 
+static void *AVSEPlayerItemStatusContext = &AVSEPlayerItemStatusContext;
+static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
+
+NSString *kStatusKey		= @"status";
+NSString *kCurrentItemKey	= @"currentItem";
+
 @interface FKTrailerEditViewController ()
 
 @end
+
 
 @implementation FKTrailerEditViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[self.selection objectForKey:@"movieTrailerURL"]]];
-    [self fetchEntriesWithRequest:req];
+    
+    [self.playerView setBackgroundColor:[UIColor blackColor]];
+	[[self view] addSubview:self.playerView];
+	[[self view] setAutoresizesSubviews:YES];
+	[[self playerView] setAutoresizesSubviews:YES];
+    
+    [self checkIfFileAlreadyDownloaded];
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"playerLayer.readyForDisplay"];
+    [self removeObserver:self forKeyPath:@"player.currentItem.status"];
 }
 
 #pragma mark - Utility Methods
+
 - (void)fetchEntriesWithRequest:(NSURLRequest *) req
 {
     UIView *currentTitleView = [[self navigationItem] titleView];
@@ -42,9 +61,8 @@
             // If everything went ok, grab the data
             if (obj)
             {
-                [self writeToFile:obj];
+                [obj writeToFile:self.filePath atomically:YES];
             }
-            // Reload the table.
         }
         else
         {
@@ -61,19 +79,14 @@
             [av show];
         }
     };
-    
     FinnkinoConnection *connection = [[FinnkinoConnection alloc] initWithRequest:req];
     [connection setCompletionBlock:completionBlock];
     [connection start];
-    
 }
 
-- (void)writeToFile:(NSData *) object
+- (void)checkIfFileAlreadyDownloaded
 {
     NSScanner *scanner = [NSScanner scannerWithString:[self.selection objectForKey:@"movieTrailerURL"]];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString  *documentsDirectory = [paths objectAtIndex:0];
-    NSString  *filePath;
     
     // Scan past the "http:// " before the magnitude.
     if ([scanner scanString:@"http://" intoString:NULL])
@@ -87,15 +100,193 @@
             NSArray * array = [location componentsSeparatedByString:@"/"];
             if (array)
             {
-                NSString * desiredString = (NSString *)[array lastObject]; //or whichever the index
-                filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,desiredString];
+                self.fileName = (NSString *)[array lastObject]; //or whichever the index
+                if (self.fileName)
+                {
+                    [self constructFilePath];
+                }
             }
         }
     }
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
+    if (![[NSFileManager defaultManager] fileExistsAtPath:self.filePath])
     {
-        [object writeToFile:filePath atomically:YES];
+        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:[self.selection objectForKey:@"movieTrailerURL"]]];
+        [self fetchEntriesWithRequest:req];
     }
+}
+
+- (void)constructFilePath
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString  *documentsDirectory = [paths objectAtIndex:0];
+    self.filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,self.fileName];
+}
+
+#pragma mark - IBAction methods
+
+- (IBAction)loadMovieButtonPressed:(id)sender
+{
+	AVAsset *asset = [[AVURLAsset alloc] initWithURL:[NSURL fileURLWithPath:self.filePath] options:nil];
+    
+	// Load the values of AVAsset keys to inspect subsequently
+	NSArray *assetKeysToLoadAndTest = @[@"playable", @"composable", @"tracks", @"duration"];
+    
+    // Tells the asset to load the values of any of the specified keys that are not already loaded.
+	[asset loadValuesAsynchronouslyForKeys:assetKeysToLoadAndTest completionHandler:
+	 ^{
+		 dispatch_async( dispatch_get_main_queue(),
+						^{
+							// IMPORTANT: Must dispatch to main queue in order to operate on the AVPlayer and AVPlayerItem.
+							[self setUpPlaybackOfAsset:asset withKeys:assetKeysToLoadAndTest];
+						});
+	 }];
+    
+	// Create AVPlayer, add rate and status observers
+	[self setPlayer:[[AVPlayer alloc] init]];
+	[self addObserver:self forKeyPath:@"player.currentItem.status" options:NSKeyValueObservingOptionNew context:AVSEPlayerItemStatusContext];
+}
+
+
+- (IBAction)playPauseToggle:(id)sender
+{
+	if ([[self player] rate] != 1.f)
+    {
+		if ([self currentTime] == [self duration])
+			[self setCurrentTime:0.f];
+		[[self player] play];
+	}
+    else
+    {
+		[[self player] pause];
+	}
+}
+
+#pragma mark - Playback
+
+- (void)setUpPlaybackOfAsset:(AVAsset *)asset withKeys:(NSArray *)keys
+{
+	// This method is called when AVAsset has completed loading the specified array of keys.
+	// playback of the asset is set up here.
+	
+	// Check whether the values of each of the keys we need has been successfully loaded.
+	for (NSString *key in keys)
+    {
+		NSError *error = nil;
+		
+		if ([asset statusOfValueForKey:key error:&error] == AVKeyValueStatusFailed)
+        {
+			[self stopLoadingAnimationAndHandleError:error];
+			return;
+		}
+	}
+	
+	if (![asset isPlayable])
+    {
+		// Asset cannot be played. Display the "Unplayable Asset" label.
+		[self stopLoadingAnimationAndHandleError:nil];
+		[[self unplayableLabel] setHidden:NO];
+		return;
+	}
+	
+	if (![asset isComposable])
+    {
+		// Asset cannot be used to create a composition (e.g. it may have protected content).
+		[self stopLoadingAnimationAndHandleError:nil];
+		[[self protectedVideoLabel] setHidden:NO];
+		return;
+	}
+	
+	// Set up an AVPlayerLayer
+	if ([[asset tracksWithMediaType:AVMediaTypeVideo] count] != 0)
+    {
+		// Create an AVPlayerLayer and add it to the player view if there is video, but hide it until it's ready for display
+		AVPlayerLayer *newPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:[self player]];
+		[newPlayerLayer setFrame:[[[self playerView] layer] bounds]];
+		[newPlayerLayer setHidden:YES];
+		[[[self playerView] layer] addSublayer:newPlayerLayer];
+		[self setPlayerLayer:newPlayerLayer];
+		[self addObserver:self forKeyPath:@"playerLayer.readyForDisplay" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:AVSEPlayerLayerReadyForDisplay];
+	}
+	else
+    {
+		// This asset has no video tracks. Show the "No Video" label.
+		[self stopLoadingAnimationAndHandleError:nil];
+		[[self noVideoLabel] setHidden:NO];
+	}
+	// Create a new AVPlayerItem and make it the player's current item.
+	AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
+	[[self player] replaceCurrentItemWithPlayerItem:playerItem];
+}
+
+- (void)stopLoadingAnimationAndHandleError:(NSError *)error
+{
+	[[self loadingSpinner] stopAnimating];
+	[[self loadingSpinner] setHidden:YES];
+	if (error) {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription]
+															message:[error localizedFailureReason]
+														   delegate:nil
+												  cancelButtonTitle:@"OK"
+												  otherButtonTitles:nil];
+		[alertView show];
+	}
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+	if (context == AVSEPlayerItemStatusContext)
+    {
+		AVPlayerStatus status = [change[NSKeyValueChangeNewKey] integerValue];
+		BOOL enable = NO;
+		switch (status)
+        {
+			case AVPlayerItemStatusUnknown:
+				break;
+			case AVPlayerItemStatusReadyToPlay:
+				enable = YES;
+				break;
+			case AVPlayerItemStatusFailed:
+				[self stopLoadingAnimationAndHandleError:[[[self player] currentItem] error]];
+				break;
+		}
+		[[self playPauseButton] setEnabled:enable];
+	}
+    else if (context == AVSEPlayerLayerReadyForDisplay)
+    {
+		if ([change[NSKeyValueChangeNewKey] boolValue] == YES)
+        {
+			// The AVPlayerLayer is ready for display. Hide the loading spinner and show the video.
+			[self stopLoadingAnimationAndHandleError:nil];
+			[[self playerLayer] setHidden:NO];
+		}
+	}
+    else
+    {
+		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+	}
+}
+
+- (double)duration
+{
+	AVPlayerItem *playerItem = [[self player] currentItem];
+	
+	if ([playerItem status] == AVPlayerItemStatusReadyToPlay)
+		return CMTimeGetSeconds([[playerItem asset] duration]);
+	else
+		return 0.f;
+}
+
+- (double)currentTime
+{
+	return CMTimeGetSeconds([[self player] currentTime]);
+}
+
+- (void)setCurrentTime:(double)time
+{
+	[[self player] seekToTime:CMTimeMakeWithSeconds(time, 1)];
 }
 
 @end

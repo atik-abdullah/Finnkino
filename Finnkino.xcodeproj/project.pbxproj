@@ -14,6 +14,8 @@
 		FF3754E917FEAB120032CB61 /* DecoratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754E817FEAB120032CB61 /* DecoratorView.m */; };
 		FF388E9E17E04F6400B4D13E /* FinnkinoFeedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */; };
 		FF388EA117E053C800B4D13E /* FinnkinoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FF388EA017E053C800B4D13E /* FinnkinoConnection.m */; };
+		FF38F7931806B3D00042E073 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF38F7921806B3D00042E073 /* AVFoundation.framework */; };
+		FF38F7951806B9120042E073 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF38F7941806B9120042E073 /* CoreMedia.framework */; };
 		FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */; };
 		FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8717F9E5AD00B6BE0D /* JSONFirstLevelDict.m */; };
 		FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8A17F9E5DA00B6BE0D /* JSONSecondLevelDict.m */; };
@@ -52,7 +54,6 @@
 		FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */; };
 		FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */; };
 		FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA084E718032388005BFFFC /* RTPosterViewController.m */; };
-		FFA084ED18033940005BFFFC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFA084EC18033940005BFFFC /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		FF388E9D17E04F6400B4D13E /* FinnkinoFeedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoFeedStore.m; path = Finnkino/FinnkinoFeedStore.m; sourceTree = "<group>"; };
 		FF388E9F17E053C800B4D13E /* FinnkinoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoConnection.h; path = Finnkino/FinnkinoConnection.h; sourceTree = "<group>"; };
 		FF388EA017E053C800B4D13E /* FinnkinoConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoConnection.m; path = Finnkino/FinnkinoConnection.m; sourceTree = "<group>"; };
+		FF38F7921806B3D00042E073 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FF38F7941806B9120042E073 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RottenTomatoesMoviesViewController.h; path = Finnkino/RottenTomatoesMoviesViewController.h; sourceTree = "<group>"; };
 		FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RottenTomatoesMoviesViewController.m; path = Finnkino/RottenTomatoesMoviesViewController.m; sourceTree = "<group>"; };
 		FF3BBA8417F9E4E900B6BE0D /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSONSerializable.h; path = Finnkino/JSONSerializable.h; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoOneMovieEvent.m; path = Finnkino/FinnkinoOneMovieEvent.m; sourceTree = "<group>"; };
 		FFA084E618032388005BFFFC /* RTPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPosterViewController.h; path = Finnkino/RTPosterViewController.h; sourceTree = "<group>"; };
 		FFA084E718032388005BFFFC /* RTPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPosterViewController.m; path = Finnkino/RTPosterViewController.m; sourceTree = "<group>"; };
-		FFA084EC18033940005BFFFC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFA084ED18033940005BFFFC /* CoreImage.framework in Frameworks */,
+				FF38F7951806B9120042E073 /* CoreMedia.framework in Frameworks */,
+				FF38F7931806B3D00042E073 /* AVFoundation.framework in Frameworks */,
 				FF8BDB2C17DF9866002AE0F9 /* UIKit.framework in Frameworks */,
 				FF8BDB2E17DF9866002AE0F9 /* Foundation.framework in Frameworks */,
 				FF8BDB3017DF9866002AE0F9 /* CoreGraphics.framework in Frameworks */,
@@ -235,7 +238,7 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
-				FFA084EC18033940005BFFFC /* CoreImage.framework */,
+				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
 				FF8BDB5A17DF9979002AE0F9 /* Model */,
@@ -258,6 +261,8 @@
 		FF8BDB2A17DF9866002AE0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF38F7941806B9120042E073 /* CoreMedia.framework */,
+				FF38F7921806B3D00042E073 /* AVFoundation.framework */,
 				FF8BDB2B17DF9866002AE0F9 /* UIKit.framework */,
 				FF8BDB2D17DF9866002AE0F9 /* Foundation.framework */,
 				FF8BDB2F17DF9866002AE0F9 /* CoreGraphics.framework */,
@@ -278,7 +283,6 @@
 				FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */,
 				FF4216191805BDDE00BECFF0 /* FKTrailerEditViewController.h */,
 				FF42161A1805BDDE00BECFF0 /* FKTrailerEditViewController.m */,
-				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 			);
 			name = FinnkinoViewController;
 			path = Finnkino;
@@ -296,6 +300,7 @@
 				FF8BDB4117DF9866002AE0F9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = Finnkino;
 			sourceTree = "<group>";
 		};
 		FF8BDB5917DF9971002AE0F9 /* View */ = {

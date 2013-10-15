@@ -246,7 +246,7 @@
                                             <constraint firstItem="Gis-pg-5EX" firstAttribute="top" secondItem="KzA-Rh-5d5" secondAttribute="top" constant="6" id="ocd-oc-vcz"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="4h4-Tn-hlS" kind="push" id="QyO-CL-pME"/>
+                                            <segue destination="3FB-Zt-Bfc" kind="push" id="YGE-TA-koi"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="46" id="4il-eb-wll">
@@ -704,19 +704,93 @@
             <point key="canvasLocation" x="1457" y="264"/>
         </scene>
         <!--Trailer Edit View Controller-->
-        <scene sceneID="jad-Mx-bea">
+        <scene sceneID="H3f-Kr-w5F">
             <objects>
-                <viewController id="4h4-Tn-hlS" customClass="FKTrailerEditViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FiF-Tb-sYe">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrk-SW-raJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="3FB-Zt-Bfc" customClass="FKTrailerEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n6L-NO-0bx">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nun-L5-0XM" userLabel="View - PlayerView">
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eke-P1-z2i"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Protected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4O-vw-iqY">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Unplayable" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-qI-nEz">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No video" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60P-nX-7ZN">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="60P-nX-7ZN" secondAttribute="bottom" constant="9" id="BRH-WS-FAK"/>
+                                    <constraint firstAttribute="bottom" secondItem="N4O-vw-iqY" secondAttribute="bottom" constant="83" id="EzL-vT-xFB"/>
+                                    <constraint firstItem="eke-P1-z2i" firstAttribute="leading" secondItem="Nun-L5-0XM" secondAttribute="leading" constant="157" id="SEt-h1-3Hf"/>
+                                    <constraint firstItem="N4O-vw-iqY" firstAttribute="leading" secondItem="Nun-L5-0XM" secondAttribute="leading" constant="146" id="Xnl-86-V6j"/>
+                                    <constraint firstItem="0Z1-qI-nEz" firstAttribute="leading" secondItem="N4O-vw-iqY" secondAttribute="leading" type="default" id="bWb-3l-6Js"/>
+                                    <constraint firstAttribute="bottom" secondItem="eke-P1-z2i" secondAttribute="bottom" constant="117" id="g7H-xU-tJo"/>
+                                    <constraint firstItem="60P-nX-7ZN" firstAttribute="leading" secondItem="eke-P1-z2i" secondAttribute="leading" type="default" id="ksu-v8-3Lo"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Z1-qI-nEz" secondAttribute="bottom" constant="47" id="stE-9P-494"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrV-7D-EeC">
+                                <items>
+                                    <barButtonItem title="Item" systemItem="play" id="yeF-Ze-fIF">
+                                        <connections>
+                                            <action selector="playPauseToggle:" destination="3FB-Zt-Bfc" id="zRN-w5-eke"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-4n-OKz">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Load Movie">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadMovieButtonPressed:" destination="3FB-Zt-Bfc" eventType="touchUpInside" id="wU1-WC-qKi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="top" secondItem="n6L-NO-0bx" secondAttribute="top" type="default" id="039-xd-ydq"/>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="4fX-mY-QTT"/>
+                            <constraint firstItem="dL5-4n-OKz" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" constant="118" id="Vkq-RD-0gk"/>
+                            <constraint firstItem="ZrV-7D-EeC" firstAttribute="bottom" secondItem="n6L-NO-0bx" secondAttribute="bottom" type="default" id="X2o-lh-abc"/>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="YsV-Fo-Nvz"/>
+                            <constraint firstItem="ZrV-7D-EeC" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="ZwG-TT-1Ob"/>
+                            <constraint firstAttribute="bottom" secondItem="dL5-4n-OKz" secondAttribute="bottom" constant="62" id="gRS-6u-wjw"/>
+                            <constraint firstItem="ZrV-7D-EeC" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="twl-7W-99c"/>
+                            <constraint firstAttribute="bottom" secondItem="Nun-L5-0XM" secondAttribute="bottom" constant="127" id="y5S-hd-sTq"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qIo-Jg-DWn"/>
+                    <navigationItem key="navigationItem" id="uGd-UL-baR"/>
+                    <connections>
+                        <outlet property="loadingSpinner" destination="eke-P1-z2i" id="eKc-o3-fg3"/>
+                        <outlet property="noVideoLabel" destination="60P-nX-7ZN" id="sf6-lw-3wm"/>
+                        <outlet property="playPauseButton" destination="yeF-Ze-fIF" id="4KE-58-PLf"/>
+                        <outlet property="playerView" destination="Nun-L5-0XM" id="Pg4-UC-uTA"/>
+                        <outlet property="protectedVideoLabel" destination="N4O-vw-iqY" id="Unm-qe-ceE"/>
+                        <outlet property="unplayableLabel" destination="0Z1-qI-nEz" id="6Xp-3b-IhG"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9dB-qN-ViQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2291" y="-544"/>
+            <point key="canvasLocation" x="2062" y="-333"/>
         </scene>
     </scenes>
     <resources>
@@ -728,6 +802,16 @@
     <classes>
         <class className="FKTrailerEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadMovieButtonPressed:"/>
+                <relationship kind="action" name="playPauseToggle:"/>
+                <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="noVideoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playPauseButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="playerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="protectedVideoLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="unplayableLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
