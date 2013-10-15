@@ -706,7 +706,6 @@
         <!--Trailer Edit View Controller-->
         <scene sceneID="H3f-Kr-w5F">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrk-SW-raJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3FB-Zt-Bfc" customClass="FKTrailerEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n6L-NO-0bx">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
@@ -750,6 +749,11 @@
                                             <action selector="playPauseToggle:" destination="3FB-Zt-Bfc" id="zRN-w5-eke"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Trim" id="b73-DH-WI2">
+                                        <connections>
+                                            <action selector="edit:" destination="3FB-Zt-Bfc" id="N5X-G0-zhd"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-4n-OKz">
@@ -789,6 +793,7 @@
                         <outlet property="unplayableLabel" destination="0Z1-qI-nEz" id="6Xp-3b-IhG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrk-SW-raJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2062" y="-333"/>
         </scene>
@@ -799,64 +804,6 @@
         <image name="movie_synopsis.png" width="524" height="465"/>
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
-    <classes>
-        <class className="FKTrailerEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loadMovieButtonPressed:"/>
-                <relationship kind="action" name="playPauseToggle:"/>
-                <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="noVideoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playPauseButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="playerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="protectedVideoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="unplayableLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoMovieViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoMovieViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="movieSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoShowTimeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoShowTimeViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RTPosterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RTPosterViewController.h"/>
-        </class>
-        <class className="RottenTomatoesDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="actorNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="audienceScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="criticsScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="genreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="movieNamelabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myButtonView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="releaseDateTheaterLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RottenTomatoesMoviesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesMoviesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeType:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

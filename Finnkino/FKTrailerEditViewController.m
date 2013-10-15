@@ -8,6 +8,10 @@
 
 #import "FKTrailerEditViewController.h"
 #import "FinnkinoConnection.h"
+#import "FKTCommand.h"
+#import "FKTTrimCommand.h"
+
+#define kTrimIndex 0
 
 static void *AVSEPlayerItemStatusContext = &AVSEPlayerItemStatusContext;
 static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
@@ -18,7 +22,6 @@ NSString *kCurrentItemKey	= @"currentItem";
 @interface FKTrailerEditViewController ()
 
 @end
-
 
 @implementation FKTrailerEditViewController
 
@@ -122,6 +125,21 @@ NSString *kCurrentItemKey	= @"currentItem";
     self.filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,self.fileName];
 }
 
+#pragma mark - Notifications
+
+- (void)editCommandCompletionNotificationReceiver:(NSNotification*) notification
+{
+	if ([[notification name] isEqualToString:FKTEditCommandCompletionNotification])
+    {
+		// Update the document's composition, video composition etc
+		self.composition = [[notification object] mutableComposition];
+        
+		dispatch_async( dispatch_get_main_queue(), ^{
+			[self reloadPlayerView];
+		});
+	}
+}
+
 #pragma mark - IBAction methods
 
 - (IBAction)loadMovieButtonPressed:(id)sender
@@ -141,9 +159,17 @@ NSString *kCurrentItemKey	= @"currentItem";
 						});
 	 }];
     
+    self.inputAsset = asset;
+
 	// Create AVPlayer, add rate and status observers
 	[self setPlayer:[[AVPlayer alloc] init]];
 	[self addObserver:self forKeyPath:@"player.currentItem.status" options:NSKeyValueObservingOptionNew context:AVSEPlayerItemStatusContext];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(editCommandCompletionNotificationReceiver:)
+												 name:FKTEditCommandCompletionNotification
+											   object:nil];
+    
 }
 
 
@@ -159,6 +185,25 @@ NSString *kCurrentItemKey	= @"currentItem";
     {
 		[[self player] pause];
 	}
+}
+
+- (IBAction)edit:(id)sender
+{
+	int tag = [sender tag];
+	// Disable the operation just selected
+	[sender setEnabled:NO];
+	
+	FKTCommand *editCommand;
+	
+	switch (tag)
+    {
+		case kTrimIndex:
+			editCommand = [[FKTTrimCommand alloc] initWithComposition:self.composition];
+			break;
+		default:
+			break;
+	}
+	[editCommand performWithAsset:self.inputAsset];
 }
 
 #pragma mark - Playback
@@ -287,6 +332,15 @@ NSString *kCurrentItemKey	= @"currentItem";
 - (void)setCurrentTime:(double)time
 {
 	[[self player] seekToTime:CMTimeMakeWithSeconds(time, 1)];
+}
+
+- (void)reloadPlayerView
+{
+	// This method is called every time a tool has been applied to a composition
+	// It reloads the player view with the updated composition
+	// Create a new AVPlayerItem and make it our player's current item.
+	AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:self.composition];
+	[[self player] replaceCurrentItemWithPlayerItem:playerItem];
 }
 
 @end
