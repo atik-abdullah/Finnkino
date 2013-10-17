@@ -42,6 +42,8 @@
 		FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */; };
 		FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF82693C180E0162006ABE96 /* QuartzCore.framework */; };
 		FF82693F180E0A0E006ABE96 /* Movie.m4v in Resources */ = {isa = PBXBuildFile; fileRef = FF82693E180E0A0E006ABE96 /* Movie.m4v */; };
+		FF826942180E0F79006ABE96 /* FKTExportCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = FF826941180E0F78006ABE96 /* FKTExportCommand.m */; };
+		FF826944180E0FD4006ABE96 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF826943180E0FD4006ABE96 /* AssetsLibrary.framework */; };
 		FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */; };
 		FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BB17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m */; };
 		FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF84F8BE17F98BF100AFD766 /* FinnkinoShowTimeViewController.m */; };
@@ -126,6 +128,9 @@
 		FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTAddWaterMarkCommand.m; sourceTree = "<group>"; };
 		FF82693C180E0162006ABE96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF82693E180E0A0E006ABE96 /* Movie.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = Movie.m4v; sourceTree = "<group>"; };
+		FF826940180E0F78006ABE96 /* FKTExportCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTExportCommand.h; sourceTree = "<group>"; };
+		FF826941180E0F78006ABE96 /* FKTExportCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKTExportCommand.m; sourceTree = "<group>"; };
+		FF826943180E0FD4006ABE96 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FF84F8B717F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleFirstLevelElement.h; path = Finnkino/FinnkinoScheduleFirstLevelElement.h; sourceTree = "<group>"; };
 		FF84F8B817F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoScheduleFirstLevelElement.m; path = Finnkino/FinnkinoScheduleFirstLevelElement.m; sourceTree = "<group>"; };
 		FF84F8BA17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoScheduleSecondLevelElement.h; path = Finnkino/FinnkinoScheduleSecondLevelElement.h; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF826944180E0FD4006ABE96 /* AssetsLibrary.framework in Frameworks */,
 				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF38F7951806B9120042E073 /* CoreMedia.framework in Frameworks */,
 				FF38F7931806B3D00042E073 /* AVFoundation.framework in Frameworks */,
@@ -239,6 +245,8 @@
 				FF826935180DF7A8006ABE96 /* FKTAddMusicCommand.m */,
 				FF826939180DFF56006ABE96 /* FKTAddWaterMarkCommand.h */,
 				FF82693A180DFF56006ABE96 /* FKTAddWaterMarkCommand.m */,
+				FF826940180E0F78006ABE96 /* FKTExportCommand.h */,
+				FF826941180E0F78006ABE96 /* FKTExportCommand.m */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
+				FF826943180E0FD4006ABE96 /* AssetsLibrary.framework */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
@@ -501,6 +510,7 @@
 				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
 				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
 				FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */,
+				FF826942180E0F79006ABE96 /* FKTExportCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

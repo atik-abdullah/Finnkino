@@ -14,12 +14,14 @@
 #import "FKTCropCommand.h"
 #import "FKTAddMusicCommand.h"
 #import "FKTAddWaterMarkCommand.h"
+#import "FKTExportCommand.h"
 
 #define kTrimIndex 0
 #define kRotateIndex 1
 #define kCropIndex 2
 #define kAddMusicIndex 3
 #define kAddWatermarkIndex 4
+#define kExportIndex 0
 
 static void *FKTPlayerItemStatusContext = &FKTPlayerItemStatusContext;
 static void *FKTPlayerLayerReadyForDisplay = &FKTPlayerLayerReadyForDisplay;
@@ -29,9 +31,13 @@ NSString *kCurrentItemKey	= @"currentItem";
 
 @interface FKTrailerEditViewController ()
 
+
 @end
 
 @implementation FKTrailerEditViewController
+{
+    FKTExportCommand *exportCommand;
+}
 
 - (void)viewDidLoad
 {
@@ -41,6 +47,7 @@ NSString *kCurrentItemKey	= @"currentItem";
 	[[self view] addSubview:self.playerView];
 	[[self view] setAutoresizesSubviews:YES];
 	[[self playerView] setAutoresizesSubviews:YES];
+    [[self exportButton] setEnabled:NO];
     
     [self checkIfFileAlreadyDownloaded];
 }
@@ -133,6 +140,61 @@ NSString *kCurrentItemKey	= @"currentItem";
     self.filePath = [NSString stringWithFormat:@"%@/%@", documentsDirectory,self.fileName];
 }
 
+- (void)exportDidEnd
+{
+	// Update UI after export is completed
+	[[self playPauseButton] setEnabled:YES];
+	[[self exportProgressView] setHidden:YES];
+	[[self exportButton] setEnabled:NO];
+}
+
+- (void)exportWillBegin
+{
+	// Hide play until the export is complete
+	[[self playPauseButton] setEnabled:NO];
+	[[self exportProgressView] setHidden:NO];
+	self.exportProgressView.progress = 0.0;
+	[NSTimer scheduledTimerWithTimeInterval:0.05
+									 target:self
+								   selector:@selector(updateExportProgress:)
+								   userInfo:nil
+									repeats:YES];
+	// If Add watermark has been applied to the composition, create a video composition animation tool for export
+	if(self.watermarkLayer)
+    {
+		CALayer *exportWatermarkLayer = [self copyWatermarkLayer:self.watermarkLayer];
+		CALayer *parentLayer = [CALayer layer];
+		CALayer *videoLayer = [CALayer layer];
+		parentLayer.frame = CGRectMake(0, 0, self.videoComposition.renderSize.width, self.videoComposition.renderSize.height);
+		videoLayer.frame = CGRectMake(0, 0, self.videoComposition.renderSize.width, self.videoComposition.renderSize.height);
+		[parentLayer addSublayer:videoLayer];
+		exportWatermarkLayer.position = CGPointMake(self.videoComposition.renderSize.width/2, self.videoComposition.renderSize.height/4);
+		[parentLayer addSublayer:exportWatermarkLayer];
+		self.videoComposition.animationTool = [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+	}
+}
+
+- (CALayer*)copyWatermarkLayer:(CALayer*)inputLayer
+{
+	CALayer *exportWatermarkLayer = [CALayer layer];
+	CATextLayer *titleLayer = [CATextLayer layer];
+	CATextLayer *inputTextLayer = [inputLayer sublayers][0];
+	titleLayer.string = inputTextLayer.string;
+	titleLayer.foregroundColor = inputTextLayer.foregroundColor;
+	titleLayer.font = inputTextLayer.font;
+	titleLayer.shadowOpacity = inputTextLayer.shadowOpacity;
+	titleLayer.alignmentMode = inputTextLayer.alignmentMode;
+	titleLayer.bounds = inputTextLayer.bounds;
+	
+	[exportWatermarkLayer addSublayer:titleLayer];
+	return exportWatermarkLayer;
+}
+
+- (void)updateExportProgress:(NSTimer*)timer
+{
+	self.exportProgressView.progress = exportCommand.exportSession.progress;
+}
+
 #pragma mark - Notifications
 
 - (void)editCommandCompletionNotificationReceiver:(NSNotification*) notification
@@ -148,6 +210,16 @@ NSString *kCurrentItemKey	= @"currentItem";
 
 		dispatch_async( dispatch_get_main_queue(), ^{
 			[self reloadPlayerView];
+		});
+	}
+}
+
+- (void)exportCommandCompletionNotificationReceiver:(NSNotification *)notification
+{
+	if ([[notification name] isEqualToString:FKTExportCommandCompletionNotification])
+    {
+		dispatch_async( dispatch_get_main_queue(), ^{
+			[self exportDidEnd];
 		});
 	}
 }
@@ -180,6 +252,10 @@ NSString *kCurrentItemKey	= @"currentItem";
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(editCommandCompletionNotificationReceiver:)
 												 name:FKTEditCommandCompletionNotification
+											   object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(exportCommandCompletionNotificationReceiver:)
+												 name:FKTExportCommandCompletionNotification
 											   object:nil];
     
 }
@@ -227,6 +303,13 @@ NSString *kCurrentItemKey	= @"currentItem";
 			break;
 	}
 	[editCommand performWithAsset:self.inputAsset];
+}
+
+- (IBAction)exportToMovie:(id)sender
+{
+	[self exportWillBegin];
+	exportCommand = [[FKTExportCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+	[exportCommand performWithAsset:nil];
 }
 
 #pragma mark - Playback
@@ -372,6 +455,9 @@ NSString *kCurrentItemKey	= @"currentItem";
 		[[[self playerView] layer] addSublayer:self.watermarkLayer];
 	}
 	[[self player] replaceCurrentItemWithPlayerItem:playerItem];
+
+    // enable export
+	[[self exportButton] setEnabled:YES];
 }
 
 @end

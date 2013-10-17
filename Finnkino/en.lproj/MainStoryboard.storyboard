@@ -732,13 +732,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="60P-nX-7ZN" secondAttribute="bottom" constant="9" id="BRH-WS-FAK"/>
+                                    <constraint firstAttribute="bottom" secondItem="60P-nX-7ZN" secondAttribute="bottom" constant="31" id="3wG-90-Xj8"/>
+                                    <constraint firstItem="60P-nX-7ZN" firstAttribute="leading" secondItem="0Z1-qI-nEz" secondAttribute="leading" type="default" id="9p0-yS-i82"/>
                                     <constraint firstAttribute="bottom" secondItem="N4O-vw-iqY" secondAttribute="bottom" constant="83" id="EzL-vT-xFB"/>
                                     <constraint firstItem="eke-P1-z2i" firstAttribute="leading" secondItem="Nun-L5-0XM" secondAttribute="leading" constant="157" id="SEt-h1-3Hf"/>
-                                    <constraint firstItem="N4O-vw-iqY" firstAttribute="leading" secondItem="Nun-L5-0XM" secondAttribute="leading" constant="146" id="Xnl-86-V6j"/>
+                                    <constraint firstItem="N4O-vw-iqY" firstAttribute="leading" secondItem="Nun-L5-0XM" secondAttribute="leading" constant="146" id="Z11-8r-2gH"/>
                                     <constraint firstItem="0Z1-qI-nEz" firstAttribute="leading" secondItem="N4O-vw-iqY" secondAttribute="leading" type="default" id="bWb-3l-6Js"/>
                                     <constraint firstAttribute="bottom" secondItem="eke-P1-z2i" secondAttribute="bottom" constant="117" id="g7H-xU-tJo"/>
-                                    <constraint firstItem="60P-nX-7ZN" firstAttribute="leading" secondItem="eke-P1-z2i" secondAttribute="leading" type="default" id="ksu-v8-3Lo"/>
                                     <constraint firstAttribute="bottom" secondItem="0Z1-qI-nEz" secondAttribute="bottom" constant="47" id="stE-9P-494"/>
                                 </constraints>
                             </view>
@@ -749,7 +749,7 @@
                                             <action selector="edit:" destination="3FB-Zt-Bfc" id="N5X-G0-zhd"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem tag="1" title="Rotate" id="lkc-Hy-Ys9">
+                                    <barButtonItem tag="1" title="Rot" id="lkc-Hy-Ys9">
                                         <connections>
                                             <action selector="edit:" destination="3FB-Zt-Bfc" id="UNA-c6-w4g"/>
                                         </connections>
@@ -764,62 +764,62 @@
                                             <action selector="edit:" destination="3FB-Zt-Bfc" id="I3v-ne-cSK"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem tag="3" title="Music" id="hHk-vV-Rv5">
+                                    <barButtonItem tag="3" title="Song" id="hHk-vV-Rv5">
                                         <connections>
                                             <action selector="edit:" destination="3FB-Zt-Bfc" id="7ma-Xv-puv"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Exp" id="oMT-lU-Qli">
+                                        <connections>
+                                            <action selector="exportToMovie:" destination="3FB-Zt-Bfc" id="4h5-NJ-HQA"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL5-4n-OKz">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Load Movie">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loadMovieButtonPressed:" destination="3FB-Zt-Bfc" eventType="touchUpInside" id="wU1-WC-qKi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULg-Dg-9Qe">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-np-EOB">
+                                <items>
+                                    <barButtonItem systemItem="play" id="fG2-3d-fI8">
+                                        <connections>
+                                            <action selector="playPauseToggle:" destination="3FB-Zt-Bfc" id="cHR-ML-J53"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="210" style="plain" systemItem="fixedSpace" id="PZo-OJ-yET"/>
+                                    <barButtonItem title="Load" id="Ogy-5t-JIG">
+                                        <connections>
+                                            <action selector="loadMovieButtonPressed:" destination="3FB-Zt-Bfc" id="rVO-8p-ZUL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-ao-C3j">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="IPA-49-QGJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="6xS-dz-Dve"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="playPauseToggle:" destination="3FB-Zt-Bfc" eventType="touchUpInside" id="SkX-EZ-OIK"/>
-                                </connections>
-                            </button>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nun-L5-0XM" firstAttribute="top" secondItem="n6L-NO-0bx" secondAttribute="top" type="default" id="039-xd-ydq"/>
-                            <constraint firstItem="ULg-Dg-9Qe" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" constant="31" id="3aE-Q4-TKJ"/>
-                            <constraint firstItem="Nun-L5-0XM" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="4fX-mY-QTT"/>
-                            <constraint firstItem="ZrV-7D-EeC" firstAttribute="bottom" secondItem="n6L-NO-0bx" secondAttribute="bottom" type="default" id="X2o-lh-abc"/>
-                            <constraint firstItem="Nun-L5-0XM" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="YsV-Fo-Nvz"/>
+                            <constraint firstAttribute="bottom" secondItem="Nun-L5-0XM" secondAttribute="bottom" constant="83" id="6Lo-G6-JkK"/>
+                            <constraint firstItem="RAW-np-EOB" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="9ve-Yp-YHO"/>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="AMy-vo-KL0"/>
+                            <constraint firstItem="RAW-np-EOB" firstAttribute="bottom" secondItem="n6L-NO-0bx" secondAttribute="bottom" type="default" id="BnE-xW-yXT"/>
+                            <constraint firstItem="RAW-np-EOB" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="GI5-7n-B29"/>
+                            <constraint firstAttribute="bottom" secondItem="iHV-ao-C3j" secondAttribute="bottom" constant="59" id="OvU-Em-qo4"/>
+                            <constraint firstItem="ZrV-7D-EeC" firstAttribute="top" secondItem="n6L-NO-0bx" secondAttribute="top" type="default" id="R8p-R4-MGF"/>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="top" secondItem="ZrV-7D-EeC" secondAttribute="bottom" type="default" id="Su0-sA-VSS"/>
+                            <constraint firstItem="iHV-ao-C3j" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" constant="97" id="TCg-3c-7AF"/>
                             <constraint firstItem="ZrV-7D-EeC" firstAttribute="leading" secondItem="n6L-NO-0bx" secondAttribute="leading" type="default" id="ZwG-TT-1Ob"/>
-                            <constraint firstAttribute="bottom" secondItem="ULg-Dg-9Qe" secondAttribute="bottom" constant="62" id="aj3-ip-3PY"/>
-                            <constraint firstItem="ULg-Dg-9Qe" firstAttribute="baseline" secondItem="dL5-4n-OKz" secondAttribute="baseline" type="default" id="bqw-gZ-VE4"/>
-                            <constraint firstAttribute="trailing" secondItem="dL5-4n-OKz" secondAttribute="trailing" constant="39" id="pcd-1Y-bk2"/>
+                            <constraint firstItem="Nun-L5-0XM" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="akR-Gy-W28"/>
                             <constraint firstItem="ZrV-7D-EeC" firstAttribute="trailing" secondItem="n6L-NO-0bx" secondAttribute="trailing" type="default" id="twl-7W-99c"/>
-                            <constraint firstAttribute="bottom" secondItem="Nun-L5-0XM" secondAttribute="bottom" constant="127" id="y5S-hd-sTq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uGd-UL-baR"/>
                     <connections>
+                        <outlet property="exportButton" destination="oMT-lU-Qli" id="Rh0-LR-BrR"/>
+                        <outlet property="exportProgressView" destination="iHV-ao-C3j" id="2AC-6L-g2s"/>
                         <outlet property="loadingSpinner" destination="eke-P1-z2i" id="eKc-o3-fg3"/>
                         <outlet property="noVideoLabel" destination="60P-nX-7ZN" id="sf6-lw-3wm"/>
+                        <outlet property="playPauseButton" destination="fG2-3d-fI8" id="etw-rA-8IA"/>
                         <outlet property="playerView" destination="Nun-L5-0XM" id="Pg4-UC-uTA"/>
                         <outlet property="protectedVideoLabel" destination="N4O-vw-iqY" id="Unm-qe-ceE"/>
                         <outlet property="unplayableLabel" destination="0Z1-qI-nEz" id="6Xp-3b-IhG"/>
@@ -827,7 +827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrk-SW-raJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2062" y="-333"/>
+            <point key="canvasLocation" x="1626" y="-390"/>
         </scene>
     </scenes>
     <resources>
@@ -840,9 +840,10 @@
         <class className="FKTrailerEditViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
             <relationships>
-                <relationship kind="action" name="edit:"/>
                 <relationship kind="action" name="loadMovieButtonPressed:"/>
                 <relationship kind="action" name="playPauseToggle:"/>
+                <relationship kind="outlet" name="exportButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="exportProgressView" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="noVideoLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playPauseButton" candidateClass="UIBarButtonItem"/>

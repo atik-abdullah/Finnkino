@@ -9,6 +9,7 @@
 #import "FKTCommand.h"
 
 NSString* const FKTEditCommandCompletionNotification = @"FKTEditCommandCompletionNotification";
+NSString* const FKTExportCommandCompletionNotification = @"FKTExportCommandCompletionNotification";
 
 @implementation FKTCommand
 

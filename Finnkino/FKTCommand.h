@@ -13,6 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 extern NSString* const FKTEditCommandCompletionNotification;
+extern NSString* const FKTExportCommandCompletionNotification;
 
 @interface FKTCommand : NSObject
 
