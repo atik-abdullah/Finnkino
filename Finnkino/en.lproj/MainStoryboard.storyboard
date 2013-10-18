@@ -20,6 +20,73 @@
             </objects>
             <point key="canvasLocation" x="521" y="274"/>
         </scene>
+        <!--Navigation Controller - Bookmark-->
+        <scene sceneID="dFI-sQ-KYZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="PTX-OE-Imi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bookmark" id="d1X-PO-zOy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vcl-rU-lhs">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XBM-MY-q0L" kind="relationship" relationship="rootViewController" id="HPa-OP-29X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Oq-wg-x8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="1041"/>
+        </scene>
+        <!--Bookmark Collection View Controller - Bookmark-->
+        <scene sceneID="jPA-OW-0zt">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="XBM-MY-q0L" customClass="BookmarkCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="BwJ-ms-CO2">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9n-0B-As1">
+                            <size key="itemSize" width="95" height="118"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookmarkViewCell" id="yeB-DW-DWe" customClass="BookmarkViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="95" height="118"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="95" height="118"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39l-8D-W9W">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="151" id="JCW-8l-Gn8"/>
+                                                <constraint firstAttribute="width" constant="102" id="ukD-ik-6Mi"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="39l-8D-W9W" firstAttribute="centerY" secondItem="yeB-DW-DWe" secondAttribute="centerY" type="default" id="hT8-Wu-PWW"/>
+                                    <constraint firstItem="39l-8D-W9W" firstAttribute="leading" secondItem="yeB-DW-DWe" secondAttribute="leading" constant="-1" id="xuL-AH-dQi"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="39l-8D-W9W" id="vVz-GE-3oA"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="XBM-MY-q0L" id="VWj-PT-3mP"/>
+                            <outlet property="delegate" destination="XBM-MY-q0L" id="Doc-H7-Jyg"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Bookmark" id="EEn-EB-ev9"/>
+                    <navigationItem key="navigationItem" id="Ijf-b6-hm5"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cuF-g6-kXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="1041"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
@@ -33,11 +100,12 @@
                     <connections>
                         <segue destination="E2u-qa-g9R" kind="relationship" relationship="viewControllers" id="6FI-VA-mlv"/>
                         <segue destination="pDt-uE-W3m" kind="relationship" relationship="viewControllers" id="RdA-oU-7Sz"/>
+                        <segue destination="PTX-OE-Imi" kind="relationship" relationship="viewControllers" id="mKL-ap-o5t"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="32"/>
+            <point key="canvasLocation" x="-78" y="192"/>
         </scene>
         <!--Navigation Controller - Finnkino-->
         <scene sceneID="o8H-83-MID">
@@ -411,7 +479,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qg0-P0-F1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="-975"/>
+            <point key="canvasLocation" x="779" y="-1299"/>
         </scene>
         <!--Rotten Tomatoes Movies View Controller-->
         <scene sceneID="stS-B2-gBG">
@@ -492,7 +560,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="zMv-bV-aUf">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="605"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87I-3D-grW">
@@ -585,7 +653,6 @@
                                     <constraints>
                                         <constraint firstItem="Qp2-uy-uSF" firstAttribute="leading" secondItem="5zz-Fb-LDd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BFW-lg-Ssr"/>
                                         <constraint firstItem="Qp2-uy-uSF" firstAttribute="top" secondItem="5zz-Fb-LDd" secondAttribute="top" type="default" id="Ilf-gM-bQT"/>
-                                        <constraint firstAttribute="bottom" secondItem="aNv-D1-kXQ" secondAttribute="bottom" constant="12" id="Irv-3R-rEN"/>
                                         <constraint firstItem="aNv-D1-kXQ" firstAttribute="top" secondItem="Qp2-uy-uSF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KMp-8X-yhb"/>
                                         <constraint firstItem="aNv-D1-kXQ" firstAttribute="leading" secondItem="5zz-Fb-LDd" secondAttribute="leading" type="default" id="rxv-oH-oiC"/>
                                     </constraints>
@@ -599,25 +666,72 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls6-Pj-XtS">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Want to watch">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addToFavorite:" destination="QXH-Sk-w8k" eventType="touchUpInside" id="YFY-FF-Olc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbi-Ms-oak">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Have watched">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addToFavorite:" destination="QXH-Sk-w8k" eventType="touchUpInside" id="Qf1-Ro-dfP"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmb-pK-P4J">
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <state key="normal" title="Favorite">
+                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="addToFavorite:" destination="QXH-Sk-w8k" eventType="touchUpInside" id="86D-ew-Lw5"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Qmb-pK-P4J" secondAttribute="bottom" constant="39" id="0tp-oh-08v"/>
                                 <constraint firstItem="0gA-EF-AaT" firstAttribute="top" secondItem="lNI-fM-6F4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2F1-Ih-wCe"/>
                                 <constraint firstItem="dTG-3S-nE1" firstAttribute="trailing" secondItem="0gA-EF-AaT" secondAttribute="trailing" type="default" id="36B-Tc-hg0"/>
                                 <constraint firstItem="sFz-S0-GRu" firstAttribute="leading" secondItem="nYu-cv-8O3" secondAttribute="leading" type="default" id="3Dk-aF-Uw6"/>
                                 <constraint firstItem="87I-3D-grW" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="10" id="3Mg-Iq-Eub"/>
-                                <constraint firstItem="nYu-cv-8O3" firstAttribute="top" secondItem="sFz-S0-GRu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4BB-4C-22d"/>
-                                <constraint firstItem="nYu-cv-8O3" firstAttribute="centerY" secondItem="87I-3D-grW" secondAttribute="centerY" type="default" id="6sk-W7-87N"/>
                                 <constraint firstItem="BAk-yb-sLe" firstAttribute="leading" secondItem="zMv-bV-aUf" secondAttribute="leading" constant="63" id="7ga-SB-JFk"/>
+                                <constraint firstItem="sbi-Ms-oak" firstAttribute="trailing" secondItem="Qmb-pK-P4J" secondAttribute="trailing" type="default" id="8jW-Yx-vap"/>
+                                <constraint firstItem="nYu-cv-8O3" firstAttribute="top" secondItem="xNG-hh-toU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="9ds-eU-EvI"/>
+                                <constraint firstItem="Ls6-Pj-XtS" firstAttribute="leading" secondItem="zMv-bV-aUf" secondAttribute="leading" constant="105" id="DhO-xs-qze"/>
+                                <constraint firstItem="sbi-Ms-oak" firstAttribute="top" secondItem="Ls6-Pj-XtS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EDK-Y4-g03"/>
                                 <constraint firstItem="lNI-fM-6F4" firstAttribute="leading" secondItem="BAk-yb-sLe" secondAttribute="leading" type="default" id="Hwr-Wz-1gl"/>
                                 <constraint firstItem="xNG-hh-toU" firstAttribute="trailing" secondItem="zMv-bV-aUf" secondAttribute="trailing" type="default" id="Ilx-ow-6lg"/>
+                                <constraint firstItem="xNG-hh-toU" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="15" id="JeW-jm-Llf"/>
+                                <constraint firstItem="sFz-S0-GRu" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="53" id="Keg-I4-gE3"/>
+                                <constraint firstItem="Qmb-pK-P4J" firstAttribute="leading" secondItem="sbi-Ms-oak" secondAttribute="leading" type="default" id="Kfu-NY-XDx"/>
                                 <constraint firstItem="5zz-Fb-LDd" firstAttribute="leading" secondItem="zMv-bV-aUf" secondAttribute="leading" constant="140" id="KiF-qq-AGc"/>
-                                <constraint firstItem="xNG-hh-toU" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="15" id="PSm-sf-UhR"/>
                                 <constraint firstItem="dTG-3S-nE1" firstAttribute="leading" secondItem="87I-3D-grW" secondAttribute="leading" type="default" id="W2f-PB-hdc"/>
                                 <constraint firstItem="BAk-yb-sLe" firstAttribute="top" secondItem="87I-3D-grW" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WnQ-xX-aZH"/>
                                 <constraint firstItem="0gA-EF-AaT" firstAttribute="top" secondItem="dTG-3S-nE1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dSZ-Du-yhv"/>
+                                <constraint firstItem="Ls6-Pj-XtS" firstAttribute="top" secondItem="0gA-EF-AaT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fVd-Kc-AUE"/>
+                                <constraint firstItem="5zz-Fb-LDd" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="123" id="hAc-ss-Xtd"/>
                                 <constraint firstItem="0gA-EF-AaT" firstAttribute="leading" secondItem="zMv-bV-aUf" secondAttribute="leading" type="default" id="lhk-X1-tCh"/>
                                 <constraint firstItem="dTG-3S-nE1" firstAttribute="top" secondItem="zMv-bV-aUf" secondAttribute="top" constant="214" id="mZv-no-eOT"/>
+                                <constraint firstItem="sbi-Ms-oak" firstAttribute="trailing" secondItem="Ls6-Pj-XtS" secondAttribute="trailing" type="default" id="mex-hs-Jxl"/>
                                 <constraint firstItem="sFz-S0-GRu" firstAttribute="leading" secondItem="xNG-hh-toU" secondAttribute="leading" type="default" id="sCj-PQ-lV9"/>
                                 <constraint firstAttribute="trailing" secondItem="5zz-Fb-LDd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sTw-ZX-P6c"/>
                                 <constraint firstItem="BAk-yb-sLe" firstAttribute="top" secondItem="5zz-Fb-LDd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xGi-7i-Vkl"/>
@@ -627,7 +741,7 @@
                             <tableViewSection id="rio-js-vdU">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="egi-8h-mLe">
-                                        <rect key="frame" x="0.0" y="465" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="615" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -650,7 +764,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eFg-lc-afB">
-                                        <rect key="frame" x="0.0" y="510" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="660" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -670,7 +784,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uSM-8O-Vmg">
-                                        <rect key="frame" x="0.0" y="554" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="704" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -827,7 +941,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wrk-SW-raJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="-390"/>
+            <point key="canvasLocation" x="1386" y="-1320"/>
         </scene>
     </scenes>
     <resources>
@@ -836,66 +950,6 @@
         <image name="movie_synopsis.png" width="524" height="465"/>
         <image name="view_photos.png" width="400" height="300"/>
     </resources>
-    <classes>
-        <class className="FKTrailerEditViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FKTrailerEditViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loadMovieButtonPressed:"/>
-                <relationship kind="action" name="playPauseToggle:"/>
-                <relationship kind="outlet" name="exportButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="exportProgressView" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="loadingSpinner" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="noVideoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playPauseButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="playerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="protectedVideoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="unplayableLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="label" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="largeImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoMovieViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoMovieViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="movieSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="FinnkinoShowTimeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinnkinoShowTimeViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RTPosterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RTPosterViewController.h"/>
-        </class>
-        <class className="RottenTomatoesDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="actorNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="audienceScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="criticsScore" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="genreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="movieNamelabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myButtonView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="releaseDateTheaterLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="runTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RottenTomatoesMoviesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RottenTomatoesMoviesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changeType:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

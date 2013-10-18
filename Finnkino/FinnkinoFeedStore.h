@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @class FinnkinoEvent;
+@class JSONSecondLevelDict;
 
 typedef enum {
     EventURL = 1,
@@ -19,7 +21,15 @@ typedef enum {
     SelfMovieURL = 6,
 }ChangeURLType;
 
+typedef enum {
+    HaveWatched = 1,
+    WantToWatch = 2,
+    Favorite = 3,
+}FavoriteType;
+
 @interface FinnkinoFeedStore : NSObject
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 + (FinnkinoFeedStore *)sharedStore;
 
@@ -30,4 +40,9 @@ typedef enum {
 
 - (void)fetchRottenTomatoesMoviesWithCompletion:(void (^)(id obj, NSError *err))block
                                          forURL: (NSString *) str;
+
+- (FinnkinoFeedStore *)createItem:(NSDictionary *) item
+                  ForFavoriteType:(FavoriteType) favoriteType;
+- (BOOL)saveChanges;
+
 @end

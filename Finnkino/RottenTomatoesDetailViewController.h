@@ -22,4 +22,6 @@
 @property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
 @property (nonatomic, weak) IBOutlet UIView *myButtonView;
 
+- (IBAction)addToFavorite:(id)sender;
+
 @end

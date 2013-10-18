@@ -12,11 +12,35 @@
 #import "JSONThirdLevelDict.h"
 #import "RTPosterViewController.h"
 
+#define kWantToWatchIndex 0
+#define kHaveWatchedIndex 1
+#define kFavoriteIndex 2
+
 @interface RottenTomatoesDetailViewController ()
-// 
+//
 @property (nonatomic, strong) NSString *selfMovieURL;
 // Model data from completion block
 @property (nonatomic, strong) JSONFirstLevelDict *model;
+
+// Data to save in Core data
+@property (nonatomic, strong) NSString *abridgedCast;
+@property (nonatomic, strong) NSString *genres;
+@property (nonatomic, strong) NSString *movieId;
+@property (nonatomic, strong) NSString *detailed;
+@property (nonatomic, strong) NSString *original;
+@property (nonatomic, strong) NSString *profile;
+@property (nonatomic, strong) NSString *thumbnail;
+
+@property (nonatomic, strong) NSString *audRating;
+@property (nonatomic, strong) NSString *audScore;
+@property (nonatomic, strong) NSString *crRating;
+@property (nonatomic, strong) NSString *crScore;
+
+@property (nonatomic, strong) NSString *runtime;
+@property (nonatomic, strong) NSString *synopsis;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *releaseDate;
+
 @end
 
 @implementation RottenTomatoesDetailViewController
@@ -25,6 +49,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
     if (self.selection)
     {
         [self configureView];
@@ -39,12 +64,13 @@
     {
         [self configureView];
         
-        // It will retrieve the genre of the movie 
+        // It will retrieve the genre of the movie
         [self fetchEntries];
     }
 }
 
 #pragma mark - Utility Methods
+
 - (void)fetchEntries
 {
     void (^completionBlock)(id obj, NSError *err) = ^(id obj, NSError *err) {
@@ -54,7 +80,7 @@
         {
             // If everything went ok, grab the channel object and
             self.model = obj;
-
+            
             // reload the table.
             [self configureModel];
         }
@@ -81,56 +107,60 @@
 -(void) configureModel
 {
     // not in nib any more so can't use awakeFromNib for this
-    NSString *genreTitle = [[NSMutableString alloc] init];
     for(NSString *aMovieGenre in self.model.movieGenreNames)
     {
-        genreTitle = [genreTitle stringByAppendingString:aMovieGenre];
-        genreTitle = [genreTitle stringByAppendingString:@","];
-        NSLog(@"castTitle %@", genreTitle);
+        self.genres = [self.genres stringByAppendingString:aMovieGenre];
+        self.genres = [self.genres stringByAppendingString:@","];
+        NSLog(@"castTitle %@", self.genres);
     }
-    self.genreLabel.text =genreTitle;
+    self.genreLabel.text = self.genres;
 }
 
 -(void) configureView
 {
     // Set Movie Name title
-    self.movieNamelabel.text = [self.selection jsonTitle];
+    self.title = [self.selection jsonTitle];
+    self.movieNamelabel.text = self.title;
     
     // Set critics and audience score
-    NSString *criticsScorePercent = [[[[self.selection criticsScoreElement] criticsScore] stringValue] stringByAppendingString:@"%"];
-    NSString *audienceScorePercent = [[[[self.selection audienceScoreElement] audienceScore] stringValue] stringByAppendingString:@"%"];
-    self.criticsScore.text = criticsScorePercent;
-    self.audienceScore.text = audienceScorePercent;
+    self.crScore = [[[[self.selection criticsScoreElement] criticsScore] stringValue] stringByAppendingString:@"%"];
+    self.audScore = [[[[self.selection audienceScoreElement] audienceScore] stringValue] stringByAppendingString:@"%"];
+    self.criticsScore.text = self.crScore;
+    self.audienceScore.text = self.audScore;
     
     // Create a string of all movie actors casted
-    NSString *castTitle = [[NSMutableString alloc] init];
+    self.abridgedCast = [[NSMutableString alloc] init];
     for (JSONThirdLevelDict *aVar in [self.selection castItems])
     {
-        castTitle = [castTitle stringByAppendingString:aVar.castTitle];
-        castTitle = [castTitle stringByAppendingString:@","];
-        NSLog(@"castTitle %@", castTitle);
+        self.abridgedCast = [self.abridgedCast stringByAppendingString:aVar.castTitle];
+        self.abridgedCast = [self.abridgedCast stringByAppendingString:@","];
     }
     
     // Set the actor casted label
-    self.actorNameLabel.text = castTitle;
+    self.actorNameLabel.text = self.abridgedCast;
     
     // Create Date formatter
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
     // Create date with the date formatter
     NSDate *dates1 = [dateFormatter dateFromString:[[self.selection releaseDatesElement] releaseDatesTheater]];
-    [dateFormatter setDateFormat:@"dd MMM yyyy"];
     
     // Creat a date string from the Date
-    NSString *dateString = [dateFormatter stringForObjectValue:dates1];
+    self.releaseDate = [dateFormatter stringFromDate:dates1];
     
     // Set the date label
-    self.releaseDateTheaterLabel.text = dateString;
+    self.releaseDateTheaterLabel.text = self.releaseDate;
     
     // Set label for the duration of movie
-    self.runTimeLabel.text = [self.selection runtime];
+    self.runtime = [self.selection runtime];
+    self.runTimeLabel.text =self.runtime;
     
-    // Set the movie poster 
+    // Set the movie poster
+    self.detailed = [[self.selection postersDetailed] postersDetailed];
+    self.original = [[self.selection postersDetailed] postersOriginal];
+    self.profile = [[self.selection postersDetailed] postersProfile];
+    self.thumbnail = [[self.selection postersDetailed] postersThumbnail];
     NSURL *urlFromString = [[NSURL alloc] initWithString:[[self.selection postersDetailed] postersDetailed]] ;
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
     self.profileImageView.image = [UIImage imageWithData:data];
@@ -157,6 +187,45 @@
     {
         [rtpvc setValue:self.selection forKey:@"selection"];
     }
+}
+
+#pragma mark - IBAction
+
+- (IBAction)addToFavorite:(id)sender
+{
+    int tag = [sender tag];
+    
+    NSDictionary *saveInCoreData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    self.abridgedCast , @"abridgedCast",
+                                    self.genres, @"genres",
+                                    self.detailed, @"detailed",
+                                    self.original, @"original",
+                                    self.thumbnail, @"thumbnail",
+                                    self.profile, @"profile",
+                                    self.audScore, @"audScore",
+                                    self.audRating, @"audRating",
+                                    self.crScore, @"crScore",
+                                    self.crRating, @"crRating",
+                                    self.runtime, @"runtime",
+                                    self.synopsis, @"synopsis",
+                                    self.title, @"title",
+                                    self.releaseDate, @"releaseDate",nil];
+    
+	switch (tag)
+    {
+		case kWantToWatchIndex:
+            [[FinnkinoFeedStore sharedStore] createItem: saveInCoreData ForFavoriteType:WantToWatch];
+            break;
+        case kHaveWatchedIndex:
+            [[FinnkinoFeedStore sharedStore] createItem: saveInCoreData ForFavoriteType:WantToWatch];
+			break;
+        case kFavoriteIndex:
+            [[FinnkinoFeedStore sharedStore] createItem: saveInCoreData ForFavoriteType:WantToWatch];
+			break;
+		default:
+			break;
+	}
+    [[FinnkinoFeedStore sharedStore] saveChanges];
 }
 
 @end
