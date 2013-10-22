@@ -16,7 +16,6 @@
 
 @interface FinnkinoFeedStore ()
 
-@property (nonatomic, strong) NSManagedObjectContext *context;
 
 // Model data from completion block
 @property (nonatomic, strong) NSManagedObjectModel *model;
@@ -69,8 +68,8 @@
         self.context = [[NSManagedObjectContext alloc] init];
         [self.context setPersistentStoreCoordinator:psc];
         
-        // The managed object context can manage undo, but we don't need it
-        [self.context setUndoManager:nil];
+        self.context.undoManager = [[NSUndoManager alloc] init];
+        self.context.undoManager.levelsOfUndo = 999;
         
         [self loadAllItems];
     }
@@ -242,6 +241,28 @@
     [self.allItems addObject:movie];
     
     return movie;
+}
+
+- (void)removeItem:(NSArray *) arrayOfIndexPaths
+{
+    if ([arrayOfIndexPaths count] > 0)
+    {
+        NSArray *selectedItemsIndexPaths = arrayOfIndexPaths;
+        
+        // Delete the managed object for the given index path
+        for (NSIndexPath *indexPath in selectedItemsIndexPaths)
+        {
+            [self.context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        }
+        
+        // Save the context.
+        NSError *error = nil;
+        if (![self.context save:&error])
+        {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
 }
 
 #pragma mark - Utilities

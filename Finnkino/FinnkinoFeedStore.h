@@ -29,7 +29,8 @@ typedef enum {
 
 @interface FinnkinoFeedStore : NSObject
 
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext *context;
 
 + (FinnkinoFeedStore *)sharedStore;
 
@@ -44,5 +45,8 @@ typedef enum {
 - (FinnkinoFeedStore *)createItem:(NSDictionary *) item
                   ForFavoriteType:(FavoriteType) favoriteType;
 - (BOOL)saveChanges;
+
+- (void)removeItem:(NSArray *) arrayOfIndexPaths;
+
 
 @end

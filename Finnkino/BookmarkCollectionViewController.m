@@ -11,11 +11,19 @@
 #import "FinnkinoFeedStore.h"
 #import "BookmarkViewCell.h"
 
+#define SYSBARBUTTON(ITEM, SELECTOR) [[UIBarButtonItem alloc] initWithBarButtonSystemItem:ITEM target:self action:SELECTOR]
+
 static NSString *CellIdentifier = @"BookmarkViewCell";
 
 @interface BookmarkCollectionViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSManagedObjectContext *context;
+@property(nonatomic) BOOL editing;
+@property(nonatomic, strong) NSMutableArray *selectedMovies;
+@property(nonatomic) UIToolbar *toolbar;
+
+- (IBAction)editButtonTapped:(id)sender;
 
 @end
 
@@ -30,15 +38,21 @@ static NSString *CellIdentifier = @"BookmarkViewCell";
     [super viewDidLoad];
     self.fetchedResultsController = [[FinnkinoFeedStore sharedStore] fetchedResultsController];
     self.fetchedResultsController.delegate = self;
+    self.context = [[FinnkinoFeedStore sharedStore] context];
     _objectChanges = [NSMutableArray array];
     _sectionChanges = [NSMutableArray array];
+    self.selectedMovies = [@[] mutableCopy];
+
+    self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 45.0f)];
+    self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.navigationItem.titleView = self.toolbar;
+    [self setBarButtonItems];
 }
 
 #pragma mark - UICollectionView DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
 }
@@ -56,6 +70,23 @@ static NSString *CellIdentifier = @"BookmarkViewCell";
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(!self.editing)
+    {
+        [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    }
+    else
+        [self.selectedMovies addObject:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.editing)
+        [self.selectedMovies removeObject:indexPath];
+}
+
+#pragma mark - NSFetchedResultsController Delegate
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
 {
@@ -79,7 +110,6 @@ static NSString *CellIdentifier = @"BookmarkViewCell";
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-    
     NSMutableDictionary *change = [NSMutableDictionary new];
     switch(type)
     {
@@ -158,6 +188,73 @@ static NSString *CellIdentifier = @"BookmarkViewCell";
     
     [_sectionChanges removeAllObjects];
     [_objectChanges removeAllObjects];
+}
+
+#pragma mark - IBAction
+
+-(IBAction)editButtonTapped:(id)sender
+{
+    UIBarButtonItem *shareButton = (UIBarButtonItem *)sender;
+
+    // 1
+    if (!self.editing)
+    {
+        self.editing = YES;
+        [shareButton setStyle:UIBarButtonItemStyleDone];
+        [shareButton setTitle:@"Delete"];
+        [self.collectionView setAllowsMultipleSelection:YES];
+    }
+    else
+    {
+        // 2
+        self.editing = NO;
+        [shareButton setStyle:UIBarButtonItemStyleBordered];
+        [shareButton setTitle:@"Edit"];
+        [self.collectionView setAllowsMultipleSelection:NO];
+
+        // 3
+        [[FinnkinoFeedStore sharedStore] removeItem:self.selectedMovies];
+        [self setBarButtonItems];
+        
+        // 4
+        for(NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems)
+        {
+            [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+        }
+        [self.selectedMovies removeAllObjects];
+    }
+}
+
+- (void) undo
+{
+    [self.context.undoManager undo];
+    [self setBarButtonItems];
+}
+
+- (void) redo
+{
+    [self.context.undoManager redo];
+    [self setBarButtonItems];
+}
+
+#pragma mark - Utility methods
+
+- (void) setBarButtonItems
+{
+    NSMutableArray *items = [NSMutableArray array];
+    UIBarButtonItem *spacer = SYSBARBUTTON(UIBarButtonSystemItemFlexibleSpace, nil);
+    [items addObject:spacer];
+
+    UIBarButtonItem *undo = SYSBARBUTTON(UIBarButtonSystemItemUndo, @selector(undo));
+    undo.enabled = self.context.undoManager.canUndo;
+    [items addObject:undo];
+    [items addObject:spacer];
+    
+    UIBarButtonItem *redo = SYSBARBUTTON(UIBarButtonSystemItemRedo, @selector(redo));
+    redo.enabled = self.context.undoManager.canRedo;
+    [items addObject:redo];
+    [items addObject:spacer];    
+    self.toolbar.items = items;
 }
 
 @end

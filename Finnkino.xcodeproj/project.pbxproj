@@ -183,9 +183,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF4715AF180FBED0001ABFB5 /* CoreData.framework in Frameworks */,
 				FF826944180E0FD4006ABE96 /* AssetsLibrary.framework in Frameworks */,
-				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF38F7951806B9120042E073 /* CoreMedia.framework in Frameworks */,
 				FF38F7931806B3D00042E073 /* AVFoundation.framework in Frameworks */,
 				FF8BDB2C17DF9866002AE0F9 /* UIKit.framework in Frameworks */,
@@ -316,7 +316,6 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
-				FF34505118107D4E00E0F9CB /* BookmarkViewController */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
@@ -324,6 +323,7 @@
 				FF8BDB5917DF9971002AE0F9 /* View */,
 				FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */,
 				FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */,
+				FF34505118107D4E00E0F9CB /* BookmarkViewController */,
 				FF8BDB2A17DF9866002AE0F9 /* Frameworks */,
 				FF8BDB2917DF9866002AE0F9 /* Products */,
 			);

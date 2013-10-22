@@ -49,6 +49,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.genres = [[NSString alloc] init];
     
     if (self.selection)
     {
