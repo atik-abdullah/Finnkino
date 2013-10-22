@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FinnkinoMovieViewController : UITableViewController
+
 @property (weak, nonatomic) IBOutlet UISearchBar *movieSearchBar;
 
 @end

@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		FF34505718107E8300E0F9CB /* BookmarkCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF34505618107E8300E0F9CB /* BookmarkCollectionViewController.m */; };
 		FF34505A181080A600E0F9CB /* BookmarkViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF345059181080A600E0F9CB /* BookmarkViewCell.m */; };
+		FF371945181678BE00E4FDD4 /* PhotoRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FF371944181678BE00E4FDD4 /* PhotoRecord.m */; };
+		FF371948181679C600E4FDD4 /* PendingOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = FF371947181679C600E4FDD4 /* PendingOperations.m */; };
+		FF37194B1816809C00E4FDD4 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FF37194A1816809C00E4FDD4 /* ImageDownloader.m */; };
+		FF37194E181680D400E4FDD4 /* ImageFiltration.m in Sources */ = {isa = PBXBuildFile; fileRef = FF37194D181680D400E4FDD4 /* ImageFiltration.m */; };
+		FF371950181681D100E4FDD4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF37194F181681D100E4FDD4 /* CoreImage.framework */; };
+		FF371952181693C400E4FDD4 /* Failed.png in Resources */ = {isa = PBXBuildFile; fileRef = FF371951181693C400E4FDD4 /* Failed.png */; };
+		FF371956181693D000E4FDD4 /* Failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF371953181693D000E4FDD4 /* Failed@2x.png */; };
+		FF371957181693D000E4FDD4 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FF371954181693D000E4FDD4 /* Placeholder.png */; };
+		FF371958181693D000E4FDD4 /* Placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF371955181693D000E4FDD4 /* Placeholder@2x.png */; };
 		FF3754E317FEA9C50032CB61 /* ImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754DC17FEA9C50032CB61 /* ImageFilter.m */; };
 		FF3754E417FEA9C50032CB61 /* ImageShadowFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754DE17FEA9C50032CB61 /* ImageShadowFilter.m */; };
 		FF3754E517FEA9C50032CB61 /* ImageTransformFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3754E017FEA9C50032CB61 /* ImageTransformFilter.m */; };
@@ -77,6 +86,19 @@
 		FF34505618107E8300E0F9CB /* BookmarkCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarkCollectionViewController.m; path = Finnkino/BookmarkCollectionViewController.m; sourceTree = "<group>"; };
 		FF345058181080A600E0F9CB /* BookmarkViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookmarkViewCell.h; path = Finnkino/BookmarkViewCell.h; sourceTree = "<group>"; };
 		FF345059181080A600E0F9CB /* BookmarkViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarkViewCell.m; path = Finnkino/BookmarkViewCell.m; sourceTree = "<group>"; };
+		FF371943181678BE00E4FDD4 /* PhotoRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoRecord.h; sourceTree = "<group>"; };
+		FF371944181678BE00E4FDD4 /* PhotoRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoRecord.m; sourceTree = "<group>"; };
+		FF371946181679C600E4FDD4 /* PendingOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendingOperations.h; sourceTree = "<group>"; };
+		FF371947181679C600E4FDD4 /* PendingOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendingOperations.m; sourceTree = "<group>"; };
+		FF3719491816809C00E4FDD4 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		FF37194A1816809C00E4FDD4 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		FF37194C181680D400E4FDD4 /* ImageFiltration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFiltration.h; sourceTree = "<group>"; };
+		FF37194D181680D400E4FDD4 /* ImageFiltration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFiltration.m; sourceTree = "<group>"; };
+		FF37194F181681D100E4FDD4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		FF371951181693C400E4FDD4 /* Failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Failed.png; sourceTree = "<group>"; };
+		FF371953181693D000E4FDD4 /* Failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Failed@2x.png"; sourceTree = "<group>"; };
+		FF371954181693D000E4FDD4 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
+		FF371955181693D000E4FDD4 /* Placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Placeholder@2x.png"; sourceTree = "<group>"; };
 		FF3754DA17FEA9C50032CB61 /* ImageComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageComponent.h; sourceTree = "<group>"; };
 		FF3754DB17FEA9C50032CB61 /* ImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilter.h; sourceTree = "<group>"; };
 		FF3754DC17FEA9C50032CB61 /* ImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilter.m; sourceTree = "<group>"; };
@@ -183,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF371950181681D100E4FDD4 /* CoreImage.framework in Frameworks */,
 				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF4715AF180FBED0001ABFB5 /* CoreData.framework in Frameworks */,
 				FF826944180E0FD4006ABE96 /* AssetsLibrary.framework in Frameworks */,
@@ -208,6 +231,22 @@
 			name = BookmarkViewController;
 			sourceTree = "<group>";
 		};
+		FF371942181678AF00E4FDD4 /* Multithreading */ = {
+			isa = PBXGroup;
+			children = (
+				FF371943181678BE00E4FDD4 /* PhotoRecord.h */,
+				FF371944181678BE00E4FDD4 /* PhotoRecord.m */,
+				FF371946181679C600E4FDD4 /* PendingOperations.h */,
+				FF371947181679C600E4FDD4 /* PendingOperations.m */,
+				FF3719491816809C00E4FDD4 /* ImageDownloader.h */,
+				FF37194A1816809C00E4FDD4 /* ImageDownloader.m */,
+				FF37194C181680D400E4FDD4 /* ImageFiltration.h */,
+				FF37194D181680D400E4FDD4 /* ImageFiltration.m */,
+			);
+			name = Multithreading;
+			path = Finnkino;
+			sourceTree = "<group>";
+		};
 		FF3754D917FEA9A80032CB61 /* Decorator */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +269,7 @@
 		FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FF371942181678AF00E4FDD4 /* Multithreading */,
 				FF3BBA8117F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.h */,
 				FF3BBA8217F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m */,
 				FF4F426A17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.h */,
@@ -316,6 +356,7 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
+				FF37194F181681D100E4FDD4 /* CoreImage.framework */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
@@ -420,11 +461,15 @@
 			isa = PBXGroup;
 			children = (
 				FF8BDB4917DF9866002AE0F9 /* first.png */,
+				FF371953181693D000E4FDD4 /* Failed@2x.png */,
+				FF371954181693D000E4FDD4 /* Placeholder.png */,
+				FF371955181693D000E4FDD4 /* Placeholder@2x.png */,
 				FF82693E180E0A0E006ABE96 /* Movie.m4v */,
 				FF8BDB4B17DF9866002AE0F9 /* first@2x.png */,
 				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
 				FF8BDB5017DF9866002AE0F9 /* second.png */,
 				FF8BDB5217DF9866002AE0F9 /* second@2x.png */,
+				FF371951181693C400E4FDD4 /* Failed.png */,
 				FF826937180DF928006ABE96 /* Music.m4a */,
 				FF4BC4E317F79A46002A50AB /* audience_up.png */,
 				FF4BC4E417F79A46002A50AB /* Button-Play-icon.png */,
@@ -506,6 +551,10 @@
 				FF4BC4ED17F79A46002A50AB /* MovieSlateIcon.png in Resources */,
 				FF4BC4EE17F79A46002A50AB /* view_photos.png in Resources */,
 				FF82693F180E0A0E006ABE96 /* Movie.m4v in Resources */,
+				FF371952181693C400E4FDD4 /* Failed.png in Resources */,
+				FF371956181693D000E4FDD4 /* Failed@2x.png in Resources */,
+				FF371957181693D000E4FDD4 /* Placeholder.png in Resources */,
+				FF371958181693D000E4FDD4 /* Placeholder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +602,10 @@
 				FF4715B5181018AC001ABFB5 /* Movie.m in Sources */,
 				FF34505718107E8300E0F9CB /* BookmarkCollectionViewController.m in Sources */,
 				FF34505A181080A600E0F9CB /* BookmarkViewCell.m in Sources */,
+				FF371945181678BE00E4FDD4 /* PhotoRecord.m in Sources */,
+				FF371948181679C600E4FDD4 /* PendingOperations.m in Sources */,
+				FF37194B1816809C00E4FDD4 /* ImageDownloader.m in Sources */,
+				FF37194E181680D400E4FDD4 /* ImageFiltration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "PendingOperations.h"
+#import "ImageDownloader.h"
+#import "ImageFiltration.h"
 
 typedef enum
 {
@@ -16,7 +18,7 @@ typedef enum
     SearchMovieURL
 } ListViewControllerRSSType;
 
-@interface RottenTomatoesMoviesViewController : UITableViewController
+@interface RottenTomatoesMoviesViewController : UITableViewController <ImageDownloaderDelegate, ImageFiltrationDelegate>
 {
     ListViewControllerRSSType rssType;
 }
