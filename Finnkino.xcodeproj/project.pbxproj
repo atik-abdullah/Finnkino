@@ -78,7 +78,13 @@
 		FF8BDB5F17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB5E17DF9A3F002AE0F9 /* FinnkinoMovieViewController.m */; };
 		FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */; };
 		FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */; };
+		FF9220901817FC79004C17B3 /* FKNews.m in Sources */ = {isa = PBXBuildFile; fileRef = FF92208F1817FC79004C17B3 /* FKNews.m */; };
+		FF9220931817FDB7004C17B3 /* FKNewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220921817FDB7004C17B3 /* FKNewsArticle.m */; };
+		FF9220991818059D004C17B3 /* FKNewsArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */; };
 		FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA084E718032388005BFFFC /* RTPosterViewController.m */; };
+		FFDF6CEA181880D200C54292 /* FinnkinoInnerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CE9181880D200C54292 /* FinnkinoInnerTableCell.m */; };
+		FFDF6CED181880E600C54292 /* FinnkinoNewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CEC181880E600C54292 /* FinnkinoNewsViewCell.m */; };
+		FFDF6CF0181880F600C54292 /* FinnkinoNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CEF181880F600C54292 /* FinnkinoNewsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,8 +202,20 @@
 		FF8BDB6117DFA38F002AE0F9 /* FinnkinoEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoEvent.m; path = Finnkino/FinnkinoEvent.m; sourceTree = "<group>"; };
 		FF8BDB6317DFA936002AE0F9 /* FinnkinoOneMovieEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoOneMovieEvent.h; path = Finnkino/FinnkinoOneMovieEvent.h; sourceTree = "<group>"; };
 		FF8BDB6417DFA936002AE0F9 /* FinnkinoOneMovieEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoOneMovieEvent.m; path = Finnkino/FinnkinoOneMovieEvent.m; sourceTree = "<group>"; };
+		FF92208E1817FC79004C17B3 /* FKNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNews.h; path = Finnkino/FKNews.h; sourceTree = "<group>"; };
+		FF92208F1817FC79004C17B3 /* FKNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNews.m; path = Finnkino/FKNews.m; sourceTree = "<group>"; };
+		FF9220911817FDB7004C17B3 /* FKNewsArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNewsArticle.h; path = Finnkino/FKNewsArticle.h; sourceTree = "<group>"; };
+		FF9220921817FDB7004C17B3 /* FKNewsArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNewsArticle.m; path = Finnkino/FKNewsArticle.m; sourceTree = "<group>"; };
+		FF9220971818059D004C17B3 /* FKNewsArticleCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNewsArticleCategory.h; path = Finnkino/FKNewsArticleCategory.h; sourceTree = "<group>"; };
+		FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNewsArticleCategory.m; path = Finnkino/FKNewsArticleCategory.m; sourceTree = "<group>"; };
 		FFA084E618032388005BFFFC /* RTPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPosterViewController.h; path = Finnkino/RTPosterViewController.h; sourceTree = "<group>"; };
 		FFA084E718032388005BFFFC /* RTPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPosterViewController.m; path = Finnkino/RTPosterViewController.m; sourceTree = "<group>"; };
+		FFDF6CE8181880D200C54292 /* FinnkinoInnerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoInnerTableCell.h; path = Finnkino/FinnkinoInnerTableCell.h; sourceTree = "<group>"; };
+		FFDF6CE9181880D200C54292 /* FinnkinoInnerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoInnerTableCell.m; path = Finnkino/FinnkinoInnerTableCell.m; sourceTree = "<group>"; };
+		FFDF6CEB181880E600C54292 /* FinnkinoNewsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoNewsViewCell.h; path = Finnkino/FinnkinoNewsViewCell.h; sourceTree = "<group>"; };
+		FFDF6CEC181880E600C54292 /* FinnkinoNewsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoNewsViewCell.m; path = Finnkino/FinnkinoNewsViewCell.m; sourceTree = "<group>"; };
+		FFDF6CEE181880F600C54292 /* FinnkinoNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoNewsViewController.h; path = Finnkino/FinnkinoNewsViewController.h; sourceTree = "<group>"; };
+		FFDF6CEF181880F600C54292 /* FinnkinoNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoNewsViewController.m; path = Finnkino/FinnkinoNewsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,15 +374,11 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
-				FF37194F181681D100E4FDD4 /* CoreImage.framework */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
 				FF8BDB5A17DF9979002AE0F9 /* Model */,
-				FF8BDB5917DF9971002AE0F9 /* View */,
-				FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */,
-				FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */,
-				FF34505118107D4E00E0F9CB /* BookmarkViewController */,
+				FF8BDB5917DF9971002AE0F9 /* ViewControllers */,
 				FF8BDB2A17DF9866002AE0F9 /* Frameworks */,
 				FF8BDB2917DF9866002AE0F9 /* Products */,
 			);
@@ -381,6 +395,7 @@
 		FF8BDB2A17DF9866002AE0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF37194F181681D100E4FDD4 /* CoreImage.framework */,
 				FF826943180E0FD4006ABE96 /* AssetsLibrary.framework */,
 				FF38F7921806B3D00042E073 /* AVFoundation.framework */,
 				FF4715AE180FBED0001ABFB5 /* CoreData.framework */,
@@ -428,16 +443,21 @@
 			path = Finnkino;
 			sourceTree = "<group>";
 		};
-		FF8BDB5917DF9971002AE0F9 /* View */ = {
+		FF8BDB5917DF9971002AE0F9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF9220831817FBC2004C17B3 /* FKNewsViewController */,
+				FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */,
+				FF3BBA8017F9E1A600B6BE0D /* RottenTomatoViewController */,
+				FF34505118107D4E00E0F9CB /* BookmarkViewController */,
 			);
-			name = View;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FF8BDB5A17DF9979002AE0F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF92208D1817FC26004C17B3 /* News */,
 				FF4715B6181018B8001ABFB5 /* Favorite */,
 				FF3BBA8517F9E4FC00B6BE0D /* RTNormal */,
 				FF84F8B317F982D300AFD766 /* Schedule */,
@@ -482,6 +502,32 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FF9220831817FBC2004C17B3 /* FKNewsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFDF6CE8181880D200C54292 /* FinnkinoInnerTableCell.h */,
+				FFDF6CE9181880D200C54292 /* FinnkinoInnerTableCell.m */,
+				FFDF6CEB181880E600C54292 /* FinnkinoNewsViewCell.h */,
+				FFDF6CEC181880E600C54292 /* FinnkinoNewsViewCell.m */,
+				FFDF6CEE181880F600C54292 /* FinnkinoNewsViewController.h */,
+				FFDF6CEF181880F600C54292 /* FinnkinoNewsViewController.m */,
+			);
+			name = FKNewsViewController;
+			sourceTree = "<group>";
+		};
+		FF92208D1817FC26004C17B3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FF92208E1817FC79004C17B3 /* FKNews.h */,
+				FF92208F1817FC79004C17B3 /* FKNews.m */,
+				FF9220911817FDB7004C17B3 /* FKNewsArticle.h */,
+				FF9220921817FDB7004C17B3 /* FKNewsArticle.m */,
+				FF9220971818059D004C17B3 /* FKNewsArticleCategory.h */,
+				FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,6 +556,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Abdullah Atik";
+				TargetAttributes = {
+					FF8BDB2717DF9866002AE0F9 = {
+						DevelopmentTeam = BGMJ2JF574;
+					};
+				};
 			};
 			buildConfigurationList = FF8BDB2317DF9866002AE0F9 /* Build configuration list for PBXProject "Finnkino" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -577,6 +628,7 @@
 				FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */,
 				FF4BC4E217F7774E002A50AB /* FinnkinoMovieContentDescriptor.m in Sources */,
 				FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */,
+				FFDF6CEA181880D200C54292 /* FinnkinoInnerTableCell.m in Sources */,
 				FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */,
 				FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */,
 				FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */,
@@ -597,6 +649,7 @@
 				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
 				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
 				FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */,
+				FFDF6CF0181880F600C54292 /* FinnkinoNewsViewController.m in Sources */,
 				FF826942180E0F79006ABE96 /* FKTExportCommand.m in Sources */,
 				FF4715B2180FC099001ABFB5 /* Finnkino.xcdatamodeld in Sources */,
 				FF4715B5181018AC001ABFB5 /* Movie.m in Sources */,
@@ -606,6 +659,10 @@
 				FF371948181679C600E4FDD4 /* PendingOperations.m in Sources */,
 				FF37194B1816809C00E4FDD4 /* ImageDownloader.m in Sources */,
 				FF37194E181680D400E4FDD4 /* ImageFiltration.m in Sources */,
+				FF9220901817FC79004C17B3 /* FKNews.m in Sources */,
+				FF9220931817FDB7004C17B3 /* FKNewsArticle.m in Sources */,
+				FF9220991818059D004C17B3 /* FKNewsArticleCategory.m in Sources */,
+				FFDF6CED181880E600C54292 /* FinnkinoNewsViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,10 +746,13 @@
 		FF8BDB5717DF9866002AE0F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finnkino/Finnkino-Prefix.pch";
 				INFOPLIST_FILE = "Finnkino/Finnkino-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -700,10 +760,13 @@
 		FF8BDB5817DF9866002AE0F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Finnkino/Finnkino-Prefix.pch";
 				INFOPLIST_FILE = "Finnkino/Finnkino-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

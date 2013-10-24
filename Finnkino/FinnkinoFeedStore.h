@@ -19,6 +19,8 @@ typedef enum {
     RottenTomatoesUpcomingURL = 4,
     RottenTomatoesSearchURL =5,
     SelfMovieURL = 6,
+    NewsCategoryURL = 7,
+    NewsURL = 8,
 }ChangeURLType;
 
 typedef enum {

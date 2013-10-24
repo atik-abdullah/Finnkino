@@ -131,3 +131,43 @@ Example JSON Data structure snippent
         ]
     }
 ]
+
+
+Example Finnkino News article Data structure snippent
+-----------------------------------------------------
+-----------------------------------------------------
+
+<News>
+    <NewsArticle>
+        <Title>Hobitti – Smaugin autioittama maa -liput myyntiin 23.11.</Title>
+        <PublishDate>2013-10-17T00:00:00</PublishDate>
+        <HTMLLead>Faneilla on mahdollisuus varmistaa lippunsa odotetun elokuvan ensimmäisiin näytöksiin jonotusyötapahtumassa Tennispalatsissa.</HTMLLead>
+        <ImageURL>http://media.finnkino.fi/1012/news/2976/Hobbit2_148em.jpg</ImageURL>
+        <Categories>
+            <NewsArticleCategory>
+                <ID>1007</ID>
+                <Name>Ajankohtaista</Name>
+            </NewsArticleCategory>
+            <NewsArticleCategory>
+                <ID>1011</ID>
+                <Name>Elokuvauutisia</Name>
+            </NewsArticleCategory>
+        </Categories>
+    </NewsArticle>
+        <NewsArticle>
+        <Title>Hobitti – Smaugin autioittama maa -liput myyntiin 23.11.</Title>
+        <PublishDate>2013-10-17T00:00:00</PublishDate>
+        <HTMLLead>Faneilla on mahdollisuus varmistaa lippunsa odotetun elokuvan ensimmäisiin näytöksiin jonotusyötapahtumassa Tennispalatsissa.</HTMLLead>
+        <ImageURL>http://media.finnkino.fi/1012/news/2976/Hobbit2_148em.jpg</ImageURL>
+        <Categories>
+            <NewsArticleCategory>
+                <ID>1007</ID>
+                <Name>Ajankohtaista</Name>
+            </NewsArticleCategory>
+            <NewsArticleCategory>
+                <ID>1011</ID>
+                <Name>Elokuvauutisia</Name>
+            </NewsArticleCategory>
+        </Categories>
+    </NewsArticle>
+<News>

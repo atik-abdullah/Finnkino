@@ -13,9 +13,9 @@
 #import "JSONFirstLevelDict.h"
 #import "JSONSecondLevelDict.h"
 #import "Movie.h"
+#import "FKNews.h"
 
 @interface FinnkinoFeedStore ()
-
 
 // Model data from completion block
 @property (nonatomic, strong) NSManagedObjectModel *model;
@@ -98,6 +98,16 @@
         url = [NSURL URLWithString:[[NSMutableString alloc] initWithString:@"http://www.finnkino.fi/xml/Schedule/"]];
         // Create an empty channel
         model = [[FinnkinoScheduleFirstLevelElement alloc] init];
+    }
+    else if (URLType == NewsCategoryURL)
+    {
+        url = [NSURL URLWithString:[[NSMutableString alloc] initWithString:@"http://www.finnkino.fi/xml/NewsCategories/"]];
+        model = [[FKNews alloc] init];
+    }
+    else if (URLType == NewsURL)
+    {
+        url = [NSURL URLWithString:[[NSMutableString alloc] initWithString:@"http://www.finnkino.fi/xml/News/"]];
+        model = [[FKNews alloc] init];
     }
     
     req = [NSURLRequest requestWithURL:url];

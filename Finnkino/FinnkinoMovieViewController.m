@@ -168,55 +168,6 @@ titleForHeaderInSection:(NSInteger)section
     return cell;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UITableViewCell *cell = [tableView
-//                             dequeueReusableCellWithIdentifier:@"plainCell"];
-//    if (cell == nil)
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-//                                      reuseIdentifier:@"plainCell"];
-//    }
-//    
-//    // Create Label
-//    UILabel *cellLabel = (UILabel *)[cell viewWithTag:2];
-//    
-//    // Create ImageView
-//    UIImageView *cellImageView = (UIImageView *) [cell viewWithTag:1];
-//        
-//    // 2: The data source contains instances of PhotoRecord. Get a hold of each of them based on the indexPath of the row.
-//    PhotoRecord *aRecord = (self.photos) [[indexPath section]][[indexPath row]];
-//    
-//    // 3: Inspect the PhotoRecord. If its image is downloaded, display the image, the image name, and stop the activity indicator.
-//    if (aRecord.hasImage)
-//    {
-//        [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
-//        cellImageView.image = aRecord.image;
-//        cellLabel.text = aRecord.name;
-//    }
-//    // 4: If downloading the image has failed, display a placeholder to display the failure, and stop the activity indicator.
-//    else if (aRecord.isFailed)
-//    {
-//        [((UIActivityIndicatorView *)cell.accessoryView) stopAnimating];
-//        cell.imageView.image = [UIImage imageNamed:@"Failed.png"];
-//        cell.textLabel.text = @"Failed to load";
-//        
-//    }
-//    // 5: Otherwise, the image has not been downloaded yet. Start the download and filtering operations (theyíre not yet implemented), and display a placeholder that indicates you are working on it. Start the activity indicator to show user something is going on.
-//    else
-//    {
-//        [((UIActivityIndicatorView *)cell.accessoryView) startAnimating];
-//        cell.imageView.image = [UIImage imageNamed:@"Placeholder.png"];
-//        cell.textLabel.text = @"";
-//        
-//        if (!tableView.dragging && !tableView.decelerating)
-//        {
-//            [self startOperationsForPhotoRecord:aRecord atIndexPath:indexPath];
-//        }
-//    }
-//    return cell;
-//}
-
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     if((self.isFiltered == YES) || (self.hideIndexTools == YES))
