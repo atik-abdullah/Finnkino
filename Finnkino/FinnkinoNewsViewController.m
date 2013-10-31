@@ -12,6 +12,7 @@
 #import "FKNews.h"
 #import "FKNewsArticle.h"
 #import "FKNewsArticleCategory.h"
+#import "ArticleEditViewController.h"
 
 #define kHeadlineSectionHeight  26
 #define kRegularSectionHeight   18
@@ -23,6 +24,9 @@
 @end
 
 @implementation FinnkinoNewsViewController
+{
+    NSMutableArray *invokerStack;
+}
 
 - (void)viewDidLoad
 {
@@ -30,6 +34,7 @@
     [self.tableView setBackgroundColor:kVerticalTableBackgroundColor];
     self.tableView.rowHeight = kCellHeight + (kRowVerticalPadding * 0.5) + ((kRowVerticalPadding * 0.5) * 0.5);
     [self fetchEntriesForNewsCategory];
+    invokerStack = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - Table view data source
@@ -78,18 +83,29 @@
     UIView *customSectionHeaderView;
     UILabel *titleLabel;
     UIFont *labelFont;
+    UIButton *button;
     
     if (section == 0)
     {
         customSectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kHeadlineSectionHeight)];
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, kHeadlineSectionHeight)];
         labelFont = [UIFont boldSystemFontOfSize:20];
+        UIImage *editImage = [UIImage imageNamed:@"edit-icon.png"];
+        /* make button one pixel less high than customView above, to account for separator line */
+        button = [[UIButton alloc] initWithFrame: CGRectMake(290, 0, 25, 25)];
+        button.alpha = 0.7;
+        [button setImage: editImage forState: UIControlStateNormal];
     }
     else
     {
         customSectionHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, kRegularSectionHeight)];
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, tableView.frame.size.width, kRegularSectionHeight)];
         labelFont = [UIFont boldSystemFontOfSize:13];
+        UIImage *editImage = [UIImage imageNamed:@"edit-icon.png"];
+        /* make button one pixel less high than customView above, to account for separator line */
+        button = [[UIButton alloc] initWithFrame: CGRectMake(300, 0, 20, 20)];
+        button.alpha = 0.7;
+        [button setImage: editImage forState: UIControlStateNormal];
     }
     customSectionHeaderView.backgroundColor = [UIColor colorWithRed:0 green:0.40784314 blue:0.21568627 alpha:0.95];
     titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -102,6 +118,22 @@
     NSString *categoryName = [sortedCategories objectAtIndex:section];
     titleLabel.text = [categoryName substringFromIndex:1];
     [customSectionHeaderView addSubview:titleLabel];
+    [customSectionHeaderView addSubview: button];
+
+    /* Prepare target-action */
+    button.tag = section;
+    [button addTarget: self action: @selector(headerTapped:)
+     forControlEvents: UIControlEventTouchUpInside];
+    NSMutableArray *currentCategory = [self.newsDictionary objectForKey:categoryName];
+
+    NSMethodSignature *sig = [self methodSignatureForSelector:@selector(headerTappedInvoker:)];
+    NSInvocation *undoAction = [NSInvocation invocationWithMethodSignature:sig];
+    [undoAction setTarget:self];
+    [undoAction setSelector:@selector(headerTappedInvoker:)];
+    [undoAction setArgument:&currentCategory atIndex:2];
+    [undoAction retainArguments];
+    [invokerStack addObject:undoAction];
+    
     return customSectionHeaderView;
 }
 
@@ -151,17 +183,14 @@
             for (FKNewsArticleCategory *aEvent in self.rootObjectForNewsCategory.articleCategoryItems)
             {
                 NSMutableArray *testArray = [[NSMutableArray alloc] init];
-                NSLog(@"categories%@", [aEvent categoryName]);
                 for (FKNewsArticle *bEvent in self.rootObjectForNewsArticle.articleItems)
                 {
                     if ([[bEvent newsArticleCategoryName] isEqualToString: aEvent.categoryName])
                     {
                         [testArray addObject:bEvent.newsArticleDictionary];
-                        NSLog(@"newsArticleDictionary%@", bEvent.newsArticleDictionary);
                     }
                 }
                 [testDictionary setObject:testArray forKey:[aEvent categoryName]];
-                NSLog(@"testDictionary%@", testDictionary);
             }
             self.newsDictionary = testDictionary;
             [self.tableView reloadData];
@@ -182,6 +211,23 @@
         }
     };
     [[FinnkinoFeedStore sharedStore] fetchRSSFeedWithCompletion:completionBlock forURLType:NewsURL];
+}
+
+#pragma mark - Touch Action
+
+- (void) headerTapped: (UIButton*) sender
+{
+    /* do what you want in response to section header tap */
+    NSInvocation *sendData = [invokerStack objectAtIndex:sender.tag];
+    [sendData invoke];
+}
+
+- (void) headerTappedInvoker:(NSMutableArray *) article
+{
+    /* do what you want in response to section header tap */
+    ArticleEditViewController *aevc = [[ArticleEditViewController alloc] init];
+    aevc.articles = article;
+    [self.navigationController pushViewController:aevc animated:YES];
 }
 
 @end

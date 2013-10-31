@@ -82,6 +82,10 @@
 		FF9220931817FDB7004C17B3 /* FKNewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220921817FDB7004C17B3 /* FKNewsArticle.m */; };
 		FF9220991818059D004C17B3 /* FKNewsArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */; };
 		FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA084E718032388005BFFFC /* RTPosterViewController.m */; };
+		FFBA2830181EF6DB00D2279F /* edit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA282F181EF6DB00D2279F /* edit-icon.png */; };
+		FFBA2833181EFC0D00D2279F /* ArticleEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA2832181EFC0D00D2279F /* ArticleEditView.m */; };
+		FFBA2836181EFC7900D2279F /* HorizontalScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA2835181EFC7900D2279F /* HorizontalScrollerView.m */; };
+		FFBA2839181EFDAD00D2279F /* ArticleEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA2838181EFDAD00D2279F /* ArticleEditViewController.m */; };
 		FFDF6CEA181880D200C54292 /* FinnkinoInnerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CE9181880D200C54292 /* FinnkinoInnerTableCell.m */; };
 		FFDF6CED181880E600C54292 /* FinnkinoNewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CEC181880E600C54292 /* FinnkinoNewsViewCell.m */; };
 		FFDF6CF0181880F600C54292 /* FinnkinoNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDF6CEF181880F600C54292 /* FinnkinoNewsViewController.m */; };
@@ -210,6 +214,13 @@
 		FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNewsArticleCategory.m; path = Finnkino/FKNewsArticleCategory.m; sourceTree = "<group>"; };
 		FFA084E618032388005BFFFC /* RTPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPosterViewController.h; path = Finnkino/RTPosterViewController.h; sourceTree = "<group>"; };
 		FFA084E718032388005BFFFC /* RTPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPosterViewController.m; path = Finnkino/RTPosterViewController.m; sourceTree = "<group>"; };
+		FFBA282F181EF6DB00D2279F /* edit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-icon.png"; sourceTree = "<group>"; };
+		FFBA2831181EFC0D00D2279F /* ArticleEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleEditView.h; path = Finnkino/ArticleEditView.h; sourceTree = "<group>"; };
+		FFBA2832181EFC0D00D2279F /* ArticleEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleEditView.m; path = Finnkino/ArticleEditView.m; sourceTree = "<group>"; };
+		FFBA2834181EFC7900D2279F /* HorizontalScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HorizontalScrollerView.h; path = Finnkino/HorizontalScrollerView.h; sourceTree = "<group>"; };
+		FFBA2835181EFC7900D2279F /* HorizontalScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HorizontalScrollerView.m; path = Finnkino/HorizontalScrollerView.m; sourceTree = "<group>"; };
+		FFBA2837181EFDAD00D2279F /* ArticleEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleEditViewController.h; path = Finnkino/ArticleEditViewController.h; sourceTree = "<group>"; };
+		FFBA2838181EFDAD00D2279F /* ArticleEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleEditViewController.m; path = Finnkino/ArticleEditViewController.m; sourceTree = "<group>"; };
 		FFDF6CE8181880D200C54292 /* FinnkinoInnerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoInnerTableCell.h; path = Finnkino/FinnkinoInnerTableCell.h; sourceTree = "<group>"; };
 		FFDF6CE9181880D200C54292 /* FinnkinoInnerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinnkinoInnerTableCell.m; path = Finnkino/FinnkinoInnerTableCell.m; sourceTree = "<group>"; };
 		FFDF6CEB181880E600C54292 /* FinnkinoNewsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinnkinoNewsViewCell.h; path = Finnkino/FinnkinoNewsViewCell.h; sourceTree = "<group>"; };
@@ -486,6 +497,7 @@
 				FF371955181693D000E4FDD4 /* Placeholder@2x.png */,
 				FF82693E180E0A0E006ABE96 /* Movie.m4v */,
 				FF8BDB4B17DF9866002AE0F9 /* first@2x.png */,
+				FFBA282F181EF6DB00D2279F /* edit-icon.png */,
 				FF8BDB4317DF9866002AE0F9 /* MainStoryboard.storyboard */,
 				FF8BDB5017DF9866002AE0F9 /* second.png */,
 				FF8BDB5217DF9866002AE0F9 /* second@2x.png */,
@@ -511,6 +523,12 @@
 				FFDF6CEC181880E600C54292 /* FinnkinoNewsViewCell.m */,
 				FFDF6CEE181880F600C54292 /* FinnkinoNewsViewController.h */,
 				FFDF6CEF181880F600C54292 /* FinnkinoNewsViewController.m */,
+				FFBA2831181EFC0D00D2279F /* ArticleEditView.h */,
+				FFBA2832181EFC0D00D2279F /* ArticleEditView.m */,
+				FFBA2834181EFC7900D2279F /* HorizontalScrollerView.h */,
+				FFBA2835181EFC7900D2279F /* HorizontalScrollerView.m */,
+				FFBA2837181EFDAD00D2279F /* ArticleEditViewController.h */,
+				FFBA2838181EFDAD00D2279F /* ArticleEditViewController.m */,
 			);
 			name = FKNewsViewController;
 			sourceTree = "<group>";
@@ -605,6 +623,7 @@
 				FF371952181693C400E4FDD4 /* Failed.png in Resources */,
 				FF371956181693D000E4FDD4 /* Failed@2x.png in Resources */,
 				FF371957181693D000E4FDD4 /* Placeholder.png in Resources */,
+				FFBA2830181EF6DB00D2279F /* edit-icon.png in Resources */,
 				FF371958181693D000E4FDD4 /* Placeholder@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +651,8 @@
 				FF84F8BC17F9860E00AFD766 /* FinnkinoScheduleSecondLevelElement.m in Sources */,
 				FF84F8BF17F98BF100AFD766 /* FinnkinoShowTimeViewController.m in Sources */,
 				FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */,
+				FFBA2836181EFC7900D2279F /* HorizontalScrollerView.m in Sources */,
+				FFBA2839181EFDAD00D2279F /* ArticleEditViewController.m in Sources */,
 				FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */,
 				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
 				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
@@ -649,6 +670,7 @@
 				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
 				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
 				FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */,
+				FFBA2833181EFC0D00D2279F /* ArticleEditView.m in Sources */,
 				FFDF6CF0181880F600C54292 /* FinnkinoNewsViewController.m in Sources */,
 				FF826942180E0F79006ABE96 /* FKTExportCommand.m in Sources */,
 				FF4715B2180FC099001ABFB5 /* Finnkino.xcdatamodeld in Sources */,

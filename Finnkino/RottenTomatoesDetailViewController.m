@@ -112,7 +112,6 @@
     {
         self.genres = [self.genres stringByAppendingString:aMovieGenre];
         self.genres = [self.genres stringByAppendingString:@","];
-        NSLog(@"castTitle %@", self.genres);
     }
     self.genreLabel.text = self.genres;
 }

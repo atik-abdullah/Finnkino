@@ -57,7 +57,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="News" id="GUa-T5-TKn">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="C7p-Mx-HjN"/>
+                        <barButtonItem key="leftBarButtonItem" title="Undo" id="C7p-Mx-HjN"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqf-e5-q13" userLabel="First Responder" sceneMemberID="firstResponder"/>

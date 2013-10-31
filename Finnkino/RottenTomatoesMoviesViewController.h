@@ -14,7 +14,7 @@
 typedef enum
 {
     BoxOfficeURL,
-    TopMoviesURL,
+    UpcomingURL,
     SearchMovieURL
 } ListViewControllerRSSType;
 

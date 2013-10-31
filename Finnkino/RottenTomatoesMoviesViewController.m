@@ -169,7 +169,7 @@
     {
         [[FinnkinoFeedStore sharedStore] fetchRottenTomatoesMovies:50 withCompletion:completionBlock forURLType:RottenTomatoesBoxOfficeURL];
     }
-    else if(rssType == TopMoviesURL )
+    else if(rssType == UpcomingURL )
     {
         [[FinnkinoFeedStore sharedStore] fetchRottenTomatoesMovies:50 withCompletion:completionBlock forURLType:RottenTomatoesUpcomingURL];
     }

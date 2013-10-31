@@ -45,7 +45,6 @@
 - (void)configureImage
 {
     NSURL *urlFromString = [[NSURL alloc] initWithString:[self.selection objectForKey:@"movieLargeImagePortraitURL"]] ;
-    NSLog(@"url%@",[self.selection objectForKey:@"movieLargeImagePortraitURL"] );
     NSData *data = [NSData dataWithContentsOfURL:urlFromString];
     UIImage *image = [UIImage imageWithData:data];
     [self.largeImageView setImage:image];
