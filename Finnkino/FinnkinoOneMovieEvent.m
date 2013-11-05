@@ -124,4 +124,35 @@ didStartElement:(NSString *)elementName
 	return [self.title caseInsensitiveCompare:[fkv title]];
 }
 
+#pragma mark- Cache
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.movieMicroImagePortraitURL forKey:@"movieMicroImagePortraitURL"];
+    [aCoder encodeObject:self.movieSmallImagePortraitURL forKey:@"movieSmallImagePortraitURL"];
+    [aCoder encodeObject:self.movieLargeImagePortraitURL forKey:@"movieLargeImagePortraitURL"];
+    [aCoder encodeObject:self.movieSmallImageLandscapeURL forKey:@"movieSmallImageLandscapeURL"];
+    [aCoder encodeObject:self.movieLargeImageLandscapeURL forKey:@"movieLargeImageLandscapeURL"];
+    [aCoder encodeObject:self.contentDescriptorItems forKey:@"contentDescriptorItems"];
+    [aCoder encodeObject:self.movieTrailerURL forKey:@"movieTrailerURL"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        [self setTitle:[aDecoder decodeObjectForKey:@"title"]];
+        [self setMovieMicroImagePortraitURL:[aDecoder decodeObjectForKey:@"movieMicroImagePortraitURL"]];
+        [self setMovieSmallImagePortraitURL:[aDecoder decodeObjectForKey:@"movieSmallImagePortraitURL"]];
+        [self setMovieLargeImagePortraitURL:[aDecoder decodeObjectForKey:@"movieLargeImagePortraitURL"]];
+        [self setMovieSmallImageLandscapeURL:[aDecoder decodeObjectForKey:@"movieSmallImageLandscapeURL"]];
+        [self setMovieLargeImageLandscapeURL:[aDecoder decodeObjectForKey:@"movieLargeImageLandscapeURL"]];
+        [self setContentDescriptorItems:[aDecoder decodeObjectForKey:@"contentDescriptorItems"]];
+        [self setMovieTrailerURL:[aDecoder decodeObjectForKey:@"movieTrailerURL"]];
+    }
+    return self;
+}
+
 @end

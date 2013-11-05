@@ -80,6 +80,37 @@
 
 - (void)fetchRSSFeedWithCompletion:(void (^)(id obj, NSError *err))block forURLType:(ChangeURLType)URLType
 {
+    // Construct the cache path
+    NSString *cachePath =
+    [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+                                         NSUserDomainMask,
+                                         YES) objectAtIndex:0];
+    cachePath = [cachePath stringByAppendingPathComponent:@"finnkino.archive"];
+    
+    // Make sure we have cached at least once before by checking to see
+    // if this date exists!
+    NSDate *tscDate = [self moviesCacheDate];
+    if (tscDate)
+    {
+        // How old is the cache?
+        NSTimeInterval cacheAge = [tscDate timeIntervalSinceNow];
+        if (cacheAge > -300.0)
+        {
+            // If it is less than 300 seconds (5 minutes) old, return cache
+            // in completion block
+            NSLog(@"Reading cache!");
+            FinnkinoEvent *cachedEvent = [NSKeyedUnarchiver
+                                         unarchiveObjectWithFile:cachePath];
+            if (cachedEvent)
+            {
+                // Execute the controller's completion block to reload its table
+                block(cachedEvent, nil);
+                // Don't need to make the request, just get out of this method
+                return;
+            }
+        }
+    }
+    
     NSURL *url;
     NSURLRequest *req;
     FinnkinoConnection *connection;
@@ -116,7 +147,17 @@
     connection = [[FinnkinoConnection alloc] initWithRequest:req];
     
     // When the connection completes, this block from the controller will be executed.
-    [connection setCompletionBlock:block];
+    [connection setCompletionBlock:^(id obj, NSError *err) {
+        // This is the store's completion code:
+        // If everything went smoothly, save the channel to disk and set cache date
+        if (!err)
+        {
+            [self setFinnkinoMoviesCacheDate:[NSDate date]];
+            [NSKeyedArchiver archiveRootObject:obj toFile:cachePath];
+        }
+        // This is the controller's completion code:
+        block(obj, err);
+    }];
     
     // Let the empty channel parse the returning data from the web service
     [connection setXmlRootObject:model];
@@ -312,6 +353,20 @@
         }
         self.allItems = [[NSMutableArray alloc] initWithArray:result];
     }
+}
+
+#pragma mark- Cache
+
+- (void)setFinnkinoMoviesCacheDate:(NSDate *)moviesCacheDate
+{
+    [[NSUserDefaults standardUserDefaults] setObject:moviesCacheDate
+                                              forKey:@"finnkinoMoviesCacheDate"];
+}
+
+- (NSDate *)moviesCacheDate
+{
+    return [[NSUserDefaults standardUserDefaults]
+            objectForKey:@"finnkinoMoviesCacheDate"];
 }
 
 @end

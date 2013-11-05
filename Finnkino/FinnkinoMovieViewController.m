@@ -281,6 +281,8 @@ titleForHeaderInSection:(NSInteger)section
 {
     void (^completionBlock)(FinnkinoEvent *obj, NSError *err) = ^(FinnkinoEvent *obj, NSError *err)
     {
+        NSLog(@"Completion block called!");
+        
         // When the request completes, this block will be called.
         if(!err)
         {
@@ -309,6 +311,7 @@ titleForHeaderInSection:(NSInteger)section
         }
     };
     [[FinnkinoFeedStore sharedStore] fetchRSSFeedWithCompletion:completionBlock forURLType:EventURL];
+    NSLog(@"Executing code at the end of fetchEntries");
 }
 
 -(void) configureModel

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FinnkinoMovieContentDescriptor: NSObject <NSXMLParserDelegate>
+@interface FinnkinoMovieContentDescriptor: NSObject <NSXMLParserDelegate, NSCoding>
 
 @property (nonatomic, weak) id parentParserDelegate;
 @property (nonatomic, strong) NSMutableString *contentURL;

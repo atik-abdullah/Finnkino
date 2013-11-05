@@ -10,7 +10,7 @@
 
 @class FinnkinoOneMovieEvent;
 
-@interface FinnkinoEvent : NSObject <NSXMLParserDelegate>
+@interface FinnkinoEvent : NSObject <NSXMLParserDelegate, NSCoding>
 
 @property (nonatomic, strong) NSMutableArray *movieItems;
 @property (nonatomic, weak) id parentParserDelegate;

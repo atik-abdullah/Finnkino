@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FinnkinoOneMovieEvent : NSObject <NSXMLParserDelegate>
+@interface FinnkinoOneMovieEvent : NSObject <NSXMLParserDelegate, NSCoding>
 
 @property (nonatomic, weak) id parentParserDelegate;
 @property (nonatomic, strong) NSString *title;

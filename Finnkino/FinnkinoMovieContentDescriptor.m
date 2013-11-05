@@ -62,4 +62,21 @@ didStartElement:(NSString *)elementName
     [self.currentString appendString:[NSString stringWithFormat:@"%@",str]];
 }
 
+#pragma mark- Cache
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.contentURL forKey:@"contentURL"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        self.contentURL = [aDecoder decodeObjectForKey:@"contentURL"];
+    }
+    return self;
+}
+
 @end

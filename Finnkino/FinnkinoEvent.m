@@ -51,4 +51,24 @@ didStartElement:(NSString *)elementName
     }
 }
 
+#pragma mark- Cache
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.movieItems forKey:@"movieItems"];
+    [aCoder encodeObject:self.sortedMovieItems forKey:@"sortedMovieItems"];
+
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        self.movieItems = [aDecoder decodeObjectForKey:@"movieItems"];
+        self.sortedMovieItems = [aDecoder decodeObjectForKey:@"sortedMovieItems"];
+    }
+    return self;
+}
+
 @end
