@@ -13,6 +13,7 @@
 #import "FinnkinoEvent+TableRepresentation.h"
 #import "FinnkinoDetailViewController.h"
 #import "PhotoRecord.h"
+#import "ImageCache.h"
 
 @interface FinnkinoMovieViewController ()
 
@@ -158,13 +159,22 @@ titleForHeaderInSection:(NSInteger)section
     // Create URL from String
     NSURL *urlFromString = [[NSURL alloc] initWithString:[currentDictionary objectForKey:@"movieSmallImagePortraitURL"]] ;
 
-    // Download image from created URL
-    NSData *data = [NSData dataWithContentsOfURL:urlFromString];
+//    // Download image from created URL
+//    NSData *data = [NSData dataWithContentsOfURL:urlFromString];
+//    
+//    // Create Image from Downloaded raw Data
+//    UIImage *myImage = [UIImage imageWithData:data];
+//    cellImageView.image = myImage;
+    
+    void (^imageFetchedBlock)(UIImage *image, NSURL *url) = ^(UIImage *image, NSURL *url)
+    {
+        // Create Image from Downloaded raw Data
+        UIImage *myImage = image;
+        cellImageView.image = myImage;
 
-    // Create Image from Downloaded raw Data
-    UIImage *myImage = [UIImage imageWithData:data];
+    };
+    [[ImageCache sharedImageCache] imageAtURL:urlFromString onCompletion:imageFetchedBlock];
 
-    cellImageView.image = myImage;
     return cell;
 }
 

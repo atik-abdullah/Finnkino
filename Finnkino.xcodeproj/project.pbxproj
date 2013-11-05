@@ -32,6 +32,9 @@
 		FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8A17F9E5DA00B6BE0D /* JSONSecondLevelDict.m */; };
 		FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */; };
 		FF3D2E5617F08F09000BBEA1 /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FF3D2E5517F08F09000BBEA1 /* Readme.txt */; };
+		FF40A54A1828903700DDADD0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF40A5491828903700DDADD0 /* SystemConfiguration.framework */; };
+		FF40A54C1828905400DDADD0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF40A54B1828905400DDADD0 /* MobileCoreServices.framework */; };
+		FF40A54E1828907100DDADD0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF40A54D1828907100DDADD0 /* libz.dylib */; };
 		FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */; };
 		FF42161B1805BDDE00BECFF0 /* FKTrailerEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF42161A1805BDDE00BECFF0 /* FKTrailerEditViewController.m */; };
 		FF4715AF180FBED0001ABFB5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4715AE180FBED0001ABFB5 /* CoreData.framework */; };
@@ -82,6 +85,18 @@
 		FF9220931817FDB7004C17B3 /* FKNewsArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220921817FDB7004C17B3 /* FKNewsArticle.m */; };
 		FF9220991818059D004C17B3 /* FKNewsArticleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */; };
 		FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA084E718032388005BFFFC /* RTPosterViewController.m */; };
+		FFB0CF9218287DB1001914E5 /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CF9118287DB1001914E5 /* ImageCache.m */; };
+		FFB0CF9518287E2B001914E5 /* ImageFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CF9418287E2B001914E5 /* ImageFetchOperation.m */; };
+		FFB0CFED18288EF4001914E5 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFD718288EF3001914E5 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFEE18288EF4001914E5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFDA18288EF3001914E5 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFEF18288EF4001914E5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFDC18288EF3001914E5 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF018288EF4001914E5 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFDE18288EF3001914E5 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF118288EF4001914E5 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFE018288EF4001914E5 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF218288EF4001914E5 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFE218288EF4001914E5 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF318288EF4001914E5 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFE618288EF4001914E5 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF418288EF4001914E5 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFE818288EF4001914E5 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF518288EF4001914E5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB0CFEC18288EF4001914E5 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFB0CFF718288F95001914E5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB0CFF618288F95001914E5 /* CFNetwork.framework */; };
 		FFBA2830181EF6DB00D2279F /* edit-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBA282F181EF6DB00D2279F /* edit-icon.png */; };
 		FFBA2833181EFC0D00D2279F /* ArticleEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA2832181EFC0D00D2279F /* ArticleEditView.m */; };
 		FFBA2836181EFC7900D2279F /* HorizontalScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBA2835181EFC7900D2279F /* HorizontalScrollerView.m */; };
@@ -136,6 +151,9 @@
 		FF3BBA8C17F9E72000B6BE0D /* JSONThirdLevelDict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONThirdLevelDict.h; path = Finnkino/JSONThirdLevelDict.h; sourceTree = "<group>"; };
 		FF3BBA8D17F9E72000B6BE0D /* JSONThirdLevelDict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONThirdLevelDict.m; path = Finnkino/JSONThirdLevelDict.m; sourceTree = "<group>"; };
 		FF3D2E5517F08F09000BBEA1 /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Readme.txt; path = Finnkino/Readme.txt; sourceTree = "<group>"; };
+		FF40A5491828903700DDADD0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FF40A54B1828905400DDADD0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FF40A54D1828907100DDADD0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FF410BE717F6C72A009E6008 /* FinnkinoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinnkinoDetailViewController.h; sourceTree = "<group>"; };
 		FF410BE817F6C72A009E6008 /* FinnkinoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinnkinoDetailViewController.m; sourceTree = "<group>"; };
 		FF4216191805BDDE00BECFF0 /* FKTrailerEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKTrailerEditViewController.h; sourceTree = "<group>"; };
@@ -214,6 +232,33 @@
 		FF9220981818059D004C17B3 /* FKNewsArticleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNewsArticleCategory.m; path = Finnkino/FKNewsArticleCategory.m; sourceTree = "<group>"; };
 		FFA084E618032388005BFFFC /* RTPosterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTPosterViewController.h; path = Finnkino/RTPosterViewController.h; sourceTree = "<group>"; };
 		FFA084E718032388005BFFFC /* RTPosterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RTPosterViewController.m; path = Finnkino/RTPosterViewController.m; sourceTree = "<group>"; };
+		FFB0CF9018287DB1001914E5 /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		FFB0CF9118287DB1001914E5 /* ImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		FFB0CF9318287E2B001914E5 /* ImageFetchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFetchOperation.h; sourceTree = "<group>"; };
+		FFB0CF9418287E2B001914E5 /* ImageFetchOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFetchOperation.m; sourceTree = "<group>"; };
+		FFB0CFD618288EF3001914E5 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		FFB0CFD718288EF3001914E5 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		FFB0CFD818288EF3001914E5 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
+		FFB0CFD918288EF3001914E5 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataCompressor.h; sourceTree = "<group>"; };
+		FFB0CFDA18288EF3001914E5 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataCompressor.m; sourceTree = "<group>"; };
+		FFB0CFDB18288EF3001914E5 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDataDecompressor.h; sourceTree = "<group>"; };
+		FFB0CFDC18288EF3001914E5 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDataDecompressor.m; sourceTree = "<group>"; };
+		FFB0CFDD18288EF3001914E5 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIDownloadCache.h; sourceTree = "<group>"; };
+		FFB0CFDE18288EF3001914E5 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIDownloadCache.m; sourceTree = "<group>"; };
+		FFB0CFDF18288EF4001914E5 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
+		FFB0CFE018288EF4001914E5 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
+		FFB0CFE118288EF4001914E5 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
+		FFB0CFE218288EF4001914E5 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequest.m; sourceTree = "<group>"; };
+		FFB0CFE318288EF4001914E5 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		FFB0CFE418288EF4001914E5 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		FFB0CFE518288EF4001914E5 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIInputStream.h; sourceTree = "<group>"; };
+		FFB0CFE618288EF4001914E5 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIInputStream.m; sourceTree = "<group>"; };
+		FFB0CFE718288EF4001914E5 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
+		FFB0CFE818288EF4001914E5 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
+		FFB0CFE918288EF4001914E5 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
+		FFB0CFEB18288EF4001914E5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		FFB0CFEC18288EF4001914E5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		FFB0CFF618288F95001914E5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FFBA282F181EF6DB00D2279F /* edit-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-icon.png"; sourceTree = "<group>"; };
 		FFBA2831181EFC0D00D2279F /* ArticleEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleEditView.h; path = Finnkino/ArticleEditView.h; sourceTree = "<group>"; };
 		FFBA2832181EFC0D00D2279F /* ArticleEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleEditView.m; path = Finnkino/ArticleEditView.m; sourceTree = "<group>"; };
@@ -234,6 +279,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF40A54E1828907100DDADD0 /* libz.dylib in Frameworks */,
+				FF40A54C1828905400DDADD0 /* MobileCoreServices.framework in Frameworks */,
+				FF40A54A1828903700DDADD0 /* SystemConfiguration.framework in Frameworks */,
+				FFB0CFF718288F95001914E5 /* CFNetwork.framework in Frameworks */,
 				FF371950181681D100E4FDD4 /* CoreImage.framework in Frameworks */,
 				FF82693D180E0163006ABE96 /* QuartzCore.framework in Frameworks */,
 				FF4715AF180FBED0001ABFB5 /* CoreData.framework in Frameworks */,
@@ -385,6 +434,7 @@
 		FF8BDB1F17DF9866002AE0F9 = {
 			isa = PBXGroup;
 			children = (
+				FFB0CF9618288749001914E5 /* External */,
 				FF8BDB3217DF9866002AE0F9 /* Supporting Files */,
 				FF8BDB5C17DF998A002AE0F9 /* Resources */,
 				FF8BDB5B17DF9981002AE0F9 /* Store */,
@@ -406,6 +456,10 @@
 		FF8BDB2A17DF9866002AE0F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF40A54D1828907100DDADD0 /* libz.dylib */,
+				FF40A54B1828905400DDADD0 /* MobileCoreServices.framework */,
+				FF40A5491828903700DDADD0 /* SystemConfiguration.framework */,
+				FFB0CFF618288F95001914E5 /* CFNetwork.framework */,
 				FF37194F181681D100E4FDD4 /* CoreImage.framework */,
 				FF826943180E0FD4006ABE96 /* AssetsLibrary.framework */,
 				FF38F7921806B3D00042E073 /* AVFoundation.framework */,
@@ -422,6 +476,7 @@
 		FF8BDB3117DF9866002AE0F9 /* FinnkinoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FFB0CF8F18287D90001914E5 /* ImageCache */,
 				FF826927180DDCD8006ABE96 /* Command */,
 				FF8BDB3A17DF9866002AE0F9 /* AppDelegate.h */,
 				FF8BDB3B17DF9866002AE0F9 /* AppDelegate.m */,
@@ -546,6 +601,62 @@
 			name = News;
 			sourceTree = "<group>";
 		};
+		FFB0CF8F18287D90001914E5 /* ImageCache */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0CF9018287DB1001914E5 /* ImageCache.h */,
+				FFB0CF9118287DB1001914E5 /* ImageCache.m */,
+				FFB0CF9318287E2B001914E5 /* ImageFetchOperation.h */,
+				FFB0CF9418287E2B001914E5 /* ImageFetchOperation.m */,
+			);
+			name = ImageCache;
+			sourceTree = "<group>";
+		};
+		FFB0CF9618288749001914E5 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0CFD518288EF3001914E5 /* ASI */,
+				FFB0CFEA18288EF4001914E5 /* Reachability */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		FFB0CFD518288EF3001914E5 /* ASI */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0CFD618288EF3001914E5 /* ASIAuthenticationDialog.h */,
+				FFB0CFD718288EF3001914E5 /* ASIAuthenticationDialog.m */,
+				FFB0CFD818288EF3001914E5 /* ASICacheDelegate.h */,
+				FFB0CFD918288EF3001914E5 /* ASIDataCompressor.h */,
+				FFB0CFDA18288EF3001914E5 /* ASIDataCompressor.m */,
+				FFB0CFDB18288EF3001914E5 /* ASIDataDecompressor.h */,
+				FFB0CFDC18288EF3001914E5 /* ASIDataDecompressor.m */,
+				FFB0CFDD18288EF3001914E5 /* ASIDownloadCache.h */,
+				FFB0CFDE18288EF3001914E5 /* ASIDownloadCache.m */,
+				FFB0CFDF18288EF4001914E5 /* ASIFormDataRequest.h */,
+				FFB0CFE018288EF4001914E5 /* ASIFormDataRequest.m */,
+				FFB0CFE118288EF4001914E5 /* ASIHTTPRequest.h */,
+				FFB0CFE218288EF4001914E5 /* ASIHTTPRequest.m */,
+				FFB0CFE318288EF4001914E5 /* ASIHTTPRequestConfig.h */,
+				FFB0CFE418288EF4001914E5 /* ASIHTTPRequestDelegate.h */,
+				FFB0CFE518288EF4001914E5 /* ASIInputStream.h */,
+				FFB0CFE618288EF4001914E5 /* ASIInputStream.m */,
+				FFB0CFE718288EF4001914E5 /* ASINetworkQueue.h */,
+				FFB0CFE818288EF4001914E5 /* ASINetworkQueue.m */,
+				FFB0CFE918288EF4001914E5 /* ASIProgressDelegate.h */,
+			);
+			path = ASI;
+			sourceTree = "<group>";
+		};
+		FFB0CFEA18288EF4001914E5 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0CFEB18288EF4001914E5 /* Reachability.h */,
+				FFB0CFEC18288EF4001914E5 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -641,10 +752,12 @@
 				FF8BDB6217DFA38F002AE0F9 /* FinnkinoEvent.m in Sources */,
 				FF8BDB6517DFA936002AE0F9 /* FinnkinoOneMovieEvent.m in Sources */,
 				FF388E9E17E04F6400B4D13E /* FinnkinoFeedStore.m in Sources */,
+				FFB0CFF018288EF4001914E5 /* ASIDownloadCache.m in Sources */,
 				FF388EA117E053C800B4D13E /* FinnkinoConnection.m in Sources */,
 				FF505F8F17ED9B44002884F3 /* FinnkinoEvent+TableRepresentation.m in Sources */,
 				FF505F9217ED9DC9002884F3 /* FinnkinoOneMovieEvent+TableRepresentation.m in Sources */,
 				FF410BE917F6C72A009E6008 /* FinnkinoDetailViewController.m in Sources */,
+				FFB0CF9518287E2B001914E5 /* ImageFetchOperation.m in Sources */,
 				FF4BC4E217F7774E002A50AB /* FinnkinoMovieContentDescriptor.m in Sources */,
 				FF84F8B917F985BE00AFD766 /* FinnkinoScheduleFirstLevelElement.m in Sources */,
 				FFDF6CEA181880D200C54292 /* FinnkinoInnerTableCell.m in Sources */,
@@ -653,10 +766,12 @@
 				FF3BBA8317F9E1CF00B6BE0D /* RottenTomatoesMoviesViewController.m in Sources */,
 				FFBA2836181EFC7900D2279F /* HorizontalScrollerView.m in Sources */,
 				FFBA2839181EFDAD00D2279F /* ArticleEditViewController.m in Sources */,
+				FFB0CFEF18288EF4001914E5 /* ASIDataDecompressor.m in Sources */,
 				FF3BBA8817F9E5AD00B6BE0D /* JSONFirstLevelDict.m in Sources */,
 				FF3BBA8B17F9E5DA00B6BE0D /* JSONSecondLevelDict.m in Sources */,
 				FF3BBA8E17F9E72000B6BE0D /* JSONThirdLevelDict.m in Sources */,
 				FF4F426C17FAEC1D00E008D3 /* RottenTomatoesDetailViewController.m in Sources */,
+				FFB0CFF118288EF4001914E5 /* ASIFormDataRequest.m in Sources */,
 				FF3754E317FEA9C50032CB61 /* ImageFilter.m in Sources */,
 				FF3754E417FEA9C50032CB61 /* ImageShadowFilter.m in Sources */,
 				FF3754E517FEA9C50032CB61 /* ImageTransformFilter.m in Sources */,
@@ -664,22 +779,29 @@
 				FF3754E917FEAB120032CB61 /* DecoratorView.m in Sources */,
 				FFA084E818032388005BFFFC /* RTPosterViewController.m in Sources */,
 				FF42161B1805BDDE00BECFF0 /* FKTrailerEditViewController.m in Sources */,
+				FFB0CFF218288EF4001914E5 /* ASIHTTPRequest.m in Sources */,
 				FF82692A180DDD44006ABE96 /* FKTCommand.m in Sources */,
 				FF82692D180DE535006ABE96 /* FKTTrimCommand.m in Sources */,
+				FFB0CFED18288EF4001914E5 /* ASIAuthenticationDialog.m in Sources */,
 				FF826930180DEE4E006ABE96 /* FKTRotateCommand.m in Sources */,
 				FF826933180DF458006ABE96 /* FKTCropCommand.m in Sources */,
 				FF826936180DF7A8006ABE96 /* FKTAddMusicCommand.m in Sources */,
 				FF82693B180DFF56006ABE96 /* FKTAddWaterMarkCommand.m in Sources */,
 				FFBA2833181EFC0D00D2279F /* ArticleEditView.m in Sources */,
 				FFDF6CF0181880F600C54292 /* FinnkinoNewsViewController.m in Sources */,
+				FFB0CF9218287DB1001914E5 /* ImageCache.m in Sources */,
+				FFB0CFF418288EF4001914E5 /* ASINetworkQueue.m in Sources */,
 				FF826942180E0F79006ABE96 /* FKTExportCommand.m in Sources */,
 				FF4715B2180FC099001ABFB5 /* Finnkino.xcdatamodeld in Sources */,
 				FF4715B5181018AC001ABFB5 /* Movie.m in Sources */,
 				FF34505718107E8300E0F9CB /* BookmarkCollectionViewController.m in Sources */,
+				FFB0CFF518288EF4001914E5 /* Reachability.m in Sources */,
 				FF34505A181080A600E0F9CB /* BookmarkViewCell.m in Sources */,
 				FF371945181678BE00E4FDD4 /* PhotoRecord.m in Sources */,
+				FFB0CFF318288EF4001914E5 /* ASIInputStream.m in Sources */,
 				FF371948181679C600E4FDD4 /* PendingOperations.m in Sources */,
 				FF37194B1816809C00E4FDD4 /* ImageDownloader.m in Sources */,
+				FFB0CFEE18288EF4001914E5 /* ASIDataCompressor.m in Sources */,
 				FF37194E181680D400E4FDD4 /* ImageFiltration.m in Sources */,
 				FF9220901817FC79004C17B3 /* FKNews.m in Sources */,
 				FF9220931817FDB7004C17B3 /* FKNewsArticle.m in Sources */,
